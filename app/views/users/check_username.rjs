@@ -1,0 +1,5 @@
+if @valid
+  page.replace_html("username_error", :text => "Username is available.")
+else
+  page.replace_html("username_error", :text => "Username is already taken; please choose another.")
+end

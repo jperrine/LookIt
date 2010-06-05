@@ -1,0 +1,19 @@
+<% SALT = "NaC1" unless defined?(SALT) %>
+
+valid_user:
+  id: 1
+  display_name:    Jimmy Perrine
+  hashed_password: <%= User.encrypted_password('password', SALT) %>
+  salt:            <%= SALT %>
+  username:        jperrine
+  email:           email@email.com
+  birthdate:       11/13/1987
+  
+invalid_user:
+  id:              2
+  display_name:   
+  hashed_password: <%= User.encrypted_password('poop', SALT) %>
+  salt:            <%= SALT %>
+  username:       
+  email:           em@em.com
+  birthdate:       11/13/1987

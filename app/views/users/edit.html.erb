@@ -1,0 +1,20 @@
+Settings for <%= @user.display_name %>
+<% upload_form_for(@user) do |f| %>
+  <%= f.error_messages %>
+  <br />
+  <%= f.label :password, "Password: " %><%= f.password_field :password %>
+  <br />
+  <%= f.label :password_confirmation, "Confirm Password: " %><%= f.password_field :password_confirmation %>
+  <br />
+  <%= f.label :display_name, "Display Name: "%><%= f.text_field :display_name %> 
+  <br />
+  <%= f.label :email, "Email Address: " %><%= f.text_field :email %>
+  <br />
+  <%= f.label :birthdate, "Birth Date: " %><%= f.date_select :birthdate, :start_year => 1940, :end_year => Time.now.year, :prompt => {:day => 'Choose day', :month => 'Choose month', :year => 'Choose year'} %>
+  <br />
+  <%= f.label :picture, "Picture" %><%= f.upload_column_field :picture %>
+  <br />
+  <%= f.label :bio, "Bio" %><%= f.text_area :bio %>
+  <br />
+  <%= submit_tag('Update')%>
+<% end %>
