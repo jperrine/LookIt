@@ -1,5 +1,5 @@
 Settings for <%= @user.display_name %>
-<% upload_form_for(@user) do |f| %>
+<% form_for(@user) do |f| %>
   <%= f.error_messages %>
   <br />
   <%= f.label :password, "Password: " %><%= f.password_field :password %>
@@ -12,7 +12,7 @@ Settings for <%= @user.display_name %>
   <br />
   <%= f.label :birthdate, "Birth Date: " %><%= f.date_select :birthdate, :start_year => 1940, :end_year => Time.now.year, :prompt => {:day => 'Choose day', :month => 'Choose month', :year => 'Choose year'} %>
   <br />
-  <%= f.label :picture, "Picture" %><%= f.upload_column_field :picture %>
+  <%= f.label :picture, "Picture" %><%= f.text_field :picture %>
   <br />
   <%= f.label :bio, "Bio" %><%= f.text_area :bio %>
   <br />
