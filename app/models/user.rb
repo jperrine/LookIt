@@ -2,7 +2,7 @@ require "digest/sha1"
 class User < ActiveRecord::Base
   has_many :looks
 
-  image_column :picture, :versions => {:thumb => "c50x50" }, :store_dir => "pictures", :filename => proc{|record, file| "picture#{record.id}.#{file.extension}"}
+  #image_column :picture, :versions => {:thumb => "c50x50" }, :store_dir => "pictures", :filename => proc{|record, file| "picture#{record.id}.#{file.extension}"}
   
   validates_presence_of :display_name, :email, :birthdate, :username
   validates_uniqueness_of :username, :email
