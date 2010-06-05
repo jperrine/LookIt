@@ -5,8 +5,7 @@ class LooksController < ApplicationController
   # GET /user/:user_id/look(.:format)
   def index
     @user_looks = Look.find(:all, 
-      :limit => 20,
-      :conditions => { :archived => false, :user_id => @current_user.id })
+      :conditions => ["ARCHIVED = ? AND USER_ID = ?", false, @current_user.id])
     respond_to do |format|
       format.html
       format.xml { render :xml => @user_looks }
