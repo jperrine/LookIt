@@ -1,6 +1,6 @@
 <h3>Welcome to LookIt, please register for an account!</h3>
 
-<% upload_form_for(@user) do |f| %>
+<% form_for(@user) do |f| %>
   <%= f.error_messages %>
   <%= f.label :username, "Username: " %><%= f.text_field :username %>
   <%= observe_field("user_username", :url => url_for(:action => "check_username"), :with => 'username') %>
@@ -16,7 +16,7 @@
   <br />
   <%= f.label :birthdate, "Birth Date: " %><%= f.date_select :birthdate, :start_year => 1940, :end_year => Time.now.year, :prompt => {:day => 'Choose day', :month => 'Choose month', :year => 'Choose year'} %>
   <br />
-  <%= f.label :picture, "Picture: " %><%= f.upload_column_field :picture %>
+  <%= f.label :picture, "Picture: " %><%= f.text_field :picture %>
   <br />
   <%= f.label :bio, "Bio: " %><%= f.text_area :bio %>
   <br />
