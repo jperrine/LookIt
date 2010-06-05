@@ -3,7 +3,6 @@
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
   <%= f.label :username, "Username: " %><%= f.text_field :username %>
-  <%= observe_field("user_username", :url => url_for(:action => "check_username"), :with => 'username') %>
   <span id="username_error" class="error"></span>
   <br />
   <%= f.label :password, "Password: " %><%= f.password_field :password %>
