@@ -6750,3 +6750,12 @@ ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 14:01:53) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.6ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."archived" = 'f' AND "looks"."user_id" = 3) LIMIT 20[0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 60ms (View: 34, DB: 11) | 200 OK [http://localhost/users/3/looks]
