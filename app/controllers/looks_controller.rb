@@ -6,6 +6,7 @@ class LooksController < ApplicationController
   def index
     @user_looks = Look.find(:all, 
       :conditions => ["ARCHIVED = ? AND USER_ID = ?", false, @current_user.id])
+    @user_looks = [] if @user_looks.nil?
     respond_to do |format|
       format.html
       format.xml { render :xml => @user_looks }
