@@ -42,7 +42,7 @@ class UsersController < ApplicationController
       if @user.save
         flash[:notice] = "#{@user.display_name}, your account was successfully created."
         session[:user_id] = @user.id
-        format.html { redirect_to user_look_index_url(:user_id => @user.id) }
+        format.html { redirect_to user_looks_url(:user_id => @user.id) }
         format.xml { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => 'new' }
