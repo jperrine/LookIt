@@ -7,6 +7,10 @@ class LooksController < ApplicationController
     @user_looks = Look.find(:all, 
       :limit => 20,
       :conditions => { :archived => false, :user_id => @current_user.id })
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @user_looks }
+    end
   end
 	
   def new
