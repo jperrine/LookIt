@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100603013105) do
+ActiveRecord::Schema.define(:version => 20100605233542) do
 
   create_table "looks", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20100603013105) do
     t.datetime "posted"
     t.boolean  "archived"
   end
+
+  add_index "looks", ["title"], :name => "index_looks_on_title"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -45,5 +47,7 @@ ActiveRecord::Schema.define(:version => 20100603013105) do
     t.string   "bio"
     t.string   "picture"
   end
+
+  add_index "users", ["username"], :name => "index_users_on_username"
 
 end

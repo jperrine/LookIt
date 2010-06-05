@@ -6775,3 +6775,84 @@ Processing LooksController#index (for 127.0.0.1 at 2010-06-05 15:22:57) [GET]
 Rendering template within layouts/application
 Rendering looks/index
 Completed in 182ms (View: 64, DB: 1) | 200 OK [http://localhost/users/3/looks]
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100423192227)
+Migrating to CreateSessions (20100423193921)
+Migrating to CreateLooks (20100512045007)
+Migrating to AddPublishedToLook (20100512053348)
+Migrating to AddActiveToUser (20100512053405)
+Migrating to AddPostedToLook (20100527234101)
+Migrating to AddArchivedToLooks (20100528200613)
+Migrating to AddBioToUsers (20100603012527)
+Migrating to AddPictureToPeople (20100603013105)
+Migrating to AdjustStringLengthToLooks (20100605233452)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TEMPORARY TABLE "altered_looks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar(255), "content" varchar(255), "created_at" datetime, "updated_at" datetime, "published" boolean, "posted" datetime, "archived" boolean) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("looks")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "looks"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "looks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar(255), "content" varchar(255), "created_at" datetime, "updated_at" datetime, "published" boolean, "posted" datetime, "archived" boolean) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_looks")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "altered_looks"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100605233452')[0m
+Migrating to AddIndexesToUsersAndLooks (20100605233542)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: indexed columns are not unique: CREATE UNIQUE INDEX "index_looks_on_title" ON "looks" ("title")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100423192227)
+Migrating to CreateSessions (20100423193921)
+Migrating to CreateLooks (20100512045007)
+Migrating to AddPublishedToLook (20100512053348)
+Migrating to AddActiveToUser (20100512053405)
+Migrating to AddPostedToLook (20100527234101)
+Migrating to AddArchivedToLooks (20100528200613)
+Migrating to AddBioToUsers (20100603012527)
+Migrating to AddPictureToPeople (20100603013105)
+Migrating to AdjustStringLengthToLooks (20100605233452)
+Migrating to AddIndexesToUsersAndLooks (20100605233542)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: indexed columns are not unique: CREATE UNIQUE INDEX "index_looks_on_title" ON "looks" ("title")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100423192227)
+Migrating to CreateSessions (20100423193921)
+Migrating to CreateLooks (20100512045007)
+Migrating to AddPublishedToLook (20100512053348)
+Migrating to AddActiveToUser (20100512053405)
+Migrating to AddPostedToLook (20100527234101)
+Migrating to AddArchivedToLooks (20100528200613)
+Migrating to AddBioToUsers (20100603012527)
+Migrating to AddPictureToPeople (20100603013105)
+Migrating to AdjustStringLengthToLooks (20100605233452)
+Migrating to AddIndexesToUsersAndLooks (20100605233542)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_looks_on_title" ON "looks" ("title")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100605233542')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("looks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_looks_on_title')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_username')[0m
