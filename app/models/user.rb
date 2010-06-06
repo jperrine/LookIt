@@ -2,7 +2,12 @@ require "digest/sha1"
 class User < ActiveRecord::Base
   has_many :looks
 
-  image_column :picture, :versions => {:thumb => "c50x50" }#, :store_dir => "pictures", :filename => proc{|record, file| "picture#{record.id}.#{file.extension}"}
+  #image_column :picture, :versions => {:thumb => "c50x50" }#, :store_dir => "pictures", :filename => proc{|record, file| "picture#{record.id}.#{file.extension}"}
+  #paperclip
+  has_attached_file :photo,
+    :styles => {
+        :thumb => "50x50"
+    }
   
   validates_presence_of :display_name, :email, :birthdate, :username
   validates_uniqueness_of :username, :email
@@ -30,7 +35,7 @@ class User < ActiveRecord::Base
     current.display_name = user_obj.display_name
     current.email = user_obj.email
     current.birthdate = user_obj.birthdate
-    current.picture = user_obj.picture
+    current.photo = user_obj.photo
     current.bio = user_obj.bio
   end
     

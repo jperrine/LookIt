@@ -1,0 +1,35 @@
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-06 00:28:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (Could not find table 'sessions') on line #13 of app/views/layouts/application.html.erb:
+10:   </head>
+11:   <body>
+12:   	<div id="login">
+13:   		<% unless session[:user_id] %>
+14:   			<%= link_to "Login", login_path %>
+15:   		<% else %>
+16:   			<%= link_to "Logout", logout_path %>
+
+    app/views/layouts/application.html.erb:13
+    /Library/Ruby/Gems/1.8/gems/logworm_client-0.6.2/lib/logworm_client/rails.rb:32:in `process'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-06 00:29:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-06 00:31:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+	 *** logworm - logs sent in 1.00244688987732 seconds
