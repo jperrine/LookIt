@@ -1,0 +1,10 @@
+<h3><%=h @look.title %></h3>
+<br />
+<span>
+	Posted by <%=h @look.user.display_name %> at <%= @look.posted %>
+</span>
+<br />
+<br />
+<div id="view_content">
+	<%= @look.content %>
+</div>

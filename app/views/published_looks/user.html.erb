@@ -1,0 +1,6 @@
+<h3>Viewing published looks by <%= @user.display_name %></h3>
+<br />
+
+<ul>
+	<%= render :partial => 'user_looks', :collection => @looks, :as => :look %>
+</ul>

@@ -1,0 +1,8 @@
+<div id="look<%= looks.id %>">
+	<%= link_to looks.title, url_for(:action => 'view', :id => looks.id) %>
+	<br />
+	<span class="posted">
+		<%= link_to looks.user.display_name, url_for(:action => 'user', :id => looks.user.id) %>
+		at <%= looks.posted %>
+	</span>
+</div>

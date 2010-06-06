@@ -4,7 +4,7 @@ class LooksController < ApplicationController
 	
   # GET /user/:user_id/look(.:format)
   def index
-    @user_looks = Look.find(:all, 
+    @looks = Look.find(:all, 
       :conditions => ["ARCHIVED = ? AND USER_ID = ?", false, @current_user.id])
     respond_to do |format|
       format.html
