@@ -6910,3 +6910,935 @@ Processing LooksController#index (for 127.0.0.1 at 2010-06-05 19:58:26) [GET]
 Rendering template within layouts/application
 Rendering looks/index
 Completed in 45ms (View: 11, DB: 1) | 200 OK [http://localhost/users/7/looks]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-05 20:36:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 88ms (View: 86, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing LooksController#new (for 127.0.0.1 at 2010-06-05 20:36:10) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"7", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering looks/new
+Rendered looks/_look_form (21.2ms)
+Completed in 77ms (View: 61, DB: 1) | 200 OK [http://localhost/users/7/looks/new]
+
+
+Processing LooksController#create (for 127.0.0.1 at 2010-06-05 20:37:02) [POST]
+  Parameters: {"commit"=>"Save", "look"=>{"title"=>"blah blah blah", "content"=>"<p>&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;</p>"}, "action"=>"create", "authenticity_token"=>"xMCCIiTeuHg1RNXGPaSXuTdwa0sW5BT8QuJ7bXuXjOM=", "user_id"=>"7", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mLook Create (0.4ms)[0m   [0;1mINSERT INTO "looks" ("posted", "created_at", "title", "updated_at", "published", "archived", "user_id", "content") VALUES('2010-06-06 00:37:02', '2010-06-06 00:37:02', 'blah blah blah', '2010-06-06 00:37:02', NULL, 'f', 7, '<p>&lt;object width="640" height="385"&gt;&lt;param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"&gt;&lt;/embed&gt;&lt;/object&gt;</p>')[0m
+Redirected to http://localhost:3000/users/7/looks/8
+Completed in 180ms (DB: 1) | 302 Found [http://localhost/users/7/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-05 20:37:02) [GET]
+  Parameters: {"action"=>"show", "id"=>"8", "user_id"=>"7", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 8 AND ("looks"."archived" = 'f' AND "looks"."user_id" = '7')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+Completed in 37ms (View: 24, DB: 1) | 200 OK [http://localhost/users/7/looks/8]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 20:37:16) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"7", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 7) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 27ms (View: 14, DB: 1) | 200 OK [http://localhost/users/7/looks]
+
+
+Processing LooksController#edit (for 127.0.0.1 at 2010-06-05 20:37:19) [GET]
+  Parameters: {"action"=>"edit", "id"=>"8", "user_id"=>"7", "controller"=>"looks"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering looks/edit
+Rendered looks/_look_form (5.3ms)
+Completed in 47ms (View: 33, DB: 1) | 200 OK [http://localhost/users/7/looks/8/edit]
+
+
+Processing LooksController#update (for 127.0.0.1 at 2010-06-05 20:37:46) [PUT]
+  Parameters: {"commit"=>"Save", "look"=>{"title"=>"blah blah blah", "content"=>"<p>\r\n<object width=\"640\" height=\"385\">\r\n<param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" />\r\n<param name=\"allowFullScreen\" value=\"true\" />\r\n<param name=\"allowscriptaccess\" value=\"always\" /><embed type=\"application/x-shockwave-flash\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></embed>\r\n</object>\r\n</p>"}, "action"=>"update", "_method"=>"put", "authenticity_token"=>"xMCCIiTeuHg1RNXGPaSXuTdwa0sW5BT8QuJ7bXuXjOM=", "id"=>"8", "user_id"=>"7", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 8) [0m
+  [4;35;1mLook Update (0.3ms)[0m   [0mUPDATE "looks" SET "updated_at" = '2010-06-06 00:37:46', "content" = '<p>
+<object width="640" height="385">
+<param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+</p>' WHERE "id" = 8[0m
+Redirected to http://localhost:3000/users/7/looks/8
+Completed in 89ms (DB: 2) | 302 Found [http://localhost/users/7/looks/8]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-05 20:37:46) [GET]
+  Parameters: {"action"=>"show", "id"=>"8", "user_id"=>"7", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 8 AND ("looks"."archived" = 'f' AND "looks"."user_id" = '7')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+Completed in 21ms (View: 7, DB: 1) | 200 OK [http://localhost/users/7/looks/8]
+
+
+Processing LooksController#new (for 127.0.0.1 at 2010-06-05 20:38:01) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"7", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering looks/new
+Rendered looks/_look_form (4.5ms)
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/users/7/looks/new]
+
+
+Processing LooksController#create (for 127.0.0.1 at 2010-06-05 20:42:43) [POST]
+  Parameters: {"commit"=>"Save", "look"=>{"title"=>"", "content"=>"<p>\r\n<div style=\"color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: #ffffff; margin: 8px;\">\r\n<p>&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;</p>\r\n</div>\r\n</p>"}, "action"=>"create", "authenticity_token"=>"xMCCIiTeuHg1RNXGPaSXuTdwa0sW5BT8QuJ7bXuXjOM=", "user_id"=>"7", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering looks/new
+Rendered looks/_look_form (7.6ms)
+Completed in 34ms (View: 12, DB: 1) | 200 OK [http://localhost/users/7/looks]
+
+
+Processing LooksController#create (for 127.0.0.1 at 2010-06-05 20:42:48) [POST]
+  Parameters: {"commit"=>"Save", "look"=>{"title"=>"look", "content"=>"<p>&nbsp;</p>\r\n<div style=\"color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: #ffffff; margin: 8px;\">\r\n<p>&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width=\"640\" height=\"385\"&gt;&lt;param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\"&gt;&lt;/param&gt;&lt;param name=\"allowFullScreen\" value=\"true\"&gt;&lt;/param&gt;&lt;param name=\"allowscriptaccess\" value=\"always\"&gt;&lt;/param&gt;&lt;embed src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"&gt;&lt;/embed&gt;&lt;/object&gt;</p>\r\n</div>\r\n<p>&nbsp;</p>"}, "action"=>"create", "authenticity_token"=>"xMCCIiTeuHg1RNXGPaSXuTdwa0sW5BT8QuJ7bXuXjOM=", "user_id"=>"7", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;35;1mLook Create (0.4ms)[0m   [0mINSERT INTO "looks" ("posted", "created_at", "title", "updated_at", "published", "archived", "user_id", "content") VALUES('2010-06-06 00:42:48', '2010-06-06 00:42:48', 'look', '2010-06-06 00:42:48', NULL, 'f', 7, '<p>&nbsp;</p>
+<div style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: #ffffff; margin: 8px;">
+<p>&lt;object width="640" height="385"&gt;&lt;param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width="640" height="385"&gt;&lt;param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width="640" height="385"&gt;&lt;param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width="640" height="385"&gt;&lt;param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width="640" height="385"&gt;&lt;param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;object width="640" height="385"&gt;&lt;param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"&gt;&lt;/embed&gt;&lt;/object&gt;</p>
+</div>
+<p>&nbsp;</p>')[0m
+Redirected to http://localhost:3000/users/7/looks/9
+Completed in 26ms (DB: 1) | 302 Found [http://localhost/users/7/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-05 20:42:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"9", "user_id"=>"7", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;35;1mLook Load (2.5ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 9 AND ("looks"."archived" = 'f' AND "looks"."user_id" = '7')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+Completed in 24ms (View: 6, DB: 4) | 200 OK [http://localhost/users/7/looks/9]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 20:42:53) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"7", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;35;1mLook Load (0.5ms)[0m   [0mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 7) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 29ms (View: 14, DB: 2) | 200 OK [http://localhost/users/7/looks]
+
+
+Processing LooksController#edit (for 127.0.0.1 at 2010-06-05 20:42:56) [GET]
+  Parameters: {"action"=>"edit", "id"=>"9", "user_id"=>"7", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;35;1mLook Load (0.5ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering looks/edit
+Rendered looks/_look_form (5.2ms)
+Completed in 25ms (View: 10, DB: 1) | 200 OK [http://localhost/users/7/looks/9/edit]
+
+
+Processing LooksController#update (for 127.0.0.1 at 2010-06-05 20:43:08) [PUT]
+  Parameters: {"commit"=>"Save", "look"=>{"title"=>"look", "content"=>"<p>\r\n<object width=\"640\" height=\"385\">\r\n<param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" />\r\n<param name=\"allowFullScreen\" value=\"true\" />\r\n<param name=\"allowscriptaccess\" value=\"always\" /><embed type=\"application/x-shockwave-flash\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></embed>\r\n</object>\r\n<object width=\"640\" height=\"385\">\r\n<param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" />\r\n<param name=\"allowFullScreen\" value=\"true\" />\r\n<param name=\"allowscriptaccess\" value=\"always\" /><embed type=\"application/x-shockwave-flash\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></embed>\r\n</object>\r\n<object width=\"640\" height=\"385\">\r\n<param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" />\r\n<param name=\"allowFullScreen\" value=\"true\" />\r\n<param name=\"allowscriptaccess\" value=\"always\" /><embed type=\"application/x-shockwave-flash\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></embed>\r\n</object>\r\n<object width=\"640\" height=\"385\">\r\n<param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" />\r\n<param name=\"allowFullScreen\" value=\"true\" />\r\n<param name=\"allowscriptaccess\" value=\"always\" /><embed type=\"application/x-shockwave-flash\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></embed>\r\n</object>\r\n<object width=\"640\" height=\"385\">\r\n<param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" />\r\n<param name=\"allowFullScreen\" value=\"true\" />\r\n<param name=\"allowscriptaccess\" value=\"always\" /><embed type=\"application/x-shockwave-flash\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></embed>\r\n</object>\r\n<object width=\"640\" height=\"385\">\r\n<param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" />\r\n<param name=\"allowFullScreen\" value=\"true\" />\r\n<param name=\"allowscriptaccess\" value=\"always\" /><embed type=\"application/x-shockwave-flash\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></embed>\r\n</object>\r\n<object width=\"640\" height=\"385\">\r\n<param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" />\r\n<param name=\"allowFullScreen\" value=\"true\" />\r\n<param name=\"allowscriptaccess\" value=\"always\" /><embed type=\"application/x-shockwave-flash\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></embed>\r\n</object>\r\n<object width=\"640\" height=\"385\">\r\n<param name=\"movie\" value=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" />\r\n<param name=\"allowFullScreen\" value=\"true\" />\r\n<param name=\"allowscriptaccess\" value=\"always\" /><embed type=\"application/x-shockwave-flash\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></embed>\r\n</object>\r\n</p>"}, "action"=>"update", "_method"=>"put", "authenticity_token"=>"xMCCIiTeuHg1RNXGPaSXuTdwa0sW5BT8QuJ7bXuXjOM=", "id"=>"9", "user_id"=>"7", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 9) [0m
+  [4;36;1mLook Update (215.0ms)[0m   [0;1mUPDATE "looks" SET "updated_at" = '2010-06-06 00:43:08', "content" = '<p>
+<object width="640" height="385">
+<param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+<object width="640" height="385">
+<param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+<object width="640" height="385">
+<param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+<object width="640" height="385">
+<param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+<object width="640" height="385">
+<param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+<object width="640" height="385">
+<param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+<object width="640" height="385">
+<param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+<object width="640" height="385">
+<param name="movie" value="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/AYC2FUutdKA&amp;hl=en_US&amp;fs=1&amp;" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+</p>' WHERE "id" = 9[0m
+Redirected to http://localhost:3000/users/7/looks/9
+Completed in 350ms (DB: 216) | 302 Found [http://localhost/users/7/looks/9]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-05 20:43:09) [GET]
+  Parameters: {"action"=>"show", "id"=>"9", "user_id"=>"7", "controller"=>"looks"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 9 AND ("looks"."archived" = 'f' AND "looks"."user_id" = '7')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+Completed in 37ms (View: 11, DB: 2) | 200 OK [http://localhost/users/7/looks/9]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-05 20:45:05) [GET]
+  Parameters: {"action"=>"edit", "id"=>"7", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Completed in 100ms (View: 77, DB: 13) | 200 OK [http://localhost/users/7/edit]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-05 21:57:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 19ms (View: 17, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-06-05 21:57:57) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://localhost:3000/login
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-06-05 21:57:57) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Completed in 37ms (View: 34, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-05 21:57:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 107ms (View: 90, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-05 21:58:24) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"xMCCIiTeuHg1RNXGPaSXuTdwa0sW5BT8QuJ7bXuXjOM=", "controller"=>"users", "user"=>{"birthdate(1i)"=>"1940", "birthdate(2i)"=>"2", "password_confirmation"=>"[FILTERED]", "birthdate(3i)"=>"4", "username"=>"[FILTERED]", "bio"=>"", "display_name"=>"poop", "password"=>"[FILTERED]", "picture"=>"", "email"=>"poop@dsljkh"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'poop') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'poop@dsljkh') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 29ms (View: 16, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-06-05 21:58:33) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-06-05 21:58:34) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"xMCCIiTeuHg1RNXGPaSXuTdwa0sW5BT8QuJ7bXuXjOM=", "username"=>"[FILTERED]", "controller"=>"users", "password"=>"[FILTERED]"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'perrine4') LIMIT 1[0m
+Redirected to http://localhost:3000/users/3
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-05 21:58:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/users/3]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:02:55) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 39ms (View: 25, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#new (for 127.0.0.1 at 2010-06-05 22:02:56) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering looks/new
+Rendered looks/_look_form (4.0ms)
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/users/3/looks/new]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-05 22:02:57) [GET]
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Completed in 26ms (View: 16, DB: 1) | 200 OK [http://localhost/users/3/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-05 22:02:58) [GET]
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Completed in 29ms (View: 18, DB: 1) | 200 OK [http://localhost/users/3/edit]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-05 22:05:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 11ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-05 22:05:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+
+LoadError (Expected /Users/jimmy/Dropbox/LookIt/app/controllers/published_looks_controller.rb to define PublishedLooksController):
+  
+
+Rendered rescues/_trace (35.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-05 22:05:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.6ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."archived" = 'f' AND "looks"."published" = 't') ORDER BY posted DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+Completed in 101ms (View: 94, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:09:16) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-06-05 22:22:18) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+
+ActionView::TemplateError (undefined local variable or method `root_url' for #<ActionView::Base:0x10421fc28>) on line #30 of app/views/layouts/application.html.erb:
+27:     	<% end %>
+28:       <div id="nav">
+29:         <ul>
+30:           <li><%= link_to "Home", root_url %></li>
+31: 					<li><%= link_to "Browse Looks", :controller => :published_looks %></li>
+32:           <% if session[:user_id] %>
+33:             <li><%= link_to "My Looks", user_looks_url(:user_id => session[:user_id]) %></li>
+
+    app/views/layouts/application.html.erb:30
+    app/controllers/users_controller.rb:107:in `login'
+
+Rendered rescues/_trace (123.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-05 22:25:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 41ms (View: 39, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-05 22:25:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.6ms)[0m   [0;1mSELECT * FROM "looks" WHERE (published = 't' AND archived = 'f') ORDER BY posted DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-05 22:25:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-05 22:25:07) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+
+SyntaxError (/Users/jimmy/Dropbox/LookIt/app/controllers/looks_controller.rb:116: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (105.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-05 22:26:28) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+
+SyntaxError (/Users/jimmy/Dropbox/LookIt/app/controllers/looks_controller.rb:116: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (39.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-05 22:26:30) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+
+SyntaxError (/Users/jimmy/Dropbox/LookIt/app/controllers/looks_controller.rb:116: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (112.9ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:27:05) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+
+ActionView::TemplateError (undefined method `unpublish' for #<ActionView::Base:0x104449030>) on line #13 of app/views/looks/index.html.erb:
+10: 			<% if look.published %>
+11: 				<%= link_to 'Publish', publish(:id => look.id) %>
+12: 			<% else %>
+13: 			  <%= link_to 'Unpublish', unpublish(:id => look.id) %>
+14: 			<% end %>
+15: 	  </p>
+16: 	<% end %>
+
+    app/views/looks/index.html.erb:13
+    app/views/looks/index.html.erb:2:in `each'
+    app/views/looks/index.html.erb:2
+    app/controllers/looks_controller.rb:9:in `index'
+
+Rendered rescues/_trace (125.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:27:28) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 28ms (View: 14, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-05 22:27:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.5ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't' AND archived = 'f') ORDER BY posted DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:27:36) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 27ms (View: 14, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:28:02) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 26ms (View: 14, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#publish (for 127.0.0.1 at 2010-06-05 22:28:04) [GET]
+  Parameters: {"action"=>"publish", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+  [4;36;1mLook Update (0.4ms)[0m   [0;1mUPDATE "looks" SET "updated_at" = '2010-06-06 02:28:04', "published" = 't' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/users/3/looks
+Completed in 105ms (DB: 2) | 302 Found [http://localhost/users/3/looks/5/publish]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:28:04) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#unpublish (for 127.0.0.1 at 2010-06-05 22:28:08) [GET]
+  Parameters: {"action"=>"unpublish", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Redirected to http://localhost:3000/users/3/looks
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/users/3/looks/5/unpublish]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:28:08) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 86ms (View: 11, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#unpublish (for 127.0.0.1 at 2010-06-05 22:28:12) [GET]
+  Parameters: {"action"=>"unpublish", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Redirected to http://localhost:3000/users/3/looks
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/users/3/looks/5/unpublish]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:28:13) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 24ms (View: 11, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:28:14) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-05 22:28:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.7ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't' AND archived = 'f') ORDER BY posted DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+
+ActionView::TemplateError (undefined local variable or method `look' for #<ActionView::Base:0x1040c05a8>) on line #1 of app/views/published_looks/_looks.html.erb:
+1: <div id="look<%= look.id %>">
+2: 	<%= look.title %>
+3: </div>
+
+    app/views/published_looks/_looks.html.erb:1
+    app/views/published_looks/index.html.erb:1
+    app/controllers/published_looks_controller.rb:10:in `index'
+
+Rendered rescues/_trace (67.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-05 22:29:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.7ms)[0m   [0;1mSELECT * FROM "looks" WHERE (published = 't' AND archived = 'f') ORDER BY posted DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+Rendered published_looks/_looks (3.0ms)
+Completed in 87ms (View: 81, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:29:31) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.5ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 24ms (View: 11, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#unpublish (for 127.0.0.1 at 2010-06-05 22:29:33) [GET]
+  Parameters: {"action"=>"unpublish", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Redirected to http://localhost:3000/users/3/looks
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/users/3/looks/5/unpublish]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:29:33) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:29:53) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:29:55) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 31ms (View: 14, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#unpublish (for 127.0.0.1 at 2010-06-05 22:29:57) [GET]
+  Parameters: {"action"=>"unpublish", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+  [4;35;1mLook Update (0.3ms)[0m   [0mUPDATE "looks" SET "updated_at" = '2010-06-06 02:29:57', "published" = 'f' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/users/3/looks
+Completed in 19ms (DB: 2) | 302 Found [http://localhost/users/3/looks/5/unpublish]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:29:57) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 25ms (View: 11, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#publish (for 127.0.0.1 at 2010-06-05 22:29:58) [GET]
+  Parameters: {"action"=>"publish", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+  [4;36;1mLook Update (0.4ms)[0m   [0;1mUPDATE "looks" SET "updated_at" = '2010-06-06 02:29:58', "published" = 't' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/users/3/looks
+Completed in 21ms (DB: 2) | 302 Found [http://localhost/users/3/looks/5/publish]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-05 22:29:58) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 24ms (View: 11, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-05 22:41:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.7ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't' AND archived = 'f') ORDER BY posted DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered published_looks/_looks (11.9ms)
+Completed in 32ms (View: 26, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#user (for 127.0.0.1 at 2010-06-05 22:41:18) [GET]
+  Parameters: {"action"=>"user", "id"=>"3", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.6ms)[0m   [0mSELECT * FROM "looks" WHERE (user_id = '3' and published = 't' and archived = 'f') [0m
+
+ActionView::MissingTemplate (Missing template published_looks/user.erb in view path app/views):
+  app/controllers/published_looks_controller.rb:39:in `user'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-05 22:41:23) [GET]
+  Parameters: {"action"=>"view", "id"=>"5", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+
+ActionView::MissingTemplate (Missing template published_looks/view.erb in view path app/views):
+  app/controllers/published_looks_controller.rb:49:in `view'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublishedLooksController#user (for 127.0.0.1 at 2010-06-05 22:46:42) [GET]
+  Parameters: {"action"=>"user", "id"=>"3", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.6ms)[0m   [0mSELECT * FROM "looks" WHERE (user_id = '3' and published = 't' and archived = 'f') [0m
+Rendering template within layouts/application
+Rendering published_looks/user
+
+ActionView::TemplateError (undefined local variable or method `users_looks' for #<ActionView::Base:0x1040cd2d0>) on line #2 of app/views/published_looks/_user_looks.html.erb:
+1: <li>
+2:   <%= link_to users_looks.title, url_for(:action => 'view', :id => users_looks.id) %>
+3: </li>
+
+    app/views/published_looks/_user_looks.html.erb:2
+    app/views/published_looks/user.html.erb:2
+    app/controllers/published_looks_controller.rb:39:in `user'
+
+Rendered rescues/_trace (77.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublishedLooksController#user (for 127.0.0.1 at 2010-06-05 22:47:06) [GET]
+  Parameters: {"action"=>"user", "id"=>"3", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.7ms)[0m   [0;1mSELECT * FROM "looks" WHERE (user_id = '3' and published = 't' and archived = 'f') [0m
+Rendering template within layouts/application
+Rendering published_looks/user
+
+ActionView::TemplateError (undefined local variable or method `users_look' for #<ActionView::Base:0x1044a7cc0>) on line #2 of app/views/published_looks/_user_looks.html.erb:
+1: <li>
+2:   <%= link_to users_look.title, url_for(:action => 'view', :id => users_look.id) %>
+3: </li>
+
+    app/views/published_looks/_user_looks.html.erb:2
+    app/views/published_looks/user.html.erb:2
+    app/controllers/published_looks_controller.rb:39:in `user'
+
+Rendered rescues/_trace (67.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublishedLooksController#user (for 127.0.0.1 at 2010-06-05 22:48:08) [GET]
+  Parameters: {"action"=>"user", "id"=>"3", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.7ms)[0m   [0mSELECT * FROM "looks" WHERE (user_id = '3' and published = 't' and archived = 'f') [0m
+Rendering template within layouts/application
+Rendering published_looks/user
+
+ActionView::TemplateError (undefined local variable or method `looks' for #<ActionView::Base:0x104488d20>) on line #2 of app/views/published_looks/_user_looks.html.erb:
+1: <li>
+2:   <%= link_to looks.title, url_for(:action => 'view', :id => looks.id) %>
+3: </li>
+
+    app/views/published_looks/_user_looks.html.erb:2
+    app/views/published_looks/user.html.erb:2
+    app/controllers/published_looks_controller.rb:39:in `user'
+
+Rendered rescues/_trace (139.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublishedLooksController#user (for 127.0.0.1 at 2010-06-05 22:48:30) [GET]
+  Parameters: {"action"=>"user", "id"=>"3", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.6ms)[0m   [0;1mSELECT * FROM "looks" WHERE (user_id = '3' and published = 't' and archived = 'f') [0m
+Rendering template within layouts/application
+Rendering published_looks/user
+
+ActionView::TemplateError (undefined local variable or method `look' for #<ActionView::Base:0x1044423c0>) on line #2 of app/views/published_looks/_user_looks.html.erb:
+1: <li>
+2:   <%= link_to look.title, url_for(:action => 'view', :id => look.id) %>
+3: </li>
+
+    app/views/published_looks/_user_looks.html.erb:2
+    app/views/published_looks/user.html.erb:2
+    app/controllers/published_looks_controller.rb:39:in `user'
+
+Rendered rescues/_trace (138.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublishedLooksController#user (for 127.0.0.1 at 2010-06-05 22:49:28) [GET]
+  Parameters: {"action"=>"user", "id"=>"3", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.6ms)[0m   [0mSELECT * FROM "looks" WHERE (user_id = '3' and published = 't' and archived = 'f') [0m
+Rendering template within layouts/application
+Rendering published_looks/user
+ERROR: compiling _run_erb_app47views47published_looks47user46html46erb RAISED compile error
+/Users/jimmy/Dropbox/LookIt/app/views/published_looks/user.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting kEND
+;  @looks each do |look| ; @output_buffer.concat "\n\t\t<li>\n\t\t  "
+              ^
+Function body:           def _run_erb_app47views47published_looks47user46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<ul>\n\t"
+;  @looks each do |look| ; @output_buffer.concat "\n\t\t<li>\n\t\t  "
+
+; @output_buffer.concat(( link_to look.title, url_for(:action => 'view', :id => look.id) ).to_s); @output_buffer.concat "\n\t\t</li>\t\n\t"
+
+;  end ; @output_buffer.concat "\n</ul>"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/jimmy/Dropbox/LookIt/app/views/published_looks/user.html.erb:10:in `compile!'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/jimmy/Dropbox/LookIt/app/controllers/published_looks_controller.rb:39:in `user'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/abstract_store.rb:122:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/jimmy/Dropbox/LookIt/app/views/published_looks/user.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting kEND
+;  @looks each do |look| ; @output_buffer.concat "\n\t\t<li>\n\t\t  "
+              ^) on line #2 of app/views/published_looks/user.html.erb:
+1: <ul>
+2: 	<% @looks each do |look| %>
+3: 		<li>
+4: 		  <%= link_to look.title, url_for(:action => 'view', :id => look.id) %>
+5: 		</li>	
+
+    app/views/published_looks/user.html.erb:10:in `compile!'
+    app/controllers/published_looks_controller.rb:39:in `user'
+
+Rendered rescues/_trace (53.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublishedLooksController#user (for 127.0.0.1 at 2010-06-05 22:49:36) [GET]
+  Parameters: {"action"=>"user", "id"=>"3", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.6ms)[0m   [0;1mSELECT * FROM "looks" WHERE (user_id = '3' and published = 't' and archived = 'f') [0m
+Rendering template within layouts/application
+Rendering published_looks/user
+Completed in 85ms (View: 79, DB: 1) | 200 OK [http://localhost/public-looks/user/3]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-05 22:49:39) [GET]
+  Parameters: {"action"=>"view", "id"=>"5", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.2ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering published_looks/view
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://localhost/public-looks/view/5]
+
+
+Processing PublishedLooksController#user (for 127.0.0.1 at 2010-06-05 22:51:06) [GET]
+  Parameters: {"action"=>"user", "id"=>"3", "controller"=>"published_looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (user_id = 3 and published = 't' and archived = 'f') [0m
+Rendering template within layouts/application
+Rendering published_looks/user
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/public-looks/user/3]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-05 22:51:09) [GET]
+  Parameters: {"action"=>"view", "id"=>"5", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.2ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering published_looks/view
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/public-looks/view/5]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-05 22:53:38) [GET]
+  Parameters: {"action"=>"view", "id"=>"5", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.2ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/public-looks/view/5]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-05 22:53:48) [GET]
+  Parameters: {"action"=>"view", "id"=>"5", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.2ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/public-looks/view/5]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-05 22:53:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.7ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't' AND archived = 'f') ORDER BY posted DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered published_looks/_looks (11.7ms)
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/public-looks]

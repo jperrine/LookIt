@@ -86,4 +86,32 @@ class LooksController < ApplicationController
       format.xml { head :ok }
     end
   end
+  
+  # PUT /users/:user_id/looks/:id.:format/unpublish
+  def unpublish
+    @look = Look.find(params[:id])
+    @look.published = false
+    
+    respond_to do |format|
+      unless @look.save
+        flash[:notice] = "Error processing unpublish, please try again."
+      end
+      format.html { redirect_to :action => 'index' }
+      format.xml { head :ok }
+    end
+  end
+  
+  # PUT /users/:user_id/looks/:.:format/publish
+  def publish
+    @look = Look.find(params[:id])
+    @look.published = true
+    
+    respond_to do |format|
+      unless @look.save
+        flash[:notice] = "Error processing publish, please try again."
+      end
+      format.html { redirect_to :action => 'index' }
+      format.xml { head :ok }
+    end
+  end
 end

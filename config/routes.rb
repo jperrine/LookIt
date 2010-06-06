@@ -46,6 +46,9 @@ ActionController::Routing::Routes.draw do |map|
   	users.resources :looks
   end
   
+  map.publish '/users/:user_id/looks/:id/publish.:format', :controller => 'looks', :action => 'publish'
+	map.unpublish '/users/:user_id/looks/:id/unpublish.:format', :controller => 'looks', :action => 'unpublish'
+  
   map.connect 'user/check_username', :controller => 'users', :action => 'check_username'
 
   map.connect 'public-looks/:action/:id', :controller => 'published_looks'

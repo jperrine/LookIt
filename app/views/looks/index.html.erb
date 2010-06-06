@@ -7,6 +7,11 @@
 	    <%= link_to 'Delete', user_look_url(:id => look.id), 
 	      :confirm => 'Are you sure you want to delete this look?', 
 	      :method => 'delete' %>
+			<% unless look.published %>
+				<%= link_to 'Publish', publish_url(:id => look.id) %>
+			<% else %>
+			  <%= link_to 'Unpublish', unpublish_url(:id => look.id) %>
+			<% end %>
 	  </p>
 	<% end %>
 <% else %>
