@@ -12,8 +12,14 @@ class LooksController < ApplicationController
     end
   end
 	
+	# GET /users/:user_id/look/new(.:format)
   def new
     @look = Look.new
+    
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @look }
+    end
   end
 	
   # GET /user/:user_id/look/:id(.:format)
@@ -28,10 +34,10 @@ class LooksController < ApplicationController
   # POST /user/:user_id/look(.:format)
   def create
   	@look = @current_user.looks.build(params[:look])
-    #@look = Look.new(params[:look])
-    #@look.user_id = session[:user_id]
+    
     @look.posted = Time.now
     @look.archived = false
+    
     respond_to do |format|
       if @look.save
         flash[:notice] = "#{@look.title} was successfully created."
@@ -75,15 +81,18 @@ class LooksController < ApplicationController
   # doesn't delete the look, only sets it to archived
   def destroy
     @look = Look.find(params[:id])
-    look_name = @look.title
     @look.archived = true
-    @look.save
-    
-    flash[:notice] = "#{look_name} was successfully deleted."
     	
     respond_to do |format|
-      format.html { redirect_to :action => 'index' }
-      format.xml { head :ok }
+      if @look.save
+        flash[:notice] = "#{@look.title} was successfully deleted."
+        format.html { redirect_to :action => 'index' }
+        format.xml { head :ok }
+      else
+        flash[:notice] = "There was an error trying to delete #{@look.title}, please try again."
+        format.html { redirect_to :action => 'index' }
+        format.xml { head :ok }
+      end
     end
   end
   

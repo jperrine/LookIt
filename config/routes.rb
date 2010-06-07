@@ -43,7 +43,9 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout.:format', :controller => 'users', :action => 'logout'
   
   map.resources :users do |users|
-  	users.resources :looks
+  	users.resources :looks do |looks|
+  	  looks.resources :pages
+	  end
   end
   
   map.publish '/users/:user_id/looks/:id/publish.:format', :controller => 'looks', :action => 'publish'
