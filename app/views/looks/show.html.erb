@@ -1,3 +1,24 @@
 <%= @look.title %>
 <br />
 <%= @look.content %>
+
+<br />
+<br />
+<h3><%= @look.title%>'s pages</h3>
+<br />
+<ol>
+	<% @look.pages.each do |page| %>
+		<li>
+			<%= link_to page.title, user_look_page_url(@current_user, @look, page) %>
+			<%= link_to "Edit", edit_user_look_page_url(@current_user, @look, page) %>
+			<%= link_to "Delete", user_look_page_url(@current_user, @look, page), 
+		    :confirm => 'Are you sure you want to delete this page?', 
+		    :method => 'delete' %>
+		</li>
+	<% end %>
+</ol>
+<br />
+
+<p>
+  <%= link_to "Add page", new_user_look_page_url(@current_user, @look) %>	
+</p>

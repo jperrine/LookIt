@@ -1,13 +1,13 @@
 <h2><%= look.title %></h2>
 <p>
-	<%= link_to 'Preview', user_look_url(:id => look.id) %>
-  <%= link_to 'Edit', edit_user_look_url(:id => look.id) %>
-  <%= link_to 'Delete', user_look_url(:id => look.id), 
+	<%= link_to 'Preview', user_look_url(@current_user, look) %>
+  <%= link_to 'Edit', edit_user_look_url(@current_user, look) %>
+  <%= link_to 'Delete', user_look_url(@current_user, look), 
     :confirm => 'Are you sure you want to delete this look?', 
     :method => 'delete' %>
 	<% unless look.published %>
-		<%= link_to 'Publish', publish_url(:id => look.id) %>
+		<%= link_to 'Publish', publish_url(@current_user, look) %>
 	<% else %>
-	  <%= link_to 'Unpublish', unpublish_url(:id => look.id) %>
+	  <%= link_to 'Unpublish', unpublish_url(@current_user, look) %>
 	<% end %>
 </p>
