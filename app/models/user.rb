@@ -2,7 +2,6 @@ require "digest/sha1"
 class User < ActiveRecord::Base
   has_many :looks
 
-  #image_column :picture, :versions => {:thumb => "c50x50" }#, :store_dir => "pictures", :filename => proc{|record, file| "picture#{record.id}.#{file.extension}"}
   #paperclip
   has_attached_file :photo,
     :styles => {

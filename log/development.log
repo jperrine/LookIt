@@ -8406,3 +8406,115 @@ Processing UsersController#show (for 127.0.0.1 at 2010-06-06 11:02:39) [GET]
 Rendering template within layouts/application
 Rendering users/show
 Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/users/3]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-06 11:14:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-06 11:23:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.7ms)[0m   [0;1mSELECT * FROM "looks" WHERE (published = 't' AND archived = 'f') ORDER BY posted DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered published_looks/_looks (106.0ms)
+Completed in 127ms (View: 120, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-06 11:23:40) [GET]
+  Parameters: {"action"=>"view", "id"=>"5", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 83ms (View: 75, DB: 1) | 200 OK [http://localhost/public-looks/view/5]
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100423192227)
+Migrating to CreateSessions (20100423193921)
+Migrating to CreateLooks (20100512045007)
+Migrating to AddPublishedToLook (20100512053348)
+Migrating to AddActiveToUser (20100512053405)
+Migrating to AddPostedToLook (20100527234101)
+Migrating to AddArchivedToLooks (20100528200613)
+Migrating to AddBioToUsers (20100603012527)
+Migrating to AddPictureToPeople (20100603013105)
+Migrating to AdjustStringLengthToLooks (20100605233452)
+Migrating to AddIndexesToUsersAndLooks (20100605233542)
+Migrating to AddPictureToUserForPaperclip (20100606040354)
+Migrating to CreatePages (20100607022726)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" varchar(10000), "look_id" integer, "posted" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100607022726')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("looks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_looks_on_title')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mPRAGMA index_info('index_users_on_username')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100423192227)
+Migrating to CreateSessions (20100423193921)
+Migrating to CreateLooks (20100512045007)
+Migrating to AddPublishedToLook (20100512053348)
+Migrating to AddActiveToUser (20100512053405)
+Migrating to AddPostedToLook (20100527234101)
+Migrating to AddArchivedToLooks (20100528200613)
+Migrating to AddBioToUsers (20100603012527)
+Migrating to AddPictureToPeople (20100603013105)
+Migrating to AdjustStringLengthToLooks (20100605233452)
+Migrating to AddIndexesToUsersAndLooks (20100605233542)
+Migrating to AddPictureToUserForPaperclip (20100606040354)
+Migrating to CreatePages (20100607022726)
+Migrating to AdjustColumnLengthInLooks (20100607023221)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TEMPORARY TABLE "altered_looks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar(255), "content" varchar(255), "created_at" datetime, "updated_at" datetime, "published" boolean, "posted" datetime, "archived" boolean) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("looks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_looks_on_title')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "temp_index_altered_looks_on_title" ON "altered_looks" ("title")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "looks"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "looks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar(255), "content" varchar(255), "created_at" datetime, "updated_at" datetime, "published" boolean, "posted" datetime, "archived" boolean) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_looks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_looks_on_title')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_looks_on_title" ON "looks" ("title")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "altered_looks"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100607023221')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("looks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_looks_on_title')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("sessions")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mPRAGMA index_info('index_users_on_username')[0m

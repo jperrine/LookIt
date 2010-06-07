@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100606040354) do
+ActiveRecord::Schema.define(:version => 20100607023221) do
 
   create_table "looks", :force => true do |t|
     t.integer  "user_id"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20100606040354) do
   end
 
   add_index "looks", ["title"], :name => "index_looks_on_title"
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.string   "content",    :limit => 10000
+    t.integer  "look_id"
+    t.datetime "posted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
