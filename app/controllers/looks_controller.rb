@@ -70,6 +70,7 @@ class LooksController < ApplicationController
     @look = Look.find(params[:id], 
       :conditions => { :archived => false,
         :user_id => params[:user_id] })
+    @pages = Page.find(:all, :conditions => { :archived => false, :look_id => @look.id })
         
     respond_to do |format|
       format.html

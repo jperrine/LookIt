@@ -31,16 +31,15 @@ class PagesController < ApplicationController
   
   # POST /users/:user_id/looks/:look_id/pages(.:format)
   def create
-    @look = Look.find(params[:look_id])
-    
-    @page = @look.pages.build(params[:look])
+    @page = Page.new(params[:page])
+    @page.look_id = params[:look_id]
     @page.posted = Time.now
     @page.archived = false
     
     respond_to do |format|
       if @page.save
-        flash[:notice] = "#{@page.title} was successfully added to #{@look.title}"
-        format.html { redirect_to [@current_user, @look, @page] }
+        flash[:notice] = "#{@page.title} was successfully added to #{@page.look.title}"
+        format.html { redirect_to user_look_page_url(@current_user, @page.look, @page) }
         format.xml { render :xml => @page, :status => :created, :location => @page }
       else
         format.html { render :action => 'new' }
@@ -56,7 +55,7 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.update_attributes(params[:page])
         flash[:notice] = "#{@page.title} was successfully updated."
-        format.html { redirect_to :action => 'index' }
+        format.html { redirect_to user_look_page_url(@current_user, @page.look, @page) }
         format.xml { render :xml => @page, :status => :updated, :location => @page }
       else
         format.html { render :action => 'edit' }
