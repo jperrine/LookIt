@@ -65,7 +65,7 @@ class PagesController < ApplicationController
   
   # GET /users/:user_id/looks/:look_id/pages/:id(.:format)
   def show
-    @page = Page.find(params[:id], :conditions => { :archived => false, :user_id => params[:user_id] })
+    @page = Page.find(params[:id], :conditions => { :archived => false })
     
     respond_to do |format|
       format.html

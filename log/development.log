@@ -8668,3 +8668,171 @@ Processing LooksController#new to xml (for 127.0.0.1 at 2010-06-06 22:56:11) [GE
   Parameters: {"format"=>"xml", "action"=>"new", "user_id"=>"3", "controller"=>"looks"}
   [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
 Completed in 17ms (View: 3, DB: 1) | 200 OK [http://localhost/users/3/looks/new.xml]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-06 23:13:20) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (6.4ms)
+Completed in 85ms (View: 12, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-06 23:13:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5 AND ("looks"."user_id" = '3' AND "looks"."archived" = 'f')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+Completed in 22ms (View: 6, DB: 1) | 200 OK [http://localhost/users/3/looks/5]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-06-06 23:13:28) [GET]
+  Parameters: {"action"=>"index", "look_id"=>"5", "user_id"=>"3", "controller"=>"pages"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 25ms (View: 10, DB: 1) | 200 OK [http://localhost/users/3/looks/5/pages]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-06-06 23:13:31) [GET]
+  Parameters: {"action"=>"new", "look_id"=>"5", "user_id"=>"3", "controller"=>"pages"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering pages/new
+Completed in 173ms (View: 8, DB: 1) | 200 OK [http://localhost/users/3/looks/5/pages/new]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-06 23:13:34) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "look_id"=>"5", "user_id"=>"3", "controller"=>"pages"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPage Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: pages.user_id: SELECT * FROM "pages" WHERE ("pages"."id" = 1 AND ("pages"."user_id" = '3' AND "pages"."archived" = 'f')) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: pages.user_id: SELECT * FROM "pages" WHERE ("pages"."id" = 1 AND ("pages"."user_id" = '3' AND "pages"."archived" = 'f')) ):
+  app/controllers/pages_controller.rb:68:in `show'
+
+Rendered rescues/_trace (52.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-06 23:14:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "look_id"=>"5", "user_id"=>"3", "controller"=>"pages"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+NoMethodError (undefined method `user_id' for :look:Symbol):
+  app/controllers/pages_controller.rb:68:in `show'
+
+Rendered rescues/_trace (107.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-06 23:14:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "look_id"=>"5", "user_id"=>"3", "controller"=>"pages"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPage Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: pages.archived: SELECT * FROM "pages" WHERE ("pages"."id" = 1 AND ("pages"."archived" = 'f')) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: pages.archived: SELECT * FROM "pages" WHERE ("pages"."id" = 1 AND ("pages"."archived" = 'f')) ):
+  app/controllers/pages_controller.rb:68:in `show'
+
+Rendered rescues/_trace (52.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100423192227)
+Migrating to CreateSessions (20100423193921)
+Migrating to CreateLooks (20100512045007)
+Migrating to AddPublishedToLook (20100512053348)
+Migrating to AddActiveToUser (20100512053405)
+Migrating to AddPostedToLook (20100527234101)
+Migrating to AddArchivedToLooks (20100528200613)
+Migrating to AddBioToUsers (20100603012527)
+Migrating to AddPictureToPeople (20100603013105)
+Migrating to AdjustStringLengthToLooks (20100605233452)
+Migrating to AddIndexesToUsersAndLooks (20100605233542)
+Migrating to AddPictureToUserForPaperclip (20100606040354)
+Migrating to CreatePages (20100607022726)
+Migrating to AdjustColumnLengthInLooks (20100607023221)
+Migrating to AdjustColumnLengthInLooksAgain (20100607023448)
+Migrating to AddArchivedToPages (20100607025042)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100607025042')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("looks")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mPRAGMA index_info('index_looks_on_title')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("sessions")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_username')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100423192227)
+Migrating to CreateSessions (20100423193921)
+Migrating to CreateLooks (20100512045007)
+Migrating to AddPublishedToLook (20100512053348)
+Migrating to AddActiveToUser (20100512053405)
+Migrating to AddPostedToLook (20100527234101)
+Migrating to AddArchivedToLooks (20100528200613)
+Migrating to AddBioToUsers (20100603012527)
+Migrating to AddPictureToPeople (20100603013105)
+Migrating to AdjustStringLengthToLooks (20100605233452)
+Migrating to AddIndexesToUsersAndLooks (20100605233542)
+Migrating to AddPictureToUserForPaperclip (20100606040354)
+Migrating to CreatePages (20100607022726)
+Migrating to AdjustColumnLengthInLooks (20100607023221)
+Migrating to AdjustColumnLengthInLooksAgain (20100607023448)
+Migrating to AddArchivedToPages (20100607031513)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "pages" ADD "archived" boolean[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100607031513')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("looks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_looks_on_title')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_username')[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-06 23:15:49) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "look_id"=>"5", "user_id"=>"3", "controller"=>"pages"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1 AND ("pages"."archived" = 'f')) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=1 AND ("pages"."archived" = 'f')):
+  app/controllers/pages_controller.rb:68:in `show'
+
+Rendered rescues/_trace (46.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
