@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   
   # GET /users/:user_id/looks/:look_id/pages/new(.:format)
   def new
+    @look = Look.find(params[:look_id])
     @page = Page.new
     
     respond_to do |format|
@@ -19,6 +20,7 @@ class PagesController < ApplicationController
   
   # GET /users/:user_id/looks/:look_id/pages/:id/edit(.:format)
   def edit
+    @look = Look.find(params[:look_id])
     @page = Page.find(params[:id])
     
     respond_to do |format|
