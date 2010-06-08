@@ -1,14 +1,14 @@
 development:
-  bucket: lookit_dev
+  bucket: lookit-dev
   access_key_id: ENV['S3_KEY']
   secret_access_key: ENV['S3_SECRET']
 
 test:
-  bucket: lookit_test
+  bucket: lookit-test
   access_key_id: ENV['S3_KEY']
   secret_access_key: ENV['S3_SECRET']
 
 production:
-  bucket: lookit_prod
+  bucket: lookit-prod
   access_key_id: ENV['S3_KEY']
   secret_access_key: ENV['S3_SECRET']
