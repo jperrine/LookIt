@@ -5,7 +5,7 @@ class Look < ActiveRecord::Base
 	#paperclip
 	has_attached_file :cover,
     :styles => {
-        :thumb => "50x50"
+        :thumb => "125x110"
     },
     :storage => :s3,
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
