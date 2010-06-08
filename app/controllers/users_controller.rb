@@ -122,9 +122,13 @@ class UsersController < ApplicationController
   end
   
   # AJAX action to check username availability
+  # GET /user/check_username?username=:username
   def check_username
     @test_username = params[:username]
     @test_user = User.find_by_username(@test_username)
     @valid = @test_user.nil?
+    if request.xhr?
+      @valid
+    end
   end
 end
