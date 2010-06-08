@@ -3,14 +3,43 @@
   tinyMCE.init({
     mode: 'textareas',
     theme: 'advanced',
-    editor_selector: 'content'
+    editor_selector: 'content',
+		width: 590,
+		height: 550
   });
 </script>
-<% form_for([@current_user, @look, @page])  do |f| %>
-	<%= f.error_messages %>
-	<%= f.label :title, "Page Title" %> <%= f.text_field :title %>
-	<br />
-	<%= f.text_area :content, {:class => 'content'} %>
-	<br />
-	<%= submit_tag("Save") %>
-<% end %>
+<div id="container">
+	<div id="lookcover">
+		<img src="http://content.screencast.com/users/nbashaw/folders/Jing/media/4bbc7711-c617-4a26-87a5-df7affbaa4a4/00000040.png" />
+	</div>
+	<div id="lookinfo">
+		<h2><%= @look.title %></h2>
+		<p><%= @look.content %></p>
+	</div>
+</div>
+
+<div id="editpreview">
+  <ul> 
+	  <li><a href="#">Edit</a></li> 
+	  <li><a href="#">Preview</a></li> 
+	</ul>	
+</div>
+
+<div id="canvas">
+	<div id= "PageSelector">
+		<%= select( 'page', 'id',@look.pages.select { |page| page.archived == false }.map { |page| [page.title, page.id]}) %>
+	</div>
+	
+	<div id="TextArea">
+		<% form_for([@current_user, @look, @page])  do |f| %>
+			<%= f.error_messages %>
+			<%= f.label :title, "Page Title" %> <%= f.text_field :title %>
+			<br />
+			<div id="editable">
+				<%= f.text_area :content, {:class => 'content '} %>
+			</div>
+			<br />
+			<%= submit_tag("Save") %>
+		<% end %>
+	</div>
+</div>

@@ -1,75 +1,161 @@
-/* CSS RESET */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-}
+/* General CSS */
+
 body {
-	line-height: 1;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+	font-family: arial;
 }
 
-/* remember to define focus styles! */
-:focus {
-	outline: 0;
+/* Top Navigation Bar */
+
+#logo
+{
+	float: left;
 }
 
-/* remember to highlight inserts somehow! */
-ins {
+#container
+{
+	background: #fff;
+	margin-right: 40px;
+	margin-left: 40px;
+	margin-bottom: 0;
+}
+
+#navigation
+{
+	float: left;
+	width: 100%;
+	background: #d5d5d5;
+	font: 0.9em;
+	height: 2.5em;
+	text-shadow: #eaeaeb 0 1px 0;
+	display: inline-block;
+	margin-bottom: 20px;
+	border-radius: 4px;
+}
+
+#navigation ul
+{
+	margin: 0;
+	padding-top: 0.4em;
+}
+
+#navigation ul li
+{
+	list-style-type: none;
+	display: inline;
+}
+
+#navigation li a
+{
+	display: inline;
+	float: right;
+	padding: 5px 10px;
+	color: #424242;
 	text-decoration: none;
 }
-del {
-	text-decoration: line-through;
+
+#navigation li a:hover 
+{
+	text-decoration: underline;
 }
 
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/* END CSS RESET */
+/* Look Info Area */
 
-
-/* Default Elements */
-body {
-
+#lookcover
+{
+	float: left;
+	padding-right: 9px;
 }
 
-/* Wrapper */
-#wrapper {
-  width: 1024px;
-  margin: 0 auto;
+#lookinfo
+{
+	clear: right;
+	padding: 20px;
+	width: 540px;
+
 }
 
-/* Navigation */
-#nav {
-  float: right;
-  margin: 10px 5px;
+p {
+	font: 0.8em;
 }
 
-#nav ul li {
-  display: inline;
+#lookinfo h2
+{
+	color: #000;
+	font-size: 160%;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: -5px;
+	padding-top: 20px;
 }
 
-#login {
+/* Edit/Preview Tabs (still needs "tab effect" styling, and I can't figure that out) */
+
+#editpreview {
+	float: left;
+	width: 100%;
+	background: #fffeff;
+	height: 2em;
+	display: inline-block;
+	margin-top: -24px;
+	font: 0.8em;
+}
+
+#editpreview ul
+{
+	margin: 0;
+}
+
+#editpreview ul li
+{
+	list-style-type: none;
+	display: inline;
+}
+
+#editpreview li a
+{
+	display: inline;
 	float: right;
+	padding: 0 10px;
+	color: #424242;
+	text-decoration: none;
+}
+
+#editpreview li a:hover 
+{
+	text-decoration: underline;
+}
+
+/* The Working Area */
+
+div#canvas {
+	text-align: center;
+	background-color: #d5d5d5;
+	padding-bottom: 24px;
+}
+
+#PageSelector select {
+	width: 492px;
+	height: 40px;
+	font: bold 1em arial;
+	color: #424242;
+	margin-top: 2em;
+
+}
+
+#TextArea {
+	width: 590px;
+	height:  605px;
+	margin: 3px auto 1px;
+	/*background-image: url(http://content.screencast.com/users/nbashaw/folders/Jing/media/89fca94d-c5d6-41f3-a88e-be0cc7f18a8c/00000043.png);*/
+}
+
+div#editable  {
+	margin: 0 auto;
+	
+}
+
+#footer { 
+	clear:both;
+	background-color:#333;
+	height:100px;
 }

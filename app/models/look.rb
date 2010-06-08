@@ -6,5 +6,4 @@ class Look < ActiveRecord::Base
 	
 	validates_length_of :content, :maximum => 500
 	validates_length_of :title, :maximum => 255
-	
 end
