@@ -1,14 +1,14 @@
 development:
   bucket: lookit_dev
-  access_key_id: AKIAJHAQJA7XUFP4ZURA
-  secret_access_key: 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
+  access_key_id: ENV['S3_KEY']
+  secret_access_key: ENV['S3_SECRET']
 
 test:
   bucket: lookit_test
-  access_key_id: AKIAJHAQJA7XUFP4ZURA
-  secret_access_key: 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
+  access_key_id: ENV['S3_KEY']
+  secret_access_key: ENV['S3_SECRET']
 
 production:
   bucket: lookit_prod
-  access_key_id: AKIAJHAQJA7XUFP4ZURA
-  secret_access_key: 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
+  access_key_id: ENV['S3_KEY']
+  secret_access_key: ENV['S3_SECRET']
