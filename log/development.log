@@ -11889,3 +11889,141 @@ ActionView::MissingTemplate (Missing template users/check_username.erb in view p
   
 
 Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-08 00:07:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_user_form (8.7ms)
+Completed in 112ms (View: 42, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:07:22) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'perrine4') LIMIT 1[0m
+
+NoMethodError (undefined method `render_text' for #<UsersController:0x104311aa0>):
+  app/controllers/users_controller.rb:131:in `check_username'
+
+Rendered rescues/_trace (112.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:07:25) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'perrine44') LIMIT 1[0m
+
+NoMethodError (undefined method `render_text' for #<UsersController:0x104425a18>):
+  app/controllers/users_controller.rb:131:in `check_username'
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-08 00:07:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_user_form (9.4ms)
+Completed in 33ms (View: 23, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:07:46) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'perrine4') LIMIT 1[0m
+
+NoMethodError (undefined method `render_text' for #<UsersController:0x10447b1e8>):
+  app/controllers/users_controller.rb:131:in `check_username'
+
+Rendered rescues/_trace (40.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-08 00:08:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_user_form (9.4ms)
+Completed in 27ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:08:59) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'sdmn') LIMIT 1[0m
+Completed in 71ms (View: 1, DB: 0) | 200 OK [http://localhost/user/check_username?username=sdmn]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-08 00:10:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_user_form (9.2ms)
+Completed in 26ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:10:36) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'perrine4') LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/user/check_username?username=perrine4]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:10:39) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'perrine') LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/user/check_username?username=perrine]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-08 00:11:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_user_form (9.1ms)
+Completed in 25ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:11:10) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'perrine') LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/user/check_username?username=perrine]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:11:12) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'perrine4') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/user/check_username?username=perrine4]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:11:14) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'perrine') LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/user/check_username?username=perrine]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-08 00:11:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_user_form (9.0ms)
+Completed in 27ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:11:24) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'per') LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/user/check_username?username=per]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:11:29) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'perrine4') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/user/check_username?username=perrine4]
+
+
+Processing UsersController#check_username (for 127.0.0.1 at 2010-06-08 00:11:31) [GET]
+  Parameters: {"action"=>"check_username", "username"=>"[FILTERED]", "controller"=>"users"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'perrine') LIMIT 1[0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/user/check_username?username=perrine]

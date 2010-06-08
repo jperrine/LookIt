@@ -128,7 +128,7 @@ class UsersController < ApplicationController
     @test_user = User.find_by_username(@test_username)
     @valid = @test_user.nil?
     if request.xhr?
-      @valid
+      render :text => @valid
     end
   end
 end
