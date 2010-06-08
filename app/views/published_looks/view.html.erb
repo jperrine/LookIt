@@ -6,5 +6,14 @@
 <br />
 <br />
 <div id="view_content">
-	<%= @look.content %>
+	<%=h @look.content %>
 </div>
+<br />
+<h3><%=h @look.title %>'s pages</h3>
+<% unless @look.pages.empty? %>
+	<ol>
+		<%= render :partial => 'page_link', :collection => @look.pages, :as => :page %>
+	</ol>
+<% else %>
+	<p>No pages yet...</p>
+<% end%>

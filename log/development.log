@@ -11683,3 +11683,107 @@ Rendering template within layouts/application
 Rendering published_looks/view
   [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
 Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/public-looks/view/5]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-07 23:28:44) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (5.9ms)
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-07 23:28:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5 AND ("looks"."archived" = 'f' AND "looks"."user_id" = '3')) [0m
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."archived" = 'f' AND "pages"."look_id" = 5) [0m
+Rendering template within layouts/application
+Rendering looks/show
+Completed in 91ms (View: 14, DB: 2) | 200 OK [http://localhost/users/3/looks/5]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-07 23:28:51) [GET]
+  Parameters: {"action"=>"show", "look_id"=>"5", "id"=>"1", "user_id"=>"3", "controller"=>"pages"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1 AND ("pages"."archived" = 'f')) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendered pages/_look_summary (1.4ms)
+Completed in 30ms (View: 15, DB: 2) | 200 OK [http://localhost/users/3/looks/5/pages/1]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-07 23:28:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5 AND ("looks"."archived" = 'f' AND "looks"."user_id" = '3')) [0m
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."archived" = 'f' AND "pages"."look_id" = 5) [0m
+Rendering template within layouts/application
+Rendering looks/show
+Completed in 33ms (View: 14, DB: 2) | 200 OK [http://localhost/users/3/looks/5]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-07 23:28:55) [GET]
+  Parameters: {"action"=>"show", "look_id"=>"5", "id"=>"3", "user_id"=>"3", "controller"=>"pages"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 3 AND ("pages"."archived" = 'f')) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendered pages/_look_summary (1.5ms)
+Completed in 93ms (View: 78, DB: 2) | 200 OK [http://localhost/users/3/looks/5/pages/3]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-07 23:31:15) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5 AND ("looks"."archived" = 'f' AND "looks"."user_id" = '3')) [0m
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."archived" = 'f' AND "pages"."look_id" = 5) [0m
+Rendering template within layouts/application
+Rendering looks/show
+Completed in 33ms (View: 14, DB: 2) | 200 OK [http://localhost/users/3/looks/5]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-07 23:39:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.7ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't' AND archived = 'f') ORDER BY posted DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered published_looks/_looks (13.2ms)
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-07 23:39:18) [GET]
+  Parameters: {"action"=>"view", "id"=>"5", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.2ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pages" WHERE ("pages".look_id = 5) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 5) [0m
+Rendered published_looks/_page_link (0.5ms)
+Rendered published_looks/_page_link (0.1ms)
+Rendered published_looks/_page_link (0.1ms)
+Completed in 97ms (View: 88, DB: 1) | 200 OK [http://localhost/public-looks/view/5]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-07 23:40:00) [GET]
+  Parameters: {"action"=>"view", "id"=>"5", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.2ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pages" WHERE ("pages".look_id = 5) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 5) [0m
+Rendered published_looks/_page_link (0.5ms)
+Rendered published_looks/_page_link (0.1ms)
+Rendered published_looks/_page_link (0.1ms)
+Completed in 35ms (View: 26, DB: 1) | 200 OK [http://localhost/public-looks/view/5]
