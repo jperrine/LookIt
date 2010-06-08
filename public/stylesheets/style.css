@@ -36,18 +36,19 @@ body {
 {
 	margin: 0;
 	padding-top: 0.4em;
+	float: right;
 }
 
 #navigation ul li
 {
 	list-style-type: none;
 	display: inline;
+	line-height: 1.7em;
 }
 
 #navigation li a
 {
 	display: inline;
-	float: right;
 	padding: 5px 10px;
 	color: #424242;
 	text-decoration: none;
@@ -159,3 +160,28 @@ div#editable  {
 	background-color:#333;
 	height:100px;
 }
+
+/* Home Page Stuff */
+
+#homecanvas {
+	width: 580px;
+	margin: 0 auto;
+}
+
+div#homecanvas h3 {
+	color: #424242;
+	font: bold 4em/1 arial;
+	text-shadow: #d5d5d5 0 2px 0;
+	display: inline-block;
+	background-color: #fffeff;
+	height: 118px;
+	float: right;
+	clear: right;
+}
+
+div#homecanvas p {
+	color: #009800;
+	padding-left: 0;
+	font-size: 0.8em;
+}
+
