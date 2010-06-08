@@ -11601,3 +11601,85 @@ Rendering pages/edit
   [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".look_id = 5) [0m
 Rendered pages/_page_form (7.8ms)
 Completed in 43ms (View: 24, DB: 2) | 200 OK [http://localhost/users/3/looks/5/pages/1/edit]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-07 23:25:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-07 23:25:55) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (5.8ms)
+Completed in 86ms (View: 9, DB: 1) | 200 OK [http://localhost/users/3/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-07 23:25:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "user_id"=>"3", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5 AND ("looks"."archived" = 'f' AND "looks"."user_id" = '3')) [0m
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."archived" = 'f' AND "pages"."look_id" = 5) [0m
+Rendering template within layouts/application
+Rendering looks/show
+Completed in 36ms (View: 17, DB: 2) | 200 OK [http://localhost/users/3/looks/5]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-07 23:26:00) [GET]
+  Parameters: {"action"=>"show", "look_id"=>"5", "id"=>"1", "user_id"=>"3", "controller"=>"pages"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1 AND ("pages"."archived" = 'f')) [0m
+Rendering template within layouts/application
+Rendering pages/show
+
+ActionView::TemplateError (undefined method `title' for nil:NilClass) on line #6 of app/views/pages/_look_summary.html.erb:
+3: 		<img src="http://content.screencast.com/users/nbashaw/folders/Jing/media/4bbc7711-c617-4a26-87a5-df7affbaa4a4/00000040.png" />
+4: 	</div>
+5: 	<div id="lookinfo">
+6: 		<h2><%= look.title %></h2>
+7: 		<p><%=h look.content %></p>
+8: 	</div>
+9: </div>
+
+    app/views/pages/_look_summary.html.erb:6
+    app/views/pages/show.html.erb:1
+    app/controllers/pages_controller.rb:71:in `show'
+
+Rendered rescues/_trace (132.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-07 23:26:20) [GET]
+  Parameters: {"action"=>"show", "look_id"=>"5", "id"=>"1", "user_id"=>"3", "controller"=>"pages"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1 AND ("pages"."archived" = 'f')) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendered pages/_look_summary (1.3ms)
+Completed in 32ms (View: 18, DB: 1) | 200 OK [http://localhost/users/3/looks/5/pages/1]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-07 23:26:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.7ms)[0m   [0;1mSELECT * FROM "looks" WHERE (published = 't' AND archived = 'f') ORDER BY posted DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered published_looks/_looks (12.5ms)
+Completed in 24ms (View: 17, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-07 23:26:34) [GET]
+  Parameters: {"action"=>"view", "id"=>"5", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.2ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/public-looks/view/5]
