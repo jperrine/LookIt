@@ -1,4 +1,4 @@
-require "digest/sha1"
+require 'digest/sha1'
 class User < ActiveRecord::Base
   has_many :looks
 
@@ -6,7 +6,10 @@ class User < ActiveRecord::Base
   has_attached_file :photo,
     :styles => {
         :thumb => "50x50"
-    }
+    },
+    :storage => :s3,
+    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+    :path => ":class/:id/:style/:filename"
   
   validates_presence_of :display_name, :email, :birthdate, :username
   validates_uniqueness_of :username, :email

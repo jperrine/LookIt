@@ -9,7 +9,7 @@
 <br />
 <%= f.label :birthdate, "Birth Date: " %><%= f.date_select :birthdate, :start_year => 1940, :end_year => Time.now.year, :prompt => {:day => 'Choose day', :month => 'Choose month', :year => 'Choose year'} %>
 <br />
-<% #f.label :photo, "Picture" %><% #f.file_field :photo %>
+<%= f.label :photo, "Picture" %><%= f.file_field :photo %>
 <br />
 <%= f.label :bio, "Bio" %><%= f.text_area :bio %>
 <br />

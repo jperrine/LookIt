@@ -1,0 +1,14 @@
+development:
+  bucket: lookit_dev
+  access_key_id: AKIAJHAQJA7XUFP4ZURA
+  secret_access_key: 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
+
+test:
+  bucket: lookit_test
+  access_key_id: AKIAJHAQJA7XUFP4ZURA
+  secret_access_key: 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
+
+production:
+  bucket: lookit_prod
+  access_key_id: AKIAJHAQJA7XUFP4ZURA
+  secret_access_key: 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
