@@ -31,6 +31,7 @@
 		<% unless flash[:notice].nil? %>
       <div id="flash"><%= flash[:notice] %></div>
     <% end %>
+			<div id="flash"><%= flash[:notice] %></div>
    	<%= yield %>
 		<div id="footer"></div>
   </body>
