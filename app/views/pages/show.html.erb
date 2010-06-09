@@ -1,11 +1,11 @@
 <%= render :partial => 'looks/look_summary', :locals => {:look => @page.look} %>
-<h3><%=h @page.title %></h3>
-<p><%= @page.content %></p>
-<p>
-	<%= link_to 'Back to look', user_look_url(@current_user, @page.look) %>
-	<%= link_to 'Edit', edit_user_look_page_url(@current_user, @page.look, @page) %>
-	<%= link_to 'Delete', user_look_page_url(@current_user, @page.look, @page), 
-    :confirm => 'Are you sure you want to delete this page?', 
-    :method => 'delete'%>
-	<%= link_to 'Add Page', new_user_look_page_url(@current_user, @page.look) %>
-</p>
+<div id= "canvas"> 
+	<%= render :partial => 'looks/look_page_select', :locals => { :look => @page.look } %>
+  <div id= "TextArea">
+		<div id="content">
+			<%= @page.content %>
+		</div>
+  </div> 
+	<a id="LastPage" href="#">< Last Page</a> 
+	<a id="NextPage" href="#">Next Page ></a> 
+</div>

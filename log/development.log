@@ -15497,3 +15497,250 @@ Rendered looks/_look_summary (5.3ms)
   [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
 Rendered pages/_page_form (5.1ms)
 Completed in 41ms (View: 21, DB: 1) | 200 OK [http://localhost/users/1/looks/1/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-06-09 11:55:29) [GET]
+  Parameters: {"action"=>"new", "look_id"=>"1", "user_id"=>"1", "controller"=>"pages"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (4.5ms)
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered pages/_page_form (6.0ms)
+Completed in 103ms (View: 84, DB: 1) | 200 OK [http://localhost/users/1/looks/1/pages/new]
+
+
+Processing PagesController#create (for 127.0.0.1 at 2010-06-09 11:56:16) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"create", "authenticity_token"=>"t7IDaVOQRQNzzJIXGhR7y02BFevWshSQrkRuNpJEQRY=", "look_id"=>"1", "user_id"=>"1", "page"=>{"title"=>"Page 1", "content"=>"<p>This is my first page to my world shattering look</p>"}, "controller"=>"pages"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPage Create (0.4ms)[0m   [0mINSERT INTO "pages" ("posted", "created_at", "title", "updated_at", "look_id", "content") VALUES('2010-06-09 15:56:16', '2010-06-09 15:56:16', 'Page 1', '2010-06-09 15:56:16', 1, '<p>This is my first page to my world shattering look</p>')[0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+Redirected to http://localhost:3000/users/1/looks/1/pages/1
+Completed in 27ms (DB: 2) | 302 Found [http://localhost/users/1/looks/1/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-09 11:56:16) [GET]
+  Parameters: {"action"=>"show", "look_id"=>"1", "id"=>"1", "user_id"=>"1", "controller"=>"pages"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (4.8ms)
+Completed in 52ms (View: 25, DB: 8) | 200 OK [http://localhost/users/1/looks/1/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-09 11:56:22) [GET]
+  Parameters: {"action"=>"show", "look_id"=>"1", "id"=>"1", "user_id"=>"1", "controller"=>"pages"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (4.9ms)
+Completed in 36ms (View: 20, DB: 2) | 200 OK [http://localhost/users/1/looks/1/pages/1]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 11:56:29) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"1", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 1) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (6.4ms)
+Completed in 25ms (View: 10, DB: 1) | 200 OK [http://localhost/users/1/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-09 11:56:31) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "user_id"=>"1", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 1 AND ("looks"."user_id" = '1')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (4.8ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+
+ActionView::TemplateError (undefined method `archived' for #<Page:0x102f23430>) on line #2 of app/views/looks/_look_page_select.html.erb:
+1: <div id= "PageSelector"> 
+2: 	<%= select( 'page', 'id', look.pages.select { |page| page.archived == false }.map { |page| [page.title, page.id]}) %> 
+3: </div>
+
+    app/views/looks/_look_page_select.html.erb:2
+    app/views/looks/_look_page_select.html.erb:2
+    app/views/looks/show.html.erb:3
+    app/controllers/looks_controller.rb:72:in `show'
+    /Library/Ruby/Gems/1.8/gems/logworm_client-0.6.2/lib/logworm_client/rails.rb:27:in `process'
+
+Rendered rescues/_trace (74.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-09 11:57:15) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "user_id"=>"1", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 1 AND ("looks"."user_id" = '1')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (4.7ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (6.9ms)
+Completed in 112ms (View: 19, DB: 1) | 200 OK [http://localhost/users/1/looks/1]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 11:58:42) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"1", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 1) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (6.4ms)
+Completed in 26ms (View: 10, DB: 1) | 200 OK [http://localhost/users/1/looks]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-09 11:58:55) [GET]
+  Parameters: {"action"=>"show", "look_id"=>"1", "id"=>"1", "user_id"=>"1", "controller"=>"pages"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (4.6ms)
+
+ActionView::TemplateError (Missing template pages/_look_page_select.erb in view path app/views) on line #3 of app/views/pages/show.html.erb:
+1: <%= render :partial => 'looks/look_summary', :locals => {:look => @page.look} %>
+2: <div id= "canvas"> 
+3: 	<%= render :partial => 'look_page_select', :locals => { :look => @page.look.pages } %>
+4:   <div id= "TextArea">
+5: 		<div id="content">
+6: 			<%= @page.content %>
+
+    app/views/pages/show.html.erb:3
+    app/controllers/pages_controller.rb:70:in `show'
+    /Library/Ruby/Gems/1.8/gems/logworm_client-0.6.2/lib/logworm_client/rails.rb:27:in `process'
+
+Rendered rescues/_trace (62.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-09 11:59:06) [GET]
+  Parameters: {"action"=>"show", "look_id"=>"1", "id"=>"1", "user_id"=>"1", "controller"=>"pages"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (5.1ms)
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `pages' for #<Class:0x102edca58>) on line #2 of app/views/looks/_look_page_select.html.erb:
+1: <div id= "PageSelector"> 
+2: 	<%= select( 'page', 'id', look.pages.map { |page| [page.title, page.id]}) %> 
+3: </div>
+
+    app/views/looks/_look_page_select.html.erb:2
+    app/views/pages/show.html.erb:3
+    app/controllers/pages_controller.rb:70:in `show'
+    /Library/Ruby/Gems/1.8/gems/logworm_client-0.6.2/lib/logworm_client/rails.rb:27:in `process'
+
+Rendered rescues/_trace (74.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-09 11:59:37) [GET]
+  Parameters: {"action"=>"show", "look_id"=>"1", "id"=>"1", "user_id"=>"1", "controller"=>"pages"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (4.9ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (2.7ms)
+Completed in 116ms (View: 22, DB: 2) | 200 OK [http://localhost/users/1/looks/1/pages/1]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 11:59:52) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"1", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 1) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (6.1ms)
+Completed in 25ms (View: 10, DB: 1) | 200 OK [http://localhost/users/1/looks]
+
+
+Processing LooksController#edit (for 127.0.0.1 at 2010-06-09 11:59:54) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "user_id"=>"1", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering looks/edit
+Rendered looks/_look_form (5.4ms)
+Completed in 260ms (View: 244, DB: 1) | 200 OK [http://localhost/users/1/looks/1/edit]
+
+
+Processing LooksController#publish (for 127.0.0.1 at 2010-06-09 11:59:59) [GET]
+  Parameters: {"action"=>"publish", "id"=>"1", "user_id"=>"1", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;35;1mLook Update (0.3ms)[0m   [0mUPDATE "looks" SET "updated_at" = '2010-06-09 15:59:59', "published" = 't' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/1/looks
+Completed in 27ms (DB: 2) | 302 Found [http://localhost/users/1/looks/1/publish]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 11:59:59) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"1", "controller"=>"looks"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (USER_ID = 1) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (17.0ms)
+Completed in 47ms (View: 22, DB: 3) | 200 OK [http://localhost/users/1/looks]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 12:00:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.6ms)[0m   [0;1mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (13.6ms)
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#user (for 127.0.0.1 at 2010-06-09 12:00:04) [GET]
+  Parameters: {"action"=>"user", "id"=>"1", "controller"=>"published_looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (user_id = 1 and published = 't') [0m
+Rendering template within layouts/application
+Rendering published_looks/user
+Rendered published_looks/_user_looks (6.7ms)
+Completed in 51ms (View: 37, DB: 1) | 200 OK [http://localhost/public-looks/user/1]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 12:00:07) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.0ms)
+Completed in 35ms (View: 21, DB: 2) | 200 OK [http://localhost/public-looks/view/1]
