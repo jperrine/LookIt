@@ -16439,3 +16439,179 @@ Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:20:57) [GET]
 Rendering template within layouts/application
 Rendering users/show
 Completed in 72ms (View: 33, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 13:23:41) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (10.6ms)
+Completed in 117ms (View: 19, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-06-09 13:23:51) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"t7IDaVOQRQNzzJIXGhR7y02BFevWshSQrkRuNpJEQRY=", "id"=>"1", "controller"=>"users", "user"=>{"photo"=>#<File:/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/RackMultipart20100609-587-1b0xjrn-0>, "birthdate(1i)"=>"", "birthdate(2i)"=>"", "password_confirmation"=>"[FILTERED]", "birthdate(3i)"=>"", "bio"=>"", "display_name"=>"Jimmy Perrine", "password"=>"[FILTERED]", "email"=>"xeno56@gmail.com"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+[paperclip] identify '-format' '%wx%h' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,0.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,0.png[0]' '-resize' '125x' '-crop' '125x110+0+1' '+repage' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,0,587,0' 2>/dev/null
+[paperclip] identify '-format' '%wx%h' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,1.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,1.png[0]' '-resize' '125x' '-crop' '125x110+0+1' '+repage' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,1,587,0' 2>/dev/null
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'perrine4' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'xeno56@gmail.com' AND "users".id <> 1) LIMIT 1[0m
+[paperclip] Saving attachments.
+[paperclip] deleting users/1/original/stream,587,0.png
+[paperclip] deleting users/1/thumb/stream,587,0.png
+[paperclip] saving users/1/thumb/stream,587,0.png
+
+AWS::S3::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/error.rb:38:in `raise'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:72:in `request'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:88:in `put'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/object.rb:241:in `store'
+  app/controllers/users_controller.rb:64:in `update'
+  app/controllers/users_controller.rb:63:in `update'
+  /Library/Ruby/Gems/1.8/gems/logworm_client-0.6.2/lib/logworm_client/rails.rb:27:in `process'
+
+Rendered rescues/_trace (168.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 13:25:01) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (9.0ms)
+Completed in 61ms (View: 33, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-06-09 13:25:08) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"t7IDaVOQRQNzzJIXGhR7y02BFevWshSQrkRuNpJEQRY=", "id"=>"1", "controller"=>"users", "user"=>{"photo"=>#<File:/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/RackMultipart20100609-1091-139r07i-0>, "birthdate(1i)"=>"", "birthdate(2i)"=>"", "password_confirmation"=>"[FILTERED]", "birthdate(3i)"=>"", "bio"=>"", "display_name"=>"Jimmy Perrine", "password"=>"[FILTERED]", "email"=>"xeno56@gmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+[paperclip] identify '-format' '%wx%h' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,1091,0.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,1091,0.png[0]' '-resize' '125x' '-crop' '125x110+0+1' '+repage' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,1091,0,1091,0' 2>/dev/null
+[paperclip] identify '-format' '%wx%h' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,1091,1.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,1091,1.png[0]' '-resize' '125x' '-crop' '125x110+0+1' '+repage' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,1091,1,1091,0' 2>/dev/null
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'perrine4' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'xeno56@gmail.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-09 17:25:09', "photo_file_name" = 'stream,1091,0.png' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] deleting users/1/original/stream,587,0.png
+[paperclip] deleting users/1/thumb/stream,587,0.png
+[paperclip] saving users/1/thumb/stream,1091,0.png
+
+AWS::S3::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/error.rb:38:in `raise'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:72:in `request'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:88:in `put'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/object.rb:241:in `store'
+  app/controllers/users_controller.rb:64:in `update'
+  app/controllers/users_controller.rb:63:in `update'
+  /Library/Ruby/Gems/1.8/gems/logworm_client-0.6.2/lib/logworm_client/rails.rb:27:in `process'
+
+Rendered rescues/_trace (82.7ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 13:25:55) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (10.0ms)
+Completed in 35ms (View: 24, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 13:26:14) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (9.4ms)
+Completed in 32ms (View: 21, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 13:26:22) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (10.1ms)
+Completed in 34ms (View: 23, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 13:27:54) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (9.0ms)
+Completed in 61ms (View: 33, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 13:27:56) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (75.9ms)
+Completed in 95ms (View: 83, DB: 1) | 200 OK [http://localhost/users/1/edit]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100423192227)
+Migrating to CreateSessions (20100423193921)
+Migrating to CreateLooks (20100512045007)
+Migrating to AddPublishedToLook (20100512053348)
+Migrating to AddActiveToUser (20100512053405)
+Migrating to AddPostedToLook (20100527234101)
+Migrating to AddArchivedToLooks (20100528200613)
+Migrating to AddBioToUsers (20100603012527)
+Migrating to AddPictureToPeople (20100603013105)
+Migrating to AdjustStringLengthToLooks (20100605233452)
+Migrating to AddIndexesToUsersAndLooks (20100605233542)
+Migrating to AddPictureToUserForPaperclip (20100606040354)
+Migrating to CreatePages (20100607022726)
+Migrating to AdjustColumnLengthInLooks (20100607023221)
+Migrating to AdjustColumnLengthInLooksAgain (20100607023448)
+Migrating to AddArchivedToPages (20100607031513)
+Migrating to ChangePageContentToTeext (20100608014842)
+Migrating to RemoveIndexesForNames (20100608025917)
+Migrating to AddCoverToLooks (20100608181556)
+Migrating to RemoveArchivedFlagsFromEverything (20100609145042)
+Migrating to AddIndexesForLoginAndSearching (20100609173310)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_looks_on_title" ON "looks" ("title")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100609173310')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("looks")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_looks_on_title')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("sessions")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_username')[0m

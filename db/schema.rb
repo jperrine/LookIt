@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100609145042) do
+ActiveRecord::Schema.define(:version => 20100609173310) do
 
   create_table "looks", :force => true do |t|
     t.integer  "user_id"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20100609145042) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
   end
+
+  add_index "looks", ["title"], :name => "index_looks_on_title"
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -57,5 +59,7 @@ ActiveRecord::Schema.define(:version => 20100609145042) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
   end
+
+  add_index "users", ["username"], :name => "index_users_on_username"
 
 end

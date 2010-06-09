@@ -7,10 +7,12 @@ class User < ActiveRecord::Base
     :styles => {
         :thumb => "125x110#"
     },
-    #:storage => :s3,
-    #:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-    :url => "/assets/:class/:id/:style/:filename",
-    :path => ":rails_root/public/assets/:class/:id/:style/:filename"
+    :storage => :s3,
+    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+    :path => ':class/:id/:style/:filename'
+    #file system storage
+    #:url => "/assets/:class/:id/:style/:filename",
+    #:path => "/public/assets/:class/:id/:style/:filename"
     
   #validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
   
