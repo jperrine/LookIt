@@ -51,16 +51,16 @@ ActionController::Routing::Routes.draw do |map|
   map.publish '/users/:user_id/looks/:id/publish.:format', :controller => 'looks', :action => 'publish'
 	map.unpublish '/users/:user_id/looks/:id/unpublish.:format', :controller => 'looks', :action => 'unpublish'
   
-  map.connect 'user/check_username', :controller => 'users', :action => 'check_username'
+  map.connect '/user/check_username', :controller => 'users', :action => 'check_username'
 
-  map.connect 'public-looks/:action/:id', :controller => 'published_looks'
+  map.connect '/public-looks/:action/:id.:format', :controller => 'published_looks'
 
-  map.connect 'home/:action', :controller => 'home'
-  map.connect 'home/:action.:format', :controller => 'home'
+  #map.connect 'home/:action', :controller => 'home'
+  #map.connect 'home/:action.:format', :controller => 'home'
   
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
   
-  map.root :controller => 'home'
+  map.root :controller => 'users', :action => 'new'
   
 end

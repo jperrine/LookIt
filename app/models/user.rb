@@ -5,11 +5,11 @@ class User < ActiveRecord::Base
   #paperclip
   has_attached_file :photo,
     :styles => {
-        :thumb => "125x110"
+        :thumb => "125x110#"
     },
     :storage => :s3,
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-    :path => ":class/:id/:style/:filename"
+    :path => "/:class/:id/:style/:filename"
   
   validates_presence_of :display_name, :email, :birthdate, :username
   validates_uniqueness_of :username, :email

@@ -1,12 +1,20 @@
 <%= javascript_include_tag 'users.js' %>
-<h3>Welcome to LookIt, please register for an account!</h3>
 
-<% form_for(@user, :html => { :multipart => true }) do |f| %>
-  <%= f.error_messages %>
-  <%= f.label :username, "Username: " %><%= f.text_field :username %>
-  <span id="username_error" class="error"></span>
-  <%= render :partial => 'user_form', :locals => { :f => f }%>
-  <%= submit_tag("Create")%>
-<% end %>
+<div id="homecanvas"> 
+  <h3>Share Your Thoughts.</h3> 
+</div>
 
-<%= link_to "Cancel", :action => 'index' %>
+<div id="register"> 
+  <p>Sign-up for an account. Fair warning - this is a work in progress. We ain't promising much.</p> 
+
+	<% form_for(@user, :html => { :multipart => true }) do |f| %>
+	  <%= f.error_messages %><br />
+		<%= f.text_field :email, :watermark => 'E-Mail' %><br />
+		<%= f.text_field :display_name, :watermark => 'Your Name' %><br />
+		<span id="username_error" class="error"></span>
+		<%= f.text_field :username, :watermark => 'Username' %><br />
+	  <%= f.text_field :password, :watermark => 'Password' %><br />
+	  <%= f.text_field :password_confirmation, :watermark => 'Confirm' %><br />
+		<%= submit_tag("Create My Account")%><br />
+	<% end %>
+</div>

@@ -49,6 +49,11 @@ table {
 body {
 	font-family: arial;
 }
+.spacer {
+	clear: both;
+	margin: 10px 0;
+}
+
 
 /* Top Navigation Bar */
 
@@ -208,9 +213,8 @@ div#editable  {
 }
 
 /* Home Page Stuff */
-
 #homecanvas {
-	width: 580px;
+	width: 700px;
 	margin: 0 auto;
 }
 
@@ -220,16 +224,30 @@ div#homecanvas h3 {
 	text-shadow: #d5d5d5 0 2px 0;
 	display: inline-block;
 	background-color: #fffeff;
-	height: 118px;
 	float: right;
 	clear: right;
+	width: 184px;
+	margin-left: 7px;
+	margin-right: 25%;
+	margin-top: 165px;
 }
 
-div#homecanvas p {
-	color: #009800;
-	padding-left: 0;
-	font-size: 0.8em;
+div#register {
+	width: 333px;
+	text-align: right;
+	padding: 20px 15px 0 0;
+	float: right;
+	margin-right: 5px;
+	margin-left: auto;
+	line-height: 25px;
+	border-right: 4px solid #d5d5d5;
+	margin-top: 150px;
 }
+
+div#register p {
+	margin-bottom: 13px;
+}
+
 
 /* Notifications */
 
