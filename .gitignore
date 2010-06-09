@@ -1,5 +1,5 @@
-log/*.log
-db/*.sqlite3
+*.log
+*.sqlite3
 .logworm
 #config/s3.yml
 public/assets/*
