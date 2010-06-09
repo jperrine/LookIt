@@ -16113,3 +16113,329 @@ Rendering template within layouts/application
 Rendering looks/index
 Rendered looks/_looks (6.7ms)
 Completed in 27ms (View: 11, DB: 1) | 200 OK [http://localhost/users/1/looks]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 13:00:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/1
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/users_controller.rb:25:in `new'
+  /Library/Ruby/Gems/1.8/gems/logworm_client-0.6.2/lib/logworm_client/rails.rb:27:in `process'
+
+Rendered rescues/_trace (124.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 13:00:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/1
+Completed in 4ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:00:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 39ms (View: 22, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:00:54) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 13:01:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/1
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:01:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 105ms (View: 91, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:01:11) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 13:01:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/1
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:01:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 26ms (View: 9, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:01:18) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 13:01:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/1
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:01:21) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 109ms (View: 83, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:01:21) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 13:05:13) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"1", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 1) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (6.3ms)
+Completed in 25ms (View: 10, DB: 1) | 200 OK [http://localhost/users/1/looks]
+
+
+Processing LooksController#new (for 127.0.0.1 at 2010-06-09 13:05:15) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"1", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering looks/new
+Rendered looks/_look_form (5.7ms)
+Completed in 29ms (View: 10, DB: 1) | 200 OK [http://localhost/users/1/looks/new]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 13:05:16) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (79.3ms)
+Completed in 97ms (View: 87, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-06-09 13:05:19) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"t7IDaVOQRQNzzJIXGhR7y02BFevWshSQrkRuNpJEQRY=", "id"=>"1", "controller"=>"users", "user"=>{"birthdate(1i)"=>"", "birthdate(2i)"=>"", "password_confirmation"=>"[FILTERED]", "birthdate(3i)"=>"", "bio"=>"", "display_name"=>"Jimmy Perrine", "password"=>"[FILTERED]", "email"=>"xeno56@gmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+RuntimeError (cannot generate tempfile `'):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/tempfile.rb:52:in `initialize'
+  app/models/user.rb:40:in `update_settings'
+  app/controllers/users_controller.rb:61:in `update'
+  /Library/Ruby/Gems/1.8/gems/logworm_client-0.6.2/lib/logworm_client/rails.rb:27:in `process'
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 13:10:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/1
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:10:17) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 105ms (View: 8, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:10:17) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 13:10:31) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (9.6ms)
+Completed in 28ms (View: 17, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-06-09 13:10:35) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"t7IDaVOQRQNzzJIXGhR7y02BFevWshSQrkRuNpJEQRY=", "id"=>"1", "controller"=>"users", "user"=>{"birthdate(1i)"=>"", "birthdate(2i)"=>"", "password_confirmation"=>"[FILTERED]", "birthdate(3i)"=>"", "bio"=>"", "display_name"=>"Jimmy Perrine", "password"=>"[FILTERED]", "email"=>"xeno56@gmail.com"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'perrine4' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'xeno56@gmail.com' AND "users".id <> 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (7.7ms)
+Completed in 31ms (View: 16, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-06-09 13:10:50) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"t7IDaVOQRQNzzJIXGhR7y02BFevWshSQrkRuNpJEQRY=", "id"=>"1", "controller"=>"users", "user"=>{"photo"=>#<File:/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/RackMultipart20100609-587-1x14f9m-0>, "birthdate(1i)"=>"", "birthdate(2i)"=>"", "password_confirmation"=>"[FILTERED]", "birthdate(3i)"=>"", "bio"=>"", "display_name"=>"Jimmy Perrine", "password"=>"[FILTERED]", "email"=>"xeno56@gmail.com"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+[paperclip] identify '-format' '%wx%h' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,0.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,0.png[0]' '-resize' '125x' '-crop' '125x110+0+1' '+repage' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,0,587,0' 2>/dev/null
+[paperclip] identify '-format' '%wx%h' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,1.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,1.png[0]' '-resize' '125x' '-crop' '125x110+0+1' '+repage' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,1,587,0' 2>/dev/null
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'perrine4' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'xeno56@gmail.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-09 17:10:52', "photo_file_name" = 'stream,587,0.png', "bio" = '', "photo_file_size" = 37545, "photo_content_type" = 'image/png' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jimmy/Dropbox/LookIt/public/assets/users/1/thumb/stream,587,0.png
+[paperclip] saving /Users/jimmy/Dropbox/LookIt/public/assets/users/1/original/stream,587,0.png
+Redirected to http://localhost:3000/users/1
+Completed in 1571ms (DB: 2) | 302 Found [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:10:52) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 28ms (View: 12, DB: 3) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:10:52) [GET]
+
+ActionController::RoutingError (No route matches "/system/photos/1/thumb/stream,587,0.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:18:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 23ms (View: 12, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:18:20) [GET]
+
+ActionController::RoutingError (No route matches "/Users/jimmy/Dropbox/LookIt/public/assets/users/1/thumb/stream,587,0.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:18:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:18:29) [GET]
+
+ActionController::RoutingError (No route matches "/Users/jimmy/Dropbox/LookIt/public/assets/users/1/thumb/stream,587,0.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:18:29) [GET]
+
+ActionController::RoutingError (No route matches "/Users/jimmy/Dropbox/LookIt/public/assets/users/1/thumb/stream,587,0.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:18:29) [GET]
+
+ActionController::RoutingError (No route matches "/Users/jimmy/Dropbox/LookIt/public/assets/users/1/thumb/stream,587,0.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:18:43) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 17ms (View: 7, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-09 13:18:43) [GET]
+
+ActionController::RoutingError (No route matches "/Users/jimmy/Dropbox/LookIt/public/assets/users/1/thumb/stream,587,0.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 13:20:51) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (9.8ms)
+Completed in 28ms (View: 17, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-06-09 13:20:57) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"t7IDaVOQRQNzzJIXGhR7y02BFevWshSQrkRuNpJEQRY=", "id"=>"1", "controller"=>"users", "user"=>{"photo"=>#<File:/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/RackMultipart20100609-587-1oacyil-0>, "birthdate(1i)"=>"", "birthdate(2i)"=>"", "password_confirmation"=>"[FILTERED]", "birthdate(3i)"=>"", "bio"=>"", "display_name"=>"Jimmy Perrine", "password"=>"[FILTERED]", "email"=>"xeno56@gmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+[paperclip] identify '-format' '%wx%h' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,0.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,0.png[0]' '-resize' '125x' '-crop' '125x110+0+1' '+repage' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,0,587,0' 2>/dev/null
+[paperclip] identify '-format' '%wx%h' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,1.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,1.png[0]' '-resize' '125x' '-crop' '125x110+0+1' '+repage' '/var/folders/U4/U4nj0mNyEna+y0CXIBtbeU+++TI/-Tmp-/stream,587,1,587,0' 2>/dev/null
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'perrine4' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'xeno56@gmail.com' AND "users".id <> 1) LIMIT 1[0m
+[paperclip] Saving attachments.
+[paperclip] deleting /Users/jimmy/Dropbox/LookIt/public/assets/users/1/original/stream,587,0.png
+[paperclip] deleting /Users/jimmy/Dropbox/LookIt/public/assets/users/1/thumb/stream,587,0.png
+[paperclip] saving /Users/jimmy/Dropbox/LookIt/public/assets/users/1/thumb/stream,587,0.png
+[paperclip] saving /Users/jimmy/Dropbox/LookIt/public/assets/users/1/original/stream,587,0.png
+Redirected to http://localhost:3000/users/1
+Completed in 182ms (DB: 2) | 302 Found [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:20:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 72ms (View: 33, DB: 1) | 200 OK [http://localhost/users/1]

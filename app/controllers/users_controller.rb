@@ -16,8 +16,12 @@ class UsersController < ApplicationController
     end
   end
   
-  # GET /user/new(.:format)
+  # GET /user/new(.:format) and /
   def new
+    #so logged-in users aren't greeted with a registration page
+    if session[:user_id]
+      redirect_to :action => 'show', :id => session[:user_id] and return
+    end
     @user = User.new
     respond_to do |format|
       format.html
