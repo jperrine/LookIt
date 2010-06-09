@@ -1,24 +1,13 @@
-<div id="container"> 
-	<div id="lookcover">
-		<%= image_tag('http://content.screencast.com/users/nbashaw/folders/Jing/media/4bbc7711-c617-4a26-87a5-df7affbaa4a4/00000040.png')%>
-	</div> 
-  <div id="lookinfo"> 
-		<h2> 
-			<%=h @look.title %>
-		</h2> 
-    <h5> 	
-			By <%= link_to @look.user.display_name, user_url(@look.user) %>
-    </h5> 
-	  <p> 
-			<%=h @look.content %>
-	  </p> 
-	</div>
-</div> 
+<%= render :partial => 'look_summary', :locals => {:look => @look} %>
 <div id= "canvas"> 
-	<%= render :partial => 'looks/look_page_select', :locals => { :look => @look }%>
+	<%= render :partial => 'look_page_select', :locals => { :look => @look } %>
   <div id= "TextArea">
 		<div id="content">
-			<%= @look.pages.first.content %>
+			<% unless @look.pages.empty? %>
+				<%= @look.pages.first.content %>
+			<% else %>
+				<p>No pages added yet, <%= link_to 'add one', new_user_look_page_url(@look.user, @look) %>
+			<% end %>
 		</div>
   </div> 
 	<a id="LastPage" href="#">< Last Page</a> 

@@ -1,1 +1,5 @@
-<%= render :partial => 'looks', :collection => @looks, :as => :look %>
+<% unless @looks.empty? %>
+	<%= render :partial => 'looks', :collection => @looks, :as => :look %>
+<% else %>
+	<p>You haven't made any looks yet, <%= link_to 'create one', new_user_look_url(@current_user) %></p>
+<% end %>
