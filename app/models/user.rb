@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
     :path => "/:class/:id/:style/:filename"
   
-  validates_presence_of :display_name, :email, :birthdate, :username
+  validates_presence_of :display_name, :email, :username
   validates_uniqueness_of :username, :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates_confirmation_of :password

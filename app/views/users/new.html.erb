@@ -13,8 +13,8 @@
 		<%= f.text_field :display_name, :watermark => 'Your Name' %><br />
 		<span id="username_error" class="error"></span>
 		<%= f.text_field :username, :watermark => 'Username' %><br />
-	  <%= f.text_field :password, :watermark => 'Password' %><br />
-	  <%= f.text_field :password_confirmation, :watermark => 'Confirm' %><br />
+	  <%= f.password_field :password, :watermark => 'Password' %><br />
+	  <%= f.password_field :password_confirmation, :watermark => 'Confirm' %><br />
 		<%= submit_tag("Create My Account")%><br />
 	<% end %>
 </div>
