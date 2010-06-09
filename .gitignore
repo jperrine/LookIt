@@ -1,4 +1,6 @@
-*.log
+log/development.log
+db/development.sqlite3
+log/*
 *.sqlite3
 .logworm
 #config/s3.yml
