@@ -1,19 +1,28 @@
-<h3><%=h @look.title %></h3>
-<br />
-<span>
-	Posted by <%=h @look.user.display_name %> at <%= @look.posted %>
-</span>
-<br />
-<br />
-<div id="view_content">
-	<%=h @look.content %>
-</div>
-<br />
-<h3><%=h @look.title %>'s pages</h3>
-<% unless @look.pages.empty? %>
-	<ol>
-		<%= render :partial => 'page_link', :collection => @look.pages, :as => :page %>
-	</ol>
-<% else %>
-	<p>No pages yet...</p>
-<% end%>
+<div id="container"> 
+	<div id="lookcover">
+		<%= image_tag('http://content.screencast.com/users/nbashaw/folders/Jing/media/4bbc7711-c617-4a26-87a5-df7affbaa4a4/00000040.png')%>
+	</div> 
+  <div id="lookinfo"> 
+		<h2> 
+			<%=h @look.title %>
+		</h2> 
+    <h5> 	
+			By <%= link_to @look.user.display_name, user_url(@look.user) %>
+    </h5> 
+	  <p> 
+			<%=h @look.content %>
+	  </p> 
+	</div>
+</div> 
+<div id= "canvas"> 
+	<div id= "PageSelector"> 
+		<%= select( 'page', 'id',@look.pages.select { |page| page.archived == false }.map { |page| [page.title, page.id]}) %> 
+	</div> 
+  <div id= "TextArea">
+		<div id="content">
+			<%= @page.content %>
+		</div>
+  </div> 
+	<a id="LastPage" href="#">< Last Page</a> 
+	<a id="NextPage" href="#">Next Page ></a> 
+</div> 

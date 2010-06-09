@@ -206,6 +206,11 @@ div#canvas {
 	background: #d5d5d5 url(http://content.screencast.com/users/nbashaw/folders/Jing/media/89fca94d-c5d6-41f3-a88e-be0cc7f18a8c/00000043.png) no-repeat center center;
 }
 
+div#content {
+	padding: 45px;
+	text-align: left;
+}
+
 div#editable  {
 	margin: 0 auto;
 	

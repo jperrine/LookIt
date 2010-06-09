@@ -19,7 +19,9 @@
 		<%= select( 'page', 'id',@look.pages.select { |page| page.archived == false }.map { |page| [page.title, page.id]}) %> 
 	</div> 
   <div id= "TextArea">
-		<%= @look.pages.first.content %>
+		<div id="content">
+			<%= @look.pages.first.content %>
+		</div>
   </div> 
 	<a id="LastPage" href="#">< Last Page</a> 
 	<a id="NextPage" href="#">Next Page ></a> 

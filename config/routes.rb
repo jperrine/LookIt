@@ -53,8 +53,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.connect '/user/check_username', :controller => 'users', :action => 'check_username'
 
+  map.connect '/public-looks/view/:look_id/pages/:id', :controller => 'published_looks', :action => 'view'
   map.connect '/public-looks/:action/:id.:format', :controller => 'published_looks'
-
+  
   #map.connect 'home/:action', :controller => 'home'
   #map.connect 'home/:action.:format', :controller => 'home'
   

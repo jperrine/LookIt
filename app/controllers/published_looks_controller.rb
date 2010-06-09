@@ -1,10 +1,10 @@
 class PublishedLooksController < ApplicationController
 
+  # GET /public-looks/
   #browse all published looks
   def index
     @looks = Look.find(:all, 
       :order => "posted DESC", 
-      :limit => 10, 
       :conditions => ["published = ? AND archived = ?", true, false] )
       
     respond_to do |format|
@@ -13,14 +13,14 @@ class PublishedLooksController < ApplicationController
     end
   end
   
+  # GET /public-looks/search?query=:query
   #search all published looks
   def search
     query = params[:query]
     @look_results = Look.find(:all,
-      :limit => 25,
       :conditions => 
-        ['archived = false AND published = true AND (title LIKE ? OR content LIKE ?)',
-        "%#{query}%", "%#{query}%"])
+        ['archived = false AND published = true AND title LIKE ?',
+        "%#{query}%"])
     
     respond_to do |format|
       format.html
@@ -28,6 +28,7 @@ class PublishedLooksController < ApplicationController
     end
   end
   
+  # GET /public-looks/user/:id
   #browse looks via user
   def user
     @user = User.find(params[:id])
@@ -42,8 +43,13 @@ class PublishedLooksController < ApplicationController
     end
   end
   
+  # GET /public-looks/view/:id OR /public-looks/view/:look_id/pages/:id
   def view
-    @look = Look.find(params[:id])
+    id = params[:look_id] || params[:id]
+    @look = Look.find(id)
+
+    #if look_id is nil, sets page to the first page in the look's collection, otherwise find specific page
+    @page = params[:look_id].nil? ? @look.pages.first : @look.pages.select { |page| page.id.to_s == params[:id] }.first
     
     if @look.published && @look.archived == false #only published/unarchived looks can be viewed here
       respond_to do |format|
