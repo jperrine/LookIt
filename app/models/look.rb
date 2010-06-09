@@ -9,7 +9,9 @@ class Look < ActiveRecord::Base
     },
     :storage => :s3,
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-    :path => ":class/:id/:style/:filename"
+    :path => ":class/:id/:style/:filename",
+    :default_url => '/images/look_cover.png',
+    :default_path => '/public/images/look_cover.png'
 	
 	validates_presence_of :title, :user_id, :content, :posted
 	
