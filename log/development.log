@@ -14874,3 +14874,17 @@ Migrating to RemoveArchivedFlagsFromEverything (20100609145042)
   [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
   [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 11:12:26) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"3", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mLook Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: ARCHIVED: SELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: ARCHIVED: SELECT * FROM "looks" WHERE (ARCHIVED = 'f' AND USER_ID = 3) ):
+  app/controllers/looks_controller.rb:7:in `index'
+  /Library/Ruby/Gems/1.8/gems/logworm_client-0.6.2/lib/logworm_client/rails.rb:27:in `process'
+
+Rendered rescues/_trace (144.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)

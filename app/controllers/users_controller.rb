@@ -69,7 +69,6 @@ class UsersController < ApplicationController
   end
 
   # DELETE /user/:id
-  # does not delete the user, sets active flag to false
   def destroy
     @user = User.find(params[:id])
     

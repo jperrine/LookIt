@@ -5,7 +5,7 @@ class PublishedLooksController < ApplicationController
   def index
     @looks = Look.find(:all, 
       :order => "posted DESC", 
-      :conditions => ["published = ? AND archived = ?", true, false] )
+      :conditions => ["published = ?", true] )
       
     respond_to do |format|
       format.html
@@ -19,7 +19,7 @@ class PublishedLooksController < ApplicationController
     query = params[:query]
     @look_results = Look.find(:all,
       :conditions => 
-        ['archived = false AND published = true AND title LIKE ?',
+        ['published = true AND title LIKE ?',
         "%#{query}%"])
     
     respond_to do |format|
@@ -34,8 +34,8 @@ class PublishedLooksController < ApplicationController
     @user = User.find(params[:id])
     @looks = Look.find(:all, 
       :conditions => 
-      ["user_id = ? and published = ? and archived = ?",
-        @user.id, true, false] )
+      ["user_id = ? and published = ?",
+        @user.id, true] )
     
     respond_to do |format|
       format.html
@@ -51,7 +51,7 @@ class PublishedLooksController < ApplicationController
     #if look_id is nil, sets page to the first page in the look's collection, otherwise find specific page
     @page = params[:look_id].nil? ? @look.pages.first : @look.pages.select { |page| page.id.to_s == params[:id] }.first
     
-    if @look.published && @look.archived == false #only published/unarchived looks can be viewed here
+    if @look.published #only published looks can be viewed here
       respond_to do |format|
         format.html
         format.xml { render :xml => @look }

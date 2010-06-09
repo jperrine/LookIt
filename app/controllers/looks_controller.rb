@@ -5,7 +5,7 @@ class LooksController < ApplicationController
   # GET /user/:user_id/look(.:format)
   def index
     @looks = Look.find(:all, 
-      :conditions => ["ARCHIVED = ? AND USER_ID = ?", false, @current_user.id])
+      :conditions => ["USER_ID = ?", @current_user.id])
     respond_to do |format|
       format.html
       format.xml { render :xml => @user_looks }
@@ -67,9 +67,7 @@ class LooksController < ApplicationController
   # GET /user/:user_id/look/:id(.:format)
   def show
     @look = Look.find(params[:id], 
-      :conditions => { :archived => false,
-        :user_id => params[:user_id] })
-    @pages = Page.find(:all, :conditions => { :archived => false, :look_id => @look.id })
+      :conditions => {:user_id => params[:user_id] })
         
     respond_to do |format|
       format.html
