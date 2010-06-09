@@ -15,9 +15,7 @@
 	</div>
 </div> 
 <div id= "canvas"> 
-	<div id= "PageSelector"> 
-		<%= select( 'page', 'id',@look.pages.select { |page| page.archived == false }.map { |page| [page.title, page.id]}) %> 
-	</div> 
+	<%= render :partial => 'looks/look_page_select', :locals => { :look => @look }%>
   <div id= "TextArea">
 		<div id="content">
 			<%= @look.pages.first.content %>

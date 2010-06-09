@@ -9,17 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100608025917) do
+ActiveRecord::Schema.define(:version => 20100609145042) do
 
   create_table "looks", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
-    t.string   "content",    :limit => 500
+    t.string   "content",            :limit => 500
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "published"
     t.datetime "posted"
-    t.boolean  "archived"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
   end
 
   create_table "pages", :force => true do |t|
@@ -29,7 +31,6 @@ ActiveRecord::Schema.define(:version => 20100608025917) do
     t.datetime "posted"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "archived"
   end
 
   create_table "sessions", :force => true do |t|
@@ -51,7 +52,6 @@ ActiveRecord::Schema.define(:version => 20100608025917) do
     t.date     "birthdate"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "active"
     t.string   "bio"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
