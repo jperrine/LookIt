@@ -49,11 +49,6 @@ table {
 body {
 	font-family: arial;
 }
-.spacer {
-	clear: both;
-	margin: 10px 0;
-}
-
 
 /* Top Navigation Bar */
 
@@ -116,18 +111,28 @@ body {
 {
 	float: left;
 	padding-right: 9px;
+	margin-top: 20px;
+	margin-right: 20px;
 }
 
 #lookinfo
 {
 	clear: right;
-	padding: 20px;
-	width: 540px;
+	padding: 51px 20px 20px;
+	font-family: arial;
+	width: 600px;
+	margin-bottom: 11px;
+}
 
+div#lookinfo h5 {
+	color: #929292;
+	white-space: pre;
+	text-decoration: none;
 }
 
 p {
-	font: 0.8em;
+	font: 0.8em/1.3em arial;
+	padding-top: 0;
 }
 
 #lookinfo h2
@@ -198,7 +203,7 @@ div#canvas {
 	width: 590px;
 	height:  605px;
 	margin: 3px auto 1px;
-	/*background-image: url(http://content.screencast.com/users/nbashaw/folders/Jing/media/89fca94d-c5d6-41f3-a88e-be0cc7f18a8c/00000043.png);*/
+	background: #d5d5d5 url(http://content.screencast.com/users/nbashaw/folders/Jing/media/89fca94d-c5d6-41f3-a88e-be0cc7f18a8c/00000043.png) no-repeat center center;
 }
 
 div#editable  {
@@ -247,7 +252,33 @@ div#register {
 div#register p {
 	margin-bottom: 13px;
 }
+/* View Look */
 
+a#LastPage {
+	float: left;
+	margin-left: 10%;
+	font-family: arial;
+	color: #424242;
+	text-decoration: none;
+	text-shadow: #fffeff 0 1px 0;
+}
+
+a#LastPage:hover {
+	text-decoration: underline;
+}
+
+a#NextPage {
+	float: right;
+	margin-right: 10%;
+	font-family: arial;
+	color: #424242;
+	text-decoration: none;
+	text-shadow: #fffeff 0 1px 0;
+}
+
+a#NextPage:hover {
+	text-decoration: underline;
+}
 
 /* Notifications */
 
