@@ -34,7 +34,6 @@ class PagesController < ApplicationController
     @page = Page.new(params[:page])
     @page.look_id = params[:look_id]
     @page.posted = Time.now
-    @page.archived = false
     
     respond_to do |format|
       if @page.save
@@ -75,13 +74,11 @@ class PagesController < ApplicationController
   end
   
   # DELETE /users/:user_id/looks/:look_id/pages/:id(.:format)
-  # doesn't delete the record, saves it as archived set to true
   def destroy
     @page = Page.find(params[:id])
-    @page.archived = true
     
     respond_to do |format|
-      if @page.save
+      if @page.destroy
         flash[:notice] = "#{@page.title} was successfully deleted."
         format.html { redirect_to :action => 'index' }
         format.xml { head :ok }

@@ -72,10 +72,9 @@ class UsersController < ApplicationController
   # does not delete the user, sets active flag to false
   def destroy
     @user = User.find(params[:id])
-    @user.active = false
     
     respond_to do |format|
-      if @user.save 
+      if @user.destroy
         format.html { redirect_to root_url }
         format.xml { head :ok }
       else

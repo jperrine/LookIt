@@ -36,7 +36,6 @@ class LooksController < ApplicationController
   	@look = @current_user.looks.build(params[:look])
     
     @look.posted = Time.now
-    @look.archived = false
     
     respond_to do |format|
       if @look.save
@@ -79,13 +78,11 @@ class LooksController < ApplicationController
   end
 	
   # DELETE /user/:user_id/look/:id(.:format)
-  # doesn't delete the look, only sets it to archived
   def destroy
     @look = Look.find(params[:id])
-    @look.archived = true
     	
     respond_to do |format|
-      if @look.save
+      if @look.destroy
         flash[:notice] = "#{@look.title} was successfully deleted."
         format.html { redirect_to :action => 'index' }
         format.xml { head :ok }
