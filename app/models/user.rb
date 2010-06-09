@@ -9,10 +9,12 @@ class User < ActiveRecord::Base
     },
     :storage => :s3,
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-    :path => ':class/:id/:style/:filename'
+    :path => ':class/:id/:style/:filename',
     #file system storage
     #:url => "/assets/:class/:id/:style/:filename",
-    #:path => "/public/assets/:class/:id/:style/:filename"
+    #:path => "/public/assets/:class/:id/:style/:filename",
+    :default_url => '/images/user_avatar.png',
+    :default_path => '/public/images/user_avatar.png'
     
   #validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
   
