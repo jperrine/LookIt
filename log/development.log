@@ -16926,3 +16926,11 @@ Processing UsersController#show (for 127.0.0.1 at 2010-06-09 13:44:35) [GET]
 Rendering template within layouts/application
 Rendering users/show
 Completed in 90ms (View: 9, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 18:08:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_login_form (2.0ms)
+Completed in 134ms (View: 112, DB: 0) | 200 OK [http://localhost/]
