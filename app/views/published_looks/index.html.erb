@@ -1,2 +1,8 @@
-<%= render :partial => 'looks', :collection => @looks %>
-
+<div id="container"></div>
+<div id="canvas">
+	<div id="TextArea">
+		<div id="content">
+			<%= render :partial => 'looks/public_look_list_display', :collection => @looks, :as => :look %>
+		</div>
+	</div>
+</div>

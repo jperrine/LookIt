@@ -1,0 +1,8 @@
+<div class="LookSnippet">
+	<%= link_to image_tag(look.cover.url(:thumb)), url_for(:action => 'view', :id => look.id)  %>
+	<h5><%= link_to look.title, url_for(:action => 'view', :id => look.id) %></h5>
+	<br />
+	<p>By <%= link_to look.user.display_name, url_for(:action => 'user', :id => look.user.id)%>
+	<br />
+	<p><%= link_to look.content, url_for(:action => 'view', :id => look.id) %></p>
+</div>
