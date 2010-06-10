@@ -154,19 +154,20 @@ p {
 	width: 100%;
 	background: #fffeff;
 	height: 1em;
-	display: inline-block;
+
+}
+
+#editpreview ul {
+	float: right;
 }
 
 #editpreview ul li
 {
-	list-style-type: none;
-	display: block;
+	display: inline;
 }
 
 #editpreview li a
 {
-	display: inline;
-	float: right;
 	padding: 0 10px;
 	color: #424242;
 	text-decoration: none;
