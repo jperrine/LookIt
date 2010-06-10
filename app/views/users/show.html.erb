@@ -6,10 +6,11 @@
 	</div> 
 	<div id="lookinfo"> 
 		<h2> 
-			<%= @user.display_name %>
+			<%=h @user.display_name %>
 		</h2>  
 	  <div id="userbio"> 
-			<br><p>Check out my brand new look! Let us play with your look! (User Bio Goes Here)</p> 
+			<br />
+			<p><%=h @user.bio %></p> 
 	  </div> 
 	</div>
 </div>
@@ -20,32 +21,17 @@
 
 	<ul>
 		<li><a href="#">Working</a></li>
-		<li><a href="3">Published</a></li>
+		<li><a href="#">Published</a></li>
 	</ul>
 </div>
 <div id= "canvas"> 
   <div id= "TextArea">
 		<div id="content">
-			
 <!-- This is the part where things get a little tricky. I want the looks to display this way, so the user sees cover art, title, and description of the look. They can click it to edit it. -->
-			
-			<div class="LookSnippet">
-				<img src="/images/look_cover.png">
-				<h5>Look Title Goes Right Here (Click To Edit)</h5>
-				<br><br>
-				<p>Look description goes here. Let's hope this works. The descriptions shouldn't be too long. Let's see if it works this way. I really hope so. At some point we'll have to set a character limit for descriptions.</p>
-			</div>
-			<div class="LookSnippet">
-				<img src="/images/look_cover.png">
-				<h5>Look Title Goes Right Here (Click To Edit)</h5>
-				<br><br>
-				<p>Look description goes here. Let's hope this works. The descriptions shouldn't be too long. Let's see if it works this way. I really hope so. At some point we'll have to set a character limit for descriptions.</p>
-			</div>
-			<div class="LookSnippet">
-				<img src="/images/look_cover.png">
-				<h5>Look Title Goes Right Here (Click To Edit)</h5>
-				<br><br>
-				<p>Look description goes here. Let's hope this works. The descriptions shouldn't be too long. Let's see if it works this way. I really hope so. At some point we'll have to set a character limit for descriptions.</p>
-			</div>
+			<% unless @user.looks.empty? %>
+			  <%= render :partial => 'looks/my_look_list_display', :collection => @user.looks, :as => :look %>
+			<% else %>
+				<p>No looks created yet, <%= link_to 'create one', new_user_look_url(@user) %>
+			<% end %>
   </div> 
 </div>
