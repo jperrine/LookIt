@@ -1,6 +1,14 @@
-Settings for <%= @user.display_name %>
-<% form_for(@user, :html => { :multipart => true }) do |f| %>
-  <%= f.error_messages %>
-  <%= render :partial => 'user_form', :locals => { :f => f }%>
-  <%= submit_tag('Update')%>
+<div id="lookinfo">
+	<h2>Settings for <%= @user.display_name %></h2>
+</div>
+<div id= "canvas">
+	<div id="TextArea">
+		<div id="content">
+			<% form_for(@user, :html => { :multipart => true }) do |f| %>
+  			<%= f.error_messages %>
+  			<%= render :partial => 'user_form', :locals => { :f => f }%>
+  			<%= submit_tag('Update')%>
+		</div>
+	</div>
+</div>
 <% end %>

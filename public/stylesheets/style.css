@@ -219,7 +219,7 @@ div#canvas {
 
 #TextArea {
 	width: 590px;
-	height:  605px;
+	height:  auto;
 	margin: 15px auto 1px;
 	clear: both;
 	background-color: #fffeff;
