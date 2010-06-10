@@ -1,6 +1,10 @@
-<h3>Viewing published looks by <%= @user.display_name %></h3>
-<br />
-
-<ul>
-	<%= render :partial => 'user_looks', :collection => @looks, :as => :look %>
-</ul>
+<div id="container">
+	<h3>Viewing published looks by <%= @user.display_name %></h3>
+</div>
+<div id="canvas">
+	<div id="TextArea">
+		<div id="content">
+			<%= render :partial => 'looks/public_look_list_display', :collection => @looks, :as => :look %>
+		</div>
+	</div>
+</div>

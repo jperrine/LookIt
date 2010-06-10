@@ -7,7 +7,7 @@
 			<%=h look.title %>
 		</h2> 
 	  <h5> 	
-			By <%= link_to h(look.user.display_name), user_url(look.user) %>
+			By <%= link_to h(look.user.display_name), url_for(:action => 'user', :id => look.user.id) %>
 	  </h5> 
 	  <p> 
 			<%=h look.content %>
