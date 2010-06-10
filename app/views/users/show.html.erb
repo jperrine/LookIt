@@ -29,7 +29,7 @@
 		<div id="content">
 <!-- This is the part where things get a little tricky. I want the looks to display this way, so the user sees cover art, title, and description of the look. They can click it to edit it. -->
 			<% unless @user.looks.empty? %>
-			  <%= render :partial => 'looks/look_list_display', :collection => @user.looks, :as => :look %>
+			  <%= render :partial => 'looks/my_look_list_display', :collection => @user.looks, :as => :look %>
 			<% else %>
 				<p>No looks created yet, <%= link_to 'create one', new_user_look_url(@user) %>
 			<% end %>

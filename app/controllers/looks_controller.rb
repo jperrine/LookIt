@@ -4,12 +4,7 @@ class LooksController < ApplicationController
 	
   # GET /user/:user_id/look(.:format)
   def index
-    @looks = Look.find(:all, 
-      :conditions => ["USER_ID = ?", @current_user.id])
-    respond_to do |format|
-      format.html
-      format.xml { render :xml => @user_looks }
-    end
+    redirect_to @current_user
   end
 	
 	# GET /users/:user_id/look/new(.:format)
