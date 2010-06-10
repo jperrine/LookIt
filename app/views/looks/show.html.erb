@@ -8,6 +8,11 @@
 			<% else %>
 				<p>No pages added yet, <%= link_to 'add one', new_user_look_page_url(@look.user, @look) %>
 			<% end %>
+			
+			<p><strong>Temporary list of pages so we can test/style editor things</strong></p>
+			<% @look.pages.each do |page| %>
+				<%= link_to h(page.title), user_look_page_url(@look.user, @look, page) %><br />
+			<% end %>
 		</div>
   </div> 
 	<a id="LastPage" href="#">< Last Page</a> 

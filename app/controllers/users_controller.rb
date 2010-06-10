@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_login, :only => [:edit, :update, :destroy]
-  before_filter :check_current_user_permission, :only => [:edit, :update, :destroy]
+  before_filter :require_login, :only => [:edit, :update, :destroy, :published_looks, :working_looks]
+  before_filter :check_current_user_permission, :only => [:edit, :update, :destroy, :published_looks, :working_looks]
 	
   # GET /user/index(.:format)
   def index
@@ -131,6 +131,26 @@ class UsersController < ApplicationController
     @valid = @test_user.nil?
     if request.xhr?
       render :text => @valid
+    end
+  end
+  
+  
+  def published_looks
+    @looks = @current_user.looks.select {|look| look.published == true }
+    @user = @current_user    
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @looks }
+    end
+  end
+  
+  
+  def working_looks
+    @looks = @current_user.looks.select {|look| look.published == false }
+    @user = @current_user
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @looks }
     end
   end
 end

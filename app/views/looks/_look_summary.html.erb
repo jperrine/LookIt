@@ -7,10 +7,13 @@
 			<%=h look.title %>
 		</h2> 
 	  <h5> 	
-			By <%= link_to look.user.display_name, user_url(look.user) %>
+			By <%= link_to h(look.user.display_name), user_url(look.user) %>
 	  </h5> 
 	  <p> 
 			<%=h look.content %>
 	  </p> 
 	</div>
+	<%= link_to "Edit Look", edit_user_look_url(look.user, look) %> | 
+	<%= link_to "Add Page", new_user_look_page_url(look.user, look) %> | 
+	<%= link_to "Delete Look", user_look_url(look.user, look), :method => 'delete', :confirm => 'Are you sure you want to delete this look?' %>
 </div>
