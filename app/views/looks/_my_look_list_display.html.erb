@@ -1,6 +1,6 @@
 <div class="LookSnippet">
 	<%= link_to image_tag(look.cover.url(:thumb)), user_look_path(look.user, look) %>
-	<h5><%= link_to look.title, user_look_path(look.user, look) %></h5>
+	<h5><%= link_to h(look.title), user_look_path(look.user, look) %></h5>
 	<br /><br />
-	<p><%= link_to look.content, user_look_path(look.user, look) %></p>
+	<p><%= link_to(h(look.content), user_look_path(look.user, look)) %></p>
 </div>

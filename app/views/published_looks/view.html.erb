@@ -3,7 +3,11 @@
 	<%= render :partial => 'looks/look_page_select', :locals => { :look => @look }%>
   <div id= "TextArea">
 		<div id="content">
-			<%= @page.content %>
+			<% unless @page.nil? %>
+				<%= @page.content %>
+			<% else %> 
+				<p>No content has been created for this look.</p>
+			<% end %>
 		</div>
   </div> 
 	<a id="LastPage" href="#">< Last Page</a> 
