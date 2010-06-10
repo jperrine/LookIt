@@ -1,2 +1,51 @@
-<h3>Welcome to the page of <%= @user.display_name %></h3>
-<%= image_tag(@user.photo.url(:thumb)) %>
+<!-- I want the logged in home page to be the same thing as "my looks", at least for now. So we can get rid of that redundant page and just use this one. This can also be the template for "browse looks", or any other time we want to display a list of looks (like when we implement a "search looks" feature, and we want to display the results in a list of looks).  -->
+
+<div id="container">
+	<div id="lookcover">
+		<%= image_tag(@user.photo.url(:thumb)) %>
+	</div> 
+	<div id="lookinfo"> 
+		<h2> 
+			<%= @user.display_name %>
+		</h2>  
+	  <div id="userbio"> 
+			<br><p>Check out my brand new look! Let us play with your look! (User Bio Goes Here)</p> 
+	  </div> 
+	</div>
+</div>
+
+<div id="editpreview">
+
+<!-- These will become tabs that let people view looks that are working (i.e. unpublished) and published -->
+
+	<ul>
+		<li><a href="#">Working</a></li>
+		<li><a href="3">Published</a></li>
+	</ul>
+</div>
+<div id= "canvas"> 
+  <div id= "TextArea">
+		<div id="content">
+			
+<!-- This is the part where things get a little tricky. I want the looks to display this way, so the user sees cover art, title, and description of the look. They can click it to edit it. -->
+			
+			<div class="LookSnippet">
+				<img src="/images/look_cover.png">
+				<h5>Look Title Goes Right Here (Click To Edit)</h5>
+				<br><br>
+				<p>Look description goes here. Let's hope this works. The descriptions shouldn't be too long. Let's see if it works this way. I really hope so. At some point we'll have to set a character limit for descriptions.</p>
+			</div>
+			<div class="LookSnippet">
+				<img src="/images/look_cover.png">
+				<h5>Look Title Goes Right Here (Click To Edit)</h5>
+				<br><br>
+				<p>Look description goes here. Let's hope this works. The descriptions shouldn't be too long. Let's see if it works this way. I really hope so. At some point we'll have to set a character limit for descriptions.</p>
+			</div>
+			<div class="LookSnippet">
+				<img src="/images/look_cover.png">
+				<h5>Look Title Goes Right Here (Click To Edit)</h5>
+				<br><br>
+				<p>Look description goes here. Let's hope this works. The descriptions shouldn't be too long. Let's see if it works this way. I really hope so. At some point we'll have to set a character limit for descriptions.</p>
+			</div>
+  </div> 
+</div>

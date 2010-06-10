@@ -70,7 +70,6 @@ body {
 	float: left;
 	width: 100%;
 	background: #d5d5d5;
-	font: 0.9em;
 	height: 2.5em;
 	text-shadow: #eaeaeb 0 1px 0;
 	display: inline-block;
@@ -89,7 +88,9 @@ body {
 {
 	list-style-type: none;
 	display: inline;
-	line-height: 1.7em;
+	line-height: 1.5em;
+	font: 0.4em;
+
 }
 
 #navigation li a
@@ -111,8 +112,9 @@ body {
 {
 	float: left;
 	padding-right: 9px;
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-right: 20px;
+	margin-bottom: 30px;
 }
 
 #lookinfo
@@ -151,21 +153,14 @@ p {
 	float: left;
 	width: 100%;
 	background: #fffeff;
-	height: 2em;
+	height: 1em;
 	display: inline-block;
-	margin-top: -24px;
-	font: 0.8em;
-}
-
-#editpreview ul
-{
-	margin: 0;
 }
 
 #editpreview ul li
 {
 	list-style-type: none;
-	display: inline;
+	display: block;
 }
 
 #editpreview li a
@@ -175,11 +170,31 @@ p {
 	padding: 0 10px;
 	color: #424242;
 	text-decoration: none;
+	font-size: 0.9em;
 }
 
 #editpreview li a:hover 
 {
 	text-decoration: underline;
+}
+
+/* Look Snippet Lists */
+
+div.LookSnippet img {
+	float: left;
+	display: inline;
+	margin-right: 10px;
+}
+
+div.LookSnippet h5 {
+	clear: right;
+	display: inline;
+}
+
+div.LookSnippet {
+	clear: both;
+	display: block;
+	height: 150px;
 }
 
 /* The Working Area */
@@ -188,6 +203,8 @@ div#canvas {
 	text-align: center;
 	background-color: #d5d5d5;
 	padding-bottom: 24px;
+	clear: both;
+	padding-top: 20px;
 }
 
 #PageSelector select {
@@ -202,8 +219,10 @@ div#canvas {
 #TextArea {
 	width: 590px;
 	height:  605px;
-	margin: 3px auto 1px;
-	background: #d5d5d5 url(http://content.screencast.com/users/nbashaw/folders/Jing/media/89fca94d-c5d6-41f3-a88e-be0cc7f18a8c/00000043.png) no-repeat center center;
+	margin: 15px auto 1px;
+	clear: both;
+	background-color: #fffeff;
+	border: 1px solid #929292;
 }
 
 div#content {

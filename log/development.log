@@ -17070,3 +17070,1528 @@ Rendering users/new
 Rendered users/_login_form (2.0ms)
 Completed in 134ms (View: 112, DB: 0) | 200 OK [http://localhost/]
 >>>>>>> a6cf11bbc5cb0c63deef5f49611f6119dae64773
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 20:54:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_login_form (2.2ms)
+Completed in 163ms (View: 132, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-06-09 20:55:58) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"znVMJVED/Z9v/hH1YnRUK2LghppsFnzOep3OZ+p4LMs=", "username"=>"[FILTERED]", "controller"=>"users", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'nbashaw') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/login
+Rendered users/_login_form (1.6ms)
+Completed in 26ms (View: 10, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-06-09 20:56:06) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"znVMJVED/Z9v/hH1YnRUK2LghppsFnzOep3OZ+p4LMs=", "username"=>"[FILTERED]", "controller"=>"users", "password"=>"[FILTERED]"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'nebashaw') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/login
+Rendered users/_login_form (1.6ms)
+Completed in 18ms (View: 5, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 20:56:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_login_form (1.6ms)
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 20:56:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_login_form (1.5ms)
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-09 20:56:54) [POST]
+  Parameters: {"commit"=>"Create My Account", "action"=>"create", "authenticity_token"=>"ehHE/Nia2JOCWJgZSpLyZhF6RA6tyoP8Z5assi3s1io=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"[FILTERED]", "display_name"=>"Nathan Bashaw", "password"=>"[FILTERED]", "email"=>"nbashaw@gmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'nbashaw') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'nbashaw@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("salt", "created_at", "photo_file_size", "birthdate", "updated_at", "photo_file_name", "hashed_password", "username", "photo_content_type", "display_name", "bio", "email") VALUES('21748332400.105714277295298', '2010-06-10 00:56:54', NULL, NULL, '2010-06-10 00:56:54', NULL, '1e665c760f1e6792f415cf43498e4f043a69f757', 'nbashaw', NULL, 'Nathan Bashaw', NULL, 'nbashaw@gmail.com')[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/2/looks
+Completed in 21ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 20:56:54) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.2ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 55ms (View: 16, DB: 2) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 20:57:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 20:57:16) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 23ms (View: 12, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 20:58:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.7ms)[0m   [0;1mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (213.9ms)
+Completed in 236ms (View: 228, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 20:58:50) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (13.3ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.6ms)
+Completed in 116ms (View: 32, DB: 2) | 200 OK [http://localhost/public-looks/view/1]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 21:03:52) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mLook Load (0.2ms)[0m   [0mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Completed in 23ms (View: 5, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing LooksController#new (for 127.0.0.1 at 2010-06-09 21:03:54) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"2", "controller"=>"looks"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering looks/new
+Rendered looks/_look_form (80.3ms)
+Completed in 113ms (View: 93, DB: 2) | 200 OK [http://localhost/users/2/looks/new]
+
+
+Processing LooksController#create (for 127.0.0.1 at 2010-06-09 21:04:16) [POST]
+  Parameters: {"commit"=>"Save", "look"=>{"title"=>"Nathan's Cool Look", "content"=>"Check out my brand new look! Let us play with your look! "}, "action"=>"create", "authenticity_token"=>"ehHE/Nia2JOCWJgZSpLyZhF6RA6tyoP8Z5assi3s1io=", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Create (5.5ms)[0m   [0;1mINSERT INTO "looks" ("posted", "created_at", "title", "updated_at", "published", "user_id", "cover_file_size", "content", "cover_file_name", "cover_content_type") VALUES('2010-06-10 01:04:16', '2010-06-10 01:04:16', 'Nathan''s Cool Look', '2010-06-10 01:04:16', NULL, 2, NULL, 'Check out my brand new look! Let us play with your look! ', NULL, NULL)[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/2/looks/2
+Completed in 110ms (DB: 7) | 302 Found [http://localhost/users/2/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-09 21:04:17) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.6ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2 AND ("looks"."user_id" = '2')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered looks/_look_summary (9.0ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 2) [0m
+Rendered looks/_look_page_select (5.1ms)
+Completed in 82ms (View: 24, DB: 2) | 200 OK [http://localhost/users/2/looks/2]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-06-09 21:04:31) [GET]
+  Parameters: {"action"=>"new", "look_id"=>"2", "user_id"=>"2", "controller"=>"pages"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering pages/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered looks/_look_summary (9.0ms)
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 2) [0m
+Rendered looks/_look_page_select (1.6ms)
+Rendered pages/_page_form (6.8ms)
+Completed in 196ms (View: 101, DB: 2) | 200 OK [http://localhost/users/2/looks/2/pages/new]
+
+
+Processing PagesController#create (for 127.0.0.1 at 2010-06-09 21:04:53) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"create", "authenticity_token"=>"ehHE/Nia2JOCWJgZSpLyZhF6RA6tyoP8Z5assi3s1io=", "look_id"=>"2", "user_id"=>"2", "page"=>{"title"=>"First Page", "content"=>"<p>test this page, hopefully add another</p>"}, "controller"=>"pages"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mPage Create (0.4ms)[0m   [0;1mINSERT INTO "pages" ("posted", "created_at", "title", "updated_at", "look_id", "content") VALUES('2010-06-10 01:04:53', '2010-06-10 01:04:53', 'First Page', '2010-06-10 01:04:53', 2, '<p>test this page, hopefully add another</p>')[0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 2) [0m
+Redirected to http://localhost:3000/users/2/looks/2/pages/2
+Completed in 33ms (DB: 2) | 302 Found [http://localhost/users/2/looks/2/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-09 21:04:53) [GET]
+  Parameters: {"action"=>"show", "look_id"=>"2", "id"=>"2", "user_id"=>"2", "controller"=>"pages"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mPage Load (1.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered looks/_look_summary (11.2ms)
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 2) [0m
+Rendered looks/_look_page_select (93.2ms)
+Completed in 152ms (View: 121, DB: 4) | 200 OK [http://localhost/users/2/looks/2/pages/2]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 21:05:07) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (7.8ms)
+Completed in 32ms (View: 16, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing LooksController#edit (for 127.0.0.1 at 2010-06-09 21:05:09) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering looks/edit
+Rendered looks/_look_form (4.9ms)
+Completed in 30ms (View: 13, DB: 1) | 200 OK [http://localhost/users/2/looks/2/edit]
+
+
+Processing LooksController#update (for 127.0.0.1 at 2010-06-09 21:05:11) [PUT]
+  Parameters: {"commit"=>"Save", "look"=>{"title"=>"Nathan's Cool Look", "content"=>"Check out my brand new look! Let us play with your look! "}, "action"=>"update", "_method"=>"put", "authenticity_token"=>"ehHE/Nia2JOCWJgZSpLyZhF6RA6tyoP8Z5assi3s1io=", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/2/looks/2
+Completed in 97ms (DB: 1) | 302 Found [http://localhost/users/2/looks/2]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-09 21:05:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2 AND ("looks"."user_id" = '2')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered looks/_look_summary (8.3ms)
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 2) [0m
+Rendered looks/_look_page_select (7.7ms)
+Completed in 55ms (View: 21, DB: 2) | 200 OK [http://localhost/users/2/looks/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 21:22:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 4ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:22:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:22:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 96ms (View: 12, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:26:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 68ms (View: 34, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:27:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 21:27:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_login_form (1.5ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:28:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:29:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:29:43) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:30:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 89ms (View: 79, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:30:49) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"users"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=3):
+  app/controllers/users_controller.rb:12:in `show'
+
+Rendered rescues/_trace (51.3ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:31:13) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 52ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:31:37) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:32:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:32:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 21:32:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:32:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 38ms (View: 27, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 21:33:01) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (7.2ms)
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-09 21:33:03) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2 AND ("looks"."user_id" = '2')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered looks/_look_summary (7.3ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 2) [0m
+Rendered looks/_look_page_select (6.3ms)
+Completed in 39ms (View: 18, DB: 2) | 200 OK [http://localhost/users/2/looks/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:35:27) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 117ms (View: 89, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:36:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:37:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 21:38:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:38:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 94ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:38:38) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:39:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:39:29) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:39:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 21:40:45) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (7.0ms)
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-09 21:40:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2 AND ("looks"."user_id" = '2')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered looks/_look_summary (6.9ms)
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 2) [0m
+Rendered looks/_look_page_select (6.1ms)
+Completed in 35ms (View: 17, DB: 2) | 200 OK [http://localhost/users/2/looks/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 21:40:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.8ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (14.4ms)
+Completed in 98ms (View: 19, DB: 2) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 21:41:01) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (12.7ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.0ms)
+Completed in 35ms (View: 20, DB: 2) | 200 OK [http://localhost/public-looks/view/1]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 21:41:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:41:13) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 21:41:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (1.1ms)[0m   [0;1mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (14.0ms)
+Completed in 27ms (View: 18, DB: 2) | 200 OK [http://localhost/public-looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 21:41:20) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (6.8ms)
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-09 21:41:22) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 2 AND ("looks"."user_id" = '2')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered looks/_look_summary (7.2ms)
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".look_id = 2) [0m
+Rendered looks/_look_page_select (6.6ms)
+Completed in 36ms (View: 18, DB: 2) | 200 OK [http://localhost/users/2/looks/2]
+
+
+Processing LooksController#new (for 127.0.0.1 at 2010-06-09 21:41:27) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"2", "controller"=>"looks"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering looks/new
+Rendered looks/_look_form (4.9ms)
+Completed in 26ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2/looks/new]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-09 21:41:29) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_user_form (58.2ms)
+Completed in 85ms (View: 73, DB: 1) | 200 OK [http://localhost/users/2/edit]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 21:41:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 4ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:41:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:45:13) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 36ms (View: 14, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:45:36) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:46:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 21:47:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (1.0ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (84.0ms)
+Completed in 97ms (View: 89, DB: 2) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 21:47:11) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (13.0ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.2ms)
+Completed in 36ms (View: 21, DB: 2) | 200 OK [http://localhost/public-looks/view/1]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 21:47:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 4ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:47:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 30ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 21:47:47) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (7.0ms)
+Completed in 101ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 21:47:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:47:51) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:49:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+
+ActionView::TemplateError (undefined local variable or method `look' for #<ActionView::Base:0x1031331f8>) on line #25 of app/views/users/show.html.erb:
+22:   <div id= "TextArea">
+23: 		<div id="content">
+24: 			<div class="LookSnippet">
+25: 				<%= image_tag(look.cover.url(:thumb))%>
+26: 		</div>
+27:   </div> 
+28: </div>
+
+    app/views/users/show.html.erb:25
+    app/controllers/users_controller.rb:13:in `show'
+
+Rendered rescues/_trace (140.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:51:30) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 21:52:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:52:25) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:52:51) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:55:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:55:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:56:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:56:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:57:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:57:44) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 88ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:58:17) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:58:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 21:59:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:00:49) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 27ms (View: 16, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:01:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:01:46) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:02:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:03:27) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:04:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:05:38) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 111ms (View: 85, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:06:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:06:32) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:06:43) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:07:15) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:07:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:08:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:08:49) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:09:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:10:09) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:12:41) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 39ms (View: 14, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:14:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 42ms (View: 16, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:15:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 35ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:15:01) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:16:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:16:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 73ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:16:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 22:16:20) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (6.8ms)
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 22:16:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.8ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (13.5ms)
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 22:16:23) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (13.7ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.4ms)
+Completed in 109ms (View: 22, DB: 2) | 200 OK [http://localhost/public-looks/view/1]
+
+
+Processing LooksController#new (for 127.0.0.1 at 2010-06-09 22:16:31) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering looks/new
+Rendered looks/_look_form (4.0ms)
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://localhost/users/2/looks/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:16:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:16:32) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 22ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:20:17) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:20:39) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:20:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:21:36) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:21:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:21:41) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:21:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_login_form (1.6ms)
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-06-09 22:21:54) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"znVMJVED/Z9v/hH1YnRUK2LghppsFnzOep3OZ+p4LMs=", "username"=>"[FILTERED]", "controller"=>"users", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'nbashaw') LIMIT 1[0m
+Redirected to http://localhost:3000/users/2
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:21:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (2.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 178ms (View: 20, DB: 3) | 200 OK [http://localhost/users/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 22:21:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.7ms)[0m   [0;1mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (14.2ms)
+Completed in 27ms (View: 19, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 22:22:01) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (6.6ms)
+Completed in 26ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:22:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:22:02) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 93ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 22:24:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.7ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (39.5ms)
+Completed in 55ms (View: 47, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:41:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 4ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:41:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 84ms (View: 38, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing LooksController#new (for 127.0.0.1 at 2010-06-09 22:42:16) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"2", "controller"=>"looks"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering looks/new
+Rendered looks/_look_form (4.3ms)
+Completed in 163ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2/looks/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:42:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:42:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 22ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 22:42:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (1.1ms)[0m   [0;1mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (16.2ms)
+Completed in 31ms (View: 22, DB: 2) | 200 OK [http://localhost/public-looks]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:42:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:42:30) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 22:43:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.8ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (13.7ms)
+Completed in 26ms (View: 18, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 22:43:07) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (6.7ms)
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing LooksController#new (for 127.0.0.1 at 2010-06-09 22:43:08) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering looks/new
+Rendered looks/_look_form (4.0ms)
+Completed in 97ms (View: 81, DB: 1) | 200 OK [http://localhost/users/2/looks/new]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 22:43:09) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mLook Load (0.4ms)[0m   [0mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (7.4ms)
+Completed in 28ms (View: 12, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:43:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:43:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 22:43:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.7ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (13.4ms)
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 22:43:21) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (6.6ms)
+Completed in 26ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-09 22:43:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2 AND ("looks"."user_id" = '2')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered looks/_look_summary (7.2ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 2) [0m
+Rendered looks/_look_page_select (6.2ms)
+Completed in 36ms (View: 18, DB: 2) | 200 OK [http://localhost/users/2/looks/2]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 22:43:42) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (7.2ms)
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing LooksController#edit (for 127.0.0.1 at 2010-06-09 22:43:44) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering looks/edit
+Rendered looks/_look_form (4.7ms)
+Completed in 27ms (View: 9, DB: 1) | 200 OK [http://localhost/users/2/looks/2/edit]
+
+
+Processing LooksController#update (for 127.0.0.1 at 2010-06-09 22:43:46) [PUT]
+  Parameters: {"commit"=>"Save", "look"=>{"title"=>"Nathan's Cool Look", "content"=>"Check out my brand new look! Let us play with your look! "}, "action"=>"update", "_method"=>"put", "authenticity_token"=>"ehHE/Nia2JOCWJgZSpLyZhF6RA6tyoP8Z5assi3s1io=", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/2/looks/2
+Completed in 46ms (DB: 1) | 302 Found [http://localhost/users/2/looks/2]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-09 22:43:46) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2 AND ("looks"."user_id" = '2')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered looks/_look_summary (11.4ms)
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 2) [0m
+Rendered looks/_look_page_select (20.8ms)
+Completed in 58ms (View: 38, DB: 2) | 200 OK [http://localhost/users/2/looks/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 22:44:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.8ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (13.9ms)
+Completed in 26ms (View: 18, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 22:44:11) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (109.1ms)
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.8ms)
+Completed in 142ms (View: 116, DB: 3) | 200 OK [http://localhost/public-looks/view/1]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 22:46:16) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (12.5ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.2ms)
+Completed in 35ms (View: 20, DB: 1) | 200 OK [http://localhost/public-looks/view/1]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 22:46:27) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (12.5ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.3ms)
+Completed in 34ms (View: 20, DB: 2) | 200 OK [http://localhost/public-looks/view/1]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 22:46:35) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (13.1ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.2ms)
+Completed in 36ms (View: 21, DB: 2) | 200 OK [http://localhost/public-looks/view/1]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 22:46:45) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (12.6ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.2ms)
+Completed in 103ms (View: 20, DB: 1) | 200 OK [http://localhost/public-looks/view/1]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 22:46:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.7ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (134.1ms)
+Completed in 150ms (View: 141, DB: 2) | 200 OK [http://localhost/public-looks]
+
+
+Processing LooksController#index (for 127.0.0.1 at 2010-06-09 22:46:51) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE (USER_ID = 2) [0m
+Rendering template within layouts/application
+Rendering looks/index
+Rendered looks/_looks (7.6ms)
+Completed in 30ms (View: 12, DB: 2) | 200 OK [http://localhost/users/2/looks]
+
+
+Processing LooksController#show (for 127.0.0.1 at 2010-06-09 22:46:52) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "user_id"=>"2", "controller"=>"looks"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mLook Load (0.3ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 2 AND ("looks"."user_id" = '2')) [0m
+Rendering template within layouts/application
+Rendering looks/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered looks/_look_summary (7.1ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 2) [0m
+Rendered looks/_look_page_select (6.1ms)
+Completed in 106ms (View: 17, DB: 2) | 200 OK [http://localhost/users/2/looks/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 22:50:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.7ms)[0m   [0mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (13.6ms)
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing PublishedLooksController#view (for 127.0.0.1 at 2010-06-09 22:50:31) [GET]
+  Parameters: {"action"=>"view", "id"=>"1", "controller"=>"published_looks"}
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering published_looks/view
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered looks/_look_summary (12.8ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".look_id = 1) [0m
+Rendered looks/_look_page_select (3.1ms)
+Completed in 34ms (View: 20, DB: 1) | 200 OK [http://localhost/public-looks/view/1]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:50:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:50:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:52:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:52:30) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 25ms (View: 14, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:52:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 5ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:52:52) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 94ms (View: 10, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing PublishedLooksController#index (for 127.0.0.1 at 2010-06-09 22:52:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"published_looks"}
+  [4;36;1mLook Load (0.7ms)[0m   [0;1mSELECT * FROM "looks" WHERE (published = 't') ORDER BY posted DESC[0m
+Rendering template within layouts/application
+Rendering published_looks/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered published_looks/_looks (14.9ms)
+Completed in 27ms (View: 19, DB: 1) | 200 OK [http://localhost/public-looks]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-09 22:52:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://localhost:3000/users/2
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-09 22:52:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-10 09:15:09) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 207ms (View: 179, DB: 1) | 200 OK [http://localhost/users/2]
