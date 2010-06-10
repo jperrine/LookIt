@@ -213,11 +213,16 @@ div#canvas {
 	font: bold 1em arial;
 	color: #424242;
 	margin-top: 2em;
-
 }
 
+button#NewPage {
+	display: inline;
+}
+
+
+
 #TextArea {
-	width: 590px;
+	width: 690px;
 	height:  605px;
 	margin: 15px auto 1px;
 	clear: both;
