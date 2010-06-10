@@ -1,0 +1,37 @@
+<!-- I want the logged in home page to be the same thing as "my looks", at least for now. So we can get rid of that redundant page and just use this one. This can also be the template for "browse looks", or any other time we want to display a list of looks (like when we implement a "search looks" feature, and we want to display the results in a list of looks).  -->
+
+<div id="container">
+	<div id="lookcover">
+		<%= image_tag(user.photo.url(:thumb)) %>
+	</div> 
+	<div id="lookinfo"> 
+		<h2> 
+			<%=h user.display_name %>
+		</h2>  
+	  <div id="userbio"> 
+			<br />
+			<p><%=h user.bio %></p> 
+	  </div> 
+	</div>
+</div>
+
+<div id="editpreview">
+<!-- These will become tabs that let people view looks that are working (i.e. unpublished) and published -->
+	<ul>
+		<li><%= link_to 'Working', working_looks_url(user) %></li>
+		<li><%= link_to 'Published', published_looks_url(user) %></li>
+		<li><%= link_to 'All', user %></li>
+	</ul>
+</div>
+<div id= "canvas"> 
+  <div id= "TextArea">
+		<div id="content">
+<!-- This is the part where things get a little tricky. I want the looks to display this way, so the user sees cover art, title, and description of the look. They can click it to edit it. -->
+			<h4>Viewing all of your <%= filter -%> looks.</h4>
+			<% unless looks.empty? %>
+			  <%= render :partial => 'looks/my_look_list_display', :collection => looks, :as => :look %>
+			<% else %>
+				<p>No looks created yet, <%= link_to 'create one', new_user_look_url(user) %>
+			<% end %>
+  </div> 
+</div>

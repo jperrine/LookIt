@@ -80,11 +80,11 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.destroy
         flash[:notice] = "#{@page.title} was successfully deleted."
-        format.html { redirect_to :action => 'index' }
+        format.html { redirect_to user_look_url(@current_user, :id => params[:look_id]) }
         format.xml { head :ok }
       else
         flash[:notice] = "There was an error trying to delete #{@page.title}, please try again."
-        format.html { redirect_to :action => 'index' }
+        format.html { redirect_to user_look_page_url(@current_user, @page.look, @page) }
         format.xml { head :ok }
       end
     end
