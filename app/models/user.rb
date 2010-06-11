@@ -8,11 +8,12 @@ class User < ActiveRecord::Base
         :thumb => "125x110#"
     },
     :storage => :s3,
-    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+    :s3_credentials => {
+      :access_key_id => ENV['S3_KEY'],
+      :secret_access_key => ENV['S3_SECRET']
+    },
+    :bucket => ENV['S3_BUCKET'],
     :path => ':class/:id/:style/:filename',
-    #file system storage
-    #:url => "/assets/:class/:id/:style/:filename",
-    #:path => "/public/assets/:class/:id/:style/:filename",
     :default_url => '/images/user_avatar.png',
     :default_path => '/public/images/user_avatar.png'
     
