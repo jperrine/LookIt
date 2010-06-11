@@ -1,15 +1,15 @@
 <br />
-<%= f.label :password, "Password: " %><br><%= f.password_field :password %><br>
+<%= f.label :password, "Password: " %><br /><%= f.password_field :password %><br />
 <br />
-<%= f.label :password_confirmation, "Confirm Password: " %><br><%= f.password_field :password_confirmation %><br>
+<%= f.label :password_confirmation, "Confirm Password: " %><br /><%= f.password_field :password_confirmation %><br />
 <br />
-<%= f.label :display_name, "Display Name: "%><br><%= f.text_field :display_name %> <br>
+<%= f.label :display_name, "Display Name: "%><br /><%= f.text_field :display_name %> <br />
 <br />
-<%= f.label :email, "Email Address: " %><br><%= f.text_field :email %><br>
+<%= f.label :email, "Email Address: " %><br /><%= f.text_field :email %><br />
 <br />
-<%= f.label :birthdate, "Birth Date: " %><br><%= f.date_select :birthdate, :start_year => 1940, :end_year => Time.now.year, :prompt => {:day => 'Choose day', :month => 'Choose month', :year => 'Choose year'} %><br>
+<%= f.label :birthdate, "Birth Date: " %><br /><%= f.date_select :birthdate, :start_year => 1940, :end_year => Time.now.year, :prompt => {:day => 'Choose day', :month => 'Choose month', :year => 'Choose year'} %><br />
 <br />
-<%= f.label :photo, "Picture" %><br><%= f.file_field :photo %><br>
+<%= f.label :photo, "Picture" %><br /><%= f.file_field :photo %><br />
 <br />
-<%= f.label :bio, "Bio" %><br><%= f.text_area :bio %>
+<%= f.label :bio, "Bio" %><br /><%= f.text_area :bio %>
 <br />

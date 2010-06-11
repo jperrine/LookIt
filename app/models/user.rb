@@ -7,17 +7,16 @@ class User < ActiveRecord::Base
     :styles => {
         :thumb => "125x110#"
     },
+    #s3 won't work on dev
     :storage => :s3,
     :s3_credentials => {
-      :access_key_id => ENV['S3_KEY'],
-      :secret_access_key => ENV['S3_SECRET']
+      :access_key_id => ENV['S3_KEY'] ? ENV['S3_KEY'] : "blah",
+      :secret_access_key => ENV['S3_SECRET'] ? ENV['S3_SECRET'] : "blahtwo"
     },
-    :bucket => ENV['S3_BUCKET'],
+    :bucket => ENV['S3_BUCKET'] ? ENV['S3_BUCKET'] : "blahbucket",
     :path => ':class/:id/:style/:filename',
     :default_url => '/images/user_avatar.png',
     :default_path => '/public/images/user_avatar.png'
-    
-  #validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
   
   validates_presence_of :display_name, :email, :username
   validates_uniqueness_of :username, :email
