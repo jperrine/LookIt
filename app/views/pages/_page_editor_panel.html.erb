@@ -1,0 +1,5 @@
+<div id="page_editor_controls">
+	<%= link_to "Edit Page", edit_user_look_page_url(page.look.user, page.look, page) %> | 
+	<%= link_to "Add Page", new_user_look_page_url(page.look.user, page.look) %> | 
+	<%= link_to "Delete Page", user_look_page_url(page.look.user, page.look), :method => 'delete', :confirm => 'Are you sure you want to delete this page?' %>
+</div>

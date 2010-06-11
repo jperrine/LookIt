@@ -1,9 +1,10 @@
 <%= render :partial => 'look_summary', :locals => {:look => @look} %>
 <div id= "canvas"> 
-	<%= render :partial => 'look_page_select', :locals => { :look => @look } %>
+	<%= render :partial => 'private_look_page_select', :locals => { :look => @look } %>
   <div id= "TextArea">
 		<div id="content">
 			<% unless @look.pages.empty? %>
+				<%= render :partial => 'pages/page_editor_panel', :locals => { :page => @look.pages.first }%>
 				<%= @look.pages.first.content %>
 			<% else %>
 				<p>No pages added yet, <%= link_to 'add one', new_user_look_page_url(@look.user, @look) %>

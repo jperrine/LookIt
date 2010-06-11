@@ -1,0 +1,3 @@
+<div id= "PageSelector"> 
+	<%= select( 'page', 'id', look.pages.map { |page| [page.title, url_for([look.user, look, page])]}) %> 
+</div>
