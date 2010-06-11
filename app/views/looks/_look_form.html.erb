@@ -7,7 +7,7 @@
 
 <div id="canvas">
 	<div id="TextArea">
-		<% form_for([@current_user, @look])  do |f| %>
+		<% form_for([@current_user, @look], :html => { :multipart => true })  do |f| %>
 			<%= f.error_messages %>
 			<%= f.label :title, "Look Title" %> <%= f.text_field :title %>
 			<br />
