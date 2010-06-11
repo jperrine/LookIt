@@ -38,6 +38,12 @@ class User < ActiveRecord::Base
     user
   end
   
+  #accepts user's hashed password, the entered password and the salt, hashes the entered password and returns a boolean on if they match
+  def self.match_password(users_password, entered_password, salt)
+    test_pass = User.encrypted_password(entered_password, salt)
+    users_password == test_pass
+  end
+  
   #controls what can be updated through the settings page
   #accepts a user object and 
   def self.update_settings(current, user_obj)

@@ -15,10 +15,10 @@ ActionController::Routing::Routes.draw do |map|
   map.working_looks '/users/:user_id/working-looks.:format', :controller => 'users', :action => 'working_looks'
   
   map.connect '/user/check_username', :controller => 'users', :action => 'check_username'
+  map.connect '/user/:id/edit/password', :controller => 'users', :action => 'change_password'
 
   map.connect '/public-looks/view/:look_id/pages/:id.:format', :controller => 'published_looks', :action => 'view'
   map.connect '/public-looks/:action/:id.:format', :controller => 'published_looks'
   
   map.root :controller => 'users', :action => 'new'
-  
 end

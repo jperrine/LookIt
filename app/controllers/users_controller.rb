@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_login, :only => [:edit, :update, :destroy, :published_looks, :working_looks]
-  before_filter :check_current_user_permission, :only => [:edit, :update, :destroy, :published_looks, :working_looks]
+  before_filter :require_login, :only => [:edit, :update, :destroy, :published_looks, :working_looks, :change_password]
+  before_filter :check_current_user_permission, :only => [:edit, :update, :destroy, :published_looks, :working_looks, :change_password]
 	
   # GET /user/index(.:format)
   def index
@@ -134,7 +134,7 @@ class UsersController < ApplicationController
     end
   end
   
-  
+  # GET /user/:id/published-looks.:format
   def published_looks
     @looks = @current_user.looks.select {|look| look.published == true }
     @user = @current_user    
@@ -144,13 +144,36 @@ class UsersController < ApplicationController
     end
   end
   
-  
+  # GET /user/:id/working-looks.:format
   def working_looks
     @looks = @current_user.looks.select {|look| look.published == false }
     @user = @current_user
     respond_to do |format|
       format.html
       format.xml { render :xml => @looks }
+    end
+  end
+  
+  # GET || POST /user/:id/edit/password
+  def change_password
+    if request.post?
+      #debugger
+      @user = @current_user
+      unless User.match_password(@user.hashed_password, params['old_password'], @user.salt)
+        flash[:notice] = 'Incorrect old password.'
+      else
+        @user.password = params['new_password']
+        @user.password_confirmation = params['new_password_confirmation']
+        if @user.save
+          flash[:notice] = 'Password successfully updated.'
+          redirect_to @user
+        else
+          flash[:notice] = 'Password confirmation did not match.'
+          render :action => 'change_password'
+        end
+      end
+    else
+      @user = @current_user
     end
   end
 end
