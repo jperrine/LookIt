@@ -9,12 +9,12 @@
 
 	<% form_for(@user, :html => { :multipart => true }) do |f| %>
 	  <%= f.error_messages %><br />
-		<%= f.text_field :email, :watermark => 'E-Mail' %><br />
-		<%= f.text_field :display_name, :watermark => 'Your Name' %><br />
+		<%= f.text_field :email %><br />
+		<%= f.text_field :display_name %><br />
 		<span id="username_error" class="error"></span>
-		<%= f.text_field :username, :watermark => 'Username' %><br />
-	  <%= f.password_field :password, :watermark => 'Password' %><br />
-	  <%= f.password_field :password_confirmation, :watermark => 'Confirm' %><br />
+		<%= f.text_field :username %><br />
+	  <%= f.password_field :password %><br />
+	  <%= f.password_field :password_confirmation %><br />
 		<%= submit_tag("Create My Account")%><br />
 	<% end %>
 </div>

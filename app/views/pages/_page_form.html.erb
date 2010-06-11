@@ -17,7 +17,7 @@
 </div>
 
 <div id="canvas">
-	<%= render :partial => 'looks/look_page_select', :locals => { :look => @look} %>
+	<%= render :partial => 'looks/private_look_page_select', :locals => { :look => @look} %>
 	<div id="TextArea">
 		<% form_for([@current_user, @look, @page])  do |f| %>
 			<%= f.error_messages %>

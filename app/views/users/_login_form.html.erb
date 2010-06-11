@@ -1,5 +1,5 @@
 <% form_tag(login_url) do  %>
-	<li><%= text_field_tag(:username, '', :size => 25, :watermark => 'Username') %></li>
-  <li><%= password_field_tag(:password, '', :size => 25, :watermark => 'Password') %></li>
+	<li><%= text_field_tag(:username, '', :size => 25) %></li>
+  <li><%= password_field_tag(:password, '', :size => 25) %></li>
 	<li><%= submit_tag("Login")%></li>
 <% end %>

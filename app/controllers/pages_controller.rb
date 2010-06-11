@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   # GET /users/:user_id/looks/:look_id/pages(.:format)
   def index
     @look = Look.find(params[:look_id])
+    redirect_to [@current_user, @look, @look.pages.first]
   end
   
   # GET /users/:user_id/looks/:look_id/pages/new(.:format)

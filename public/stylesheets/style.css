@@ -208,15 +208,6 @@ div#canvas {
 	padding-top: 20px;
 }
 
-#PageSelector select {
-	width: 492px;
-	height: 40px;
-	font: bold 1em arial;
-	color: #424242;
-	margin-top: 2em;
-
-}
-
 #TextArea {
 	width: 590px;
 	height:  auto;
@@ -309,4 +300,53 @@ a#NextPage:hover {
 
 #flash {
 	
+}
+
+
+/* Look Page Drop Down Menu */
+
+#PageSelector {
+	height: 40px;
+	font: bold 1em arial;
+	color: #424242;
+	text-align: left;
+}
+
+dl.pageSelect {
+	width: 300px;
+	margin: 0 auto;
+}
+.pageSelect dd, .pageSelect dt, .pageSelect ul { 
+	margin: 0; 
+	padding: 0;
+}
+.pageSelect dd {
+	position: relative;
+}
+
+.pageSelect dd ul li a:hover {
+	background-color: #d3d3d3;
+}
+
+.pageSelect dt span {
+	display: block;
+	padding-right: 20px;
+	cursor: pointer;
+	background: #e4dfcb url(/images/arrow.png) no-repeat scroll right center;
+}
+
+.pageSelect dd ul { 
+	background-color: #e4dfcb;
+	list-style: none;
+	display: none;
+	padding: 5px 0;
+	position: absolute;
+	left: 0px;
+	top: 2px;
+	min-width: 170px;
+}
+
+.pageSelect dd ul li a {
+	padding: 5px;
+	display: block;
 }

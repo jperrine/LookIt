@@ -1,3 +1,16 @@
+<%= javascript_include_tag "looks" %>
 <div id= "PageSelector"> 
-	<%= select( 'page', 'id', look.pages.map { |page| [page.title, url_for([look.user, look, page])]}) %> 
+	<dl class="pageSelect">
+		<dt>
+			<span class="link">Select Page</span>
+		</dt>
+		<dd>
+			<ul>
+				<% look.pages.each do |page| %>
+					<li><%= link_to h(page.title), user_look_page_url(look.user, look, page) %></li>
+				<% end %>
+				<li><%= link_to "New Page", new_user_look_page_url(look.user, look) %></li>
+			</ul>
+		</dd>
+	</dl>
 </div>
