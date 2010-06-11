@@ -198,6 +198,15 @@ div.LookSnippet {
 	height: 150px;
 }
 
+div.LookSnippet a {
+	text-decoration: none;
+	color: #424242;
+}
+
+div.LookSnippet a:hover {
+	color: #000;
+}
+
 /* The Working Area */
 
 div#canvas {
