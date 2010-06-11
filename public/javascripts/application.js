@@ -1,6 +1,6 @@
 $().ready(function() {
-	//$('#flash').effect("highlight", {}, 3000);
-	//setTimeout(function() {
-	//	$('#flash').fadeOut('fast');
-	//}, 2500);
+	$('#flash').effect("highlight", {}, 3000);
+	setTimeout(function() {
+		$('#flash').fadeOut('fast');
+	}, 2500);
 });
