@@ -5,7 +5,7 @@ class Look < ActiveRecord::Base
 	#paperclip
 	has_attached_file :cover,
     :styles => {
-        :thumb => "125x110"
+        :thumb => "125x110#"
     },
     #s3 won't work on dev
     :storage => :s3,
