@@ -5,4 +5,5 @@
 	<p>By <%= link_to h(look.user.display_name), url_for(:action => 'user', :id => look.user.id)%>
 	<br />
 	<p><%= link_to h(look.content), url_for(:action => 'view', :id => look.id) %></p>
+	<p>Tags: <%=h look.tag_list %></p>
 </div>

@@ -11,7 +11,8 @@
 	  </h5> 
 	  <p> 
 			<%=h look.content %>
-	  </p> 
+	  </p>
+		<p><strong>Tags:</strong> <%=h look.tag_list %></p>
 	</div>
 	<%= link_to "Edit Look", edit_user_look_url(look.user, look) %> | 
 	<%= link_to "Add Page", new_user_look_page_url(look.user, look) %> | 

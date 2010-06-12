@@ -3,4 +3,5 @@
 	<h5><%= link_to h(look.title), user_look_path(look.user, look) %></h5>
 	<br /><br />
 	<p><%= link_to(h(look.content), user_look_path(look.user, look)) %></p>
+	<p><strong>Tags:</strong> <%=h look.tag_list %></p>
 </div>
