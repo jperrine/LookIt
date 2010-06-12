@@ -96,7 +96,7 @@ class LooksController < ApplicationController
       unless @look.save
         flash[:notice] = "Error processing unpublish, please try again."
       end
-      format.html { redirect_to :action => 'index' }
+      format.html { redirect_to user_look_url(@current_user, @look) }
       format.xml { head :ok }
     end
   end
@@ -110,7 +110,7 @@ class LooksController < ApplicationController
       unless @look.save
         flash[:notice] = "Error processing publish, please try again."
       end
-      format.html { redirect_to :action => 'index' }
+      format.html { redirect_to user_look_url(@current_user, @look) }
       format.xml { head :ok }
     end
   end
