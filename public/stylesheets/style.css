@@ -50,6 +50,10 @@ body {
 	font-family: arial;
 }
 
+form {
+	display: inline;
+}
+
 a, a:visited, a:active {
 	color: #424242;
 	text-decoration: none;

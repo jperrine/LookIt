@@ -35,6 +35,7 @@
           <li><%= link_to "Settings", edit_user_url(:id => session[:user_id]) %></li>
          	<li><%= link_to "Log Out", logout_url %></li>
 				<% else %>
+					<li><%= link_to "Browse Looks", :controller => 'published_looks' %></li>
 					<%= render :partial => 'users/login_form' %>			
 				<% end %>
 	    </ul> 
