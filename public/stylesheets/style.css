@@ -122,7 +122,6 @@ a:hover {
 {
 	clear: right;
 	padding: 51px 20px 20px;
-	font-family: arial;
 	width: 600px;
 	margin-bottom: 11px;
 }
@@ -283,7 +282,6 @@ div#register p {
 a#LastPage {
 	float: left;
 	margin-left: 10%;
-	font-family: arial;
 	color: #424242;
 	text-decoration: none;
 	text-shadow: #fffeff 0 1px 0;
@@ -296,7 +294,6 @@ a#LastPage:hover {
 a#NextPage {
 	float: right;
 	margin-right: 10%;
-	font-family: arial;
 	color: #424242;
 	text-decoration: none;
 	text-shadow: #fffeff 0 1px 0;
@@ -309,7 +306,15 @@ a#NextPage:hover {
 /* Notifications */
 
 #flash {
-	
+	width: 200px;
+	height: 50px;
+	padding: 25px;
+	margin: 10px;
+	position: absolute;
+	top: 25px;
+	right: -50px;
+	background-color: yellow;
+	border: 1px solid #000;
 }
 
 

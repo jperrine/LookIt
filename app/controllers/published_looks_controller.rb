@@ -12,20 +12,29 @@ class PublishedLooksController < ApplicationController
       format.xml { render :xml => @looks }
     end
   end
-  
-  # GET /public-looks/search?query=:query
-  #search all published looks
-  def search
+
+  # GET /public-looks/results?query=:query
+  #search all published looks  
+  def results
     query = params[:query]
-    @look_results = Look.find(:all,
-      :conditions => 
-        ['published = true AND title LIKE ?',
-        "%#{query}%"])
+    unless query
+      flash[:notice] = "You must enter a search term."
+      redirect_to :action => 'search' and return
+    else
+      @look_results = Look.find(:all,
+        :conditions => 
+          ['published = true AND title LIKE ?',
+          "%#{query}%"])
+    end
     
     respond_to do |format|
       format.html
       format.xml { render :xml => @look_results }
     end
+  end
+  
+  # GET /public-looks/search
+  def search
   end
   
   # GET /public-looks/user/:id
