@@ -2,6 +2,8 @@ class Look < ActiveRecord::Base
 	belongs_to :user
 	has_many :pages
 	
+	acts_as_taggable
+	
 	#paperclip
 	has_attached_file :cover,
     :styles => {

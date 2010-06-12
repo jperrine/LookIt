@@ -5,6 +5,7 @@
 	<div id="TextArea">
 		<div id="content">
 			<%= link_to "Change password", url_for(:action => 'change_password', :id => @user.id) %>
+			<br />
 			<% form_for(@user, :html => { :multipart => true }) do |f| %>
   			<%= f.error_messages %>
   			<%= render :partial => 'user_form', :locals => { :f => f }%>
