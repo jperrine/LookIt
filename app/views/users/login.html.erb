@@ -1,6 +1,14 @@
-<h3>Please login using your LookIt account</h3>
-<% form_tag(url_for(:action => 'login'), :method => 'post') do %>
-  Username: <%= text_field_tag("username") %><br />
-  Password: <%= password_field_tag("password") %><br />
-  <%= submit_tag("Login")%>
-<% end %>
+<div id="lookinfo">
+	<h2>Please login using your Lookit account.</h2>
+</div>
+<div id= "canvas">
+	<div id="TextArea">
+		<div id="content">
+			<% form_tag(url_for(:action => 'login'), :method => 'post') do %>
+			  Username: <%= text_field_tag("username") %><br />
+			  Password: <%= password_field_tag("password") %><br />
+			  <%= submit_tag("Login")%>
+			<% end %>
+		</div>
+	</div>
+</div>

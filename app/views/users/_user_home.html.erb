@@ -1,5 +1,3 @@
-<!-- I want the logged in home page to be the same thing as "my looks", at least for now. So we can get rid of that redundant page and just use this one. This can also be the template for "browse looks", or any other time we want to display a list of looks (like when we implement a "search looks" feature, and we want to display the results in a list of looks).  -->
-
 <div id="container">
 	<div id="lookcover">
 		<%= image_tag(user.photo.url(:thumb)) %>
@@ -16,7 +14,6 @@
 </div>
 
 <div id="editpreview">
-<!-- These will become tabs that let people view looks that are working (i.e. unpublished) and published -->
 	<ul>
 		<li><%= link_to 'All', user %></li>
 		<li><%= link_to 'Working', working_looks_url(user) %></li>
@@ -26,7 +23,6 @@
 <div id= "canvas"> 
   <div id= "TextArea">
 		<div id="content">
-<!-- This is the part where things get a little tricky. I want the looks to display this way, so the user sees cover art, title, and description of the look. They can click it to edit it. -->
 			<h4>Viewing all of your <%= filter -%> looks.</h4>
 			<% unless looks.empty? %>
 			  <%= render :partial => 'looks/my_look_list_display', :collection => looks, :as => :look %>
