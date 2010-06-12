@@ -50,6 +50,14 @@ body {
 	font-family: arial;
 }
 
+a, a:visited, a:active {
+	color: #424242;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
 /* Top Navigation Bar */
 
 #logo
@@ -97,13 +105,6 @@ body {
 {
 	display: inline;
 	padding: 5px 10px;
-	color: #424242;
-	text-decoration: none;
-}
-
-#navigation li a:hover 
-{
-	text-decoration: underline;
 }
 
 /* Look Info Area */
@@ -333,29 +334,35 @@ dl.pageSelect {
 	position: relative;
 }
 
-.pageSelect dd ul li a:hover {
-	background-color: #d3d3d3;
-}
-
 .pageSelect dt span {
 	display: block;
 	padding-right: 20px;
+	padding-left: 5px;
 	cursor: pointer;
-	background: #e4dfcb url(/images/arrow.png) no-repeat scroll right center;
+	background: #fff url(/images/arrow.png) no-repeat scroll right center;
+	border: 1px solid #929292;
 }
 
 .pageSelect dd ul { 
-	background-color: #e4dfcb;
+	background-color: #fff;
+	border: 1px solid #929292;
 	list-style: none;
 	display: none;
 	padding: 5px 0;
 	position: absolute;
 	left: 0px;
 	top: 2px;
-	min-width: 170px;
+}
+
+.pageSelect dd ul li {
+	width: 298px;
 }
 
 .pageSelect dd ul li a {
 	padding: 5px;
 	display: block;
+}
+
+.pageSelect dd ul li a:hover {
+	background-color: #d3d3d3;
 }

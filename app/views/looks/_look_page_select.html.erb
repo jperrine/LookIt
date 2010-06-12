@@ -1,0 +1,15 @@
+<%= javascript_include_tag "looks" %>
+<div id= "PageSelector"> 
+	<dl class="pageSelect">
+		<dt>
+			<span class="link">Select Page</span>
+		</dt>
+		<dd>
+			<ul>
+				<% look.pages.each do |page| %>
+					<li><%= link_to h(page.title), url_for(:action => 'view', :look_id => page.look.id, :id => page.id) %></li>
+				<% end %>
+			</ul>
+		</dd>
+	</dl>
+</div>
