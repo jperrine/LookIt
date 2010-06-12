@@ -24,10 +24,11 @@
   <div id= "TextArea">
 		<div id="content">
 			<h4>Viewing all of your <%= filter -%> looks.</h4>
+			<br />
 			<% unless looks.empty? %>
 			  <%= render :partial => 'looks/my_look_list_display', :collection => looks, :as => :look %>
 			<% else %>
-				<p>No looks created yet, <%= link_to 'create one', new_user_look_url(user) %>
+				<p>No <%= filter -%> looks yet, <%= link_to 'create one', new_user_look_url(user) %>.</p>
 			<% end %>
   </div> 
 </div>

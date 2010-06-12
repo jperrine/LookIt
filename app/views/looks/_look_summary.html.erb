@@ -12,15 +12,18 @@
 	  <p> 
 			<%=h look.content %>
 	  </p>
+		<br />
 		<p><strong>Tags:</strong> <%=h look.tag_list %></p>
 	</div>
-	<%= link_to "Edit Look", edit_user_look_url(look.user, look) %> | 
-	<%= link_to "Add Page", new_user_look_page_url(look.user, look) %> | 
-	<% if look.published %>
-		<%= link_to 'Unpublish Look', unpublish_url(look.user, look) %> | 
-	<% else %>
-		<%= link_to 'Publish Look', publish_url(look.user, look) %> | 
-	<% end %>
-	<%= link_to "Delete Look", user_look_url(look.user, look), :method => 'delete', :confirm => 'Are you sure you want to delete this look?' %>
-	<br />
+	<div id="lookEditor">
+		<%= link_to "Edit Look", edit_user_look_url(look.user, look) %> | 
+		<%= link_to "Add Page", new_user_look_page_url(look.user, look) %> | 
+		<% if look.published %>
+			<%= link_to 'Unpublish Look', unpublish_url(look.user, look) %> | 
+		<% else %>
+			<%= link_to 'Publish Look', publish_url(look.user, look) %> | 
+		<% end %>
+		<%= link_to "Delete Look", user_look_url(look.user, look), :method => 'delete', :confirm => 'Are you sure you want to delete this look?' %>
+	</div>
+	<br /><br />
 </div>
