@@ -2,7 +2,12 @@
 <div id="canvas">
 	<div id="TextArea">
 		<div id="content">
-
+			<% form_tag(url_for(:action => 'results'), :method => 'get') do %>
+				<p>Enter your search terms, you will be search by look title, page title (not quite yet), and user.</p>
+				<%= label_tag :query %>: <%= text_field_tag :query %>
+				<br /><br />
+				<%= submit_tag("Search") %>
+			<% end %>
 		</div>
 	</div>
 </div>

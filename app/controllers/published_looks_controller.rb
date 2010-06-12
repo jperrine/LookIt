@@ -22,14 +22,21 @@ class PublishedLooksController < ApplicationController
       redirect_to :action => 'search' and return
     else
       @look_results = Look.find(:all,
+        :order => 'id DESC',
         :conditions => 
-          ['published = true AND title LIKE ?',
-          "%#{query}%"])
+          ['published = ? AND title LIKE ?',
+            true, "%#{query}%"])
+      # TODO: implement search for pages, while look is published
+      @user_results = User.find(:all,
+        :order => 'id DESC',
+        :conditions => 
+          ['username LIKE ? OR display_name LIKE ? OR bio LIKE ?',
+            "%#{query}%", "%#{query}%", "%#{query}%"])
     end
     
     respond_to do |format|
       format.html
-      format.xml { render :xml => @look_results }
+      format.xml { render :xml => [@look_results, @page_results, @user_results] }
     end
   end
   
