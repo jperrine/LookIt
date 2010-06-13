@@ -73,9 +73,17 @@ class LooksController < ApplicationController
   # DELETE /user/:user_id/look/:id(.:format)
   def destroy
     @look = Look.find(params[:id])
-    	
+    destroyed = @look.destroy
+    
+    if destroyed
+      pages = Page.find(:all, :look_id => params[:id])
+      pages.each do |page|
+        page.destroy
+      end
+    end
+    
     respond_to do |format|
-      if @look.destroy
+      if destroyed
         flash[:notice] = "#{@look.title} was successfully deleted."
         format.html { redirect_to :action => 'index' }
         format.xml { head :ok }

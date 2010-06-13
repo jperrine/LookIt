@@ -128,3 +128,120 @@
   [4;35;1mUser Load (0.6ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'email@email.com' AND "users".id <> 1) LIMIT 1[0m
   [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" IS NULL AND "users".id <> 1) LIMIT 1[0m
   [4;35;1mUser Load (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'email@email.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100423192227)
+Migrating to CreateSessions (20100423193921)
+Migrating to CreateLooks (20100512045007)
+Migrating to AddPublishedToLook (20100512053348)
+Migrating to AddActiveToUser (20100512053405)
+Migrating to AddPostedToLook (20100527234101)
+Migrating to AddArchivedToLooks (20100528200613)
+Migrating to AddBioToUsers (20100603012527)
+Migrating to AddPictureToPeople (20100603013105)
+Migrating to AdjustStringLengthToLooks (20100605233452)
+Migrating to AddIndexesToUsersAndLooks (20100605233542)
+Migrating to AddPictureToUserForPaperclip (20100606040354)
+Migrating to CreatePages (20100607022726)
+Migrating to AdjustColumnLengthInLooks (20100607023221)
+Migrating to AdjustColumnLengthInLooksAgain (20100607023448)
+Migrating to AddArchivedToPages (20100607031513)
+Migrating to ChangePageContentToTeext (20100608014842)
+Migrating to RemoveIndexesForNames (20100608025917)
+Migrating to AddCoverToLooks (20100608181556)
+Migrating to RemoveArchivedFlagsFromEverything (20100609145042)
+Migrating to AddIndexesForLoginAndSearching (20100609173310)
+Migrating to ActsAsTaggableMigration (20100612035435)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("looks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_looks_on_title')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("taggings")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_taggings_on_tag_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_username')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100423192227)
+Migrating to CreateSessions (20100423193921)
+Migrating to CreateLooks (20100512045007)
+Migrating to AddPublishedToLook (20100512053348)
+Migrating to AddActiveToUser (20100512053405)
+Migrating to AddPostedToLook (20100527234101)
+Migrating to AddArchivedToLooks (20100528200613)
+Migrating to AddBioToUsers (20100603012527)
+Migrating to AddPictureToPeople (20100603013105)
+Migrating to AdjustStringLengthToLooks (20100605233452)
+Migrating to AddIndexesToUsersAndLooks (20100605233542)
+Migrating to AddPictureToUserForPaperclip (20100606040354)
+Migrating to CreatePages (20100607022726)
+Migrating to AdjustColumnLengthInLooks (20100607023221)
+Migrating to AdjustColumnLengthInLooksAgain (20100607023448)
+Migrating to AddArchivedToPages (20100607031513)
+Migrating to ChangePageContentToTeext (20100608014842)
+Migrating to RemoveIndexesForNames (20100608025917)
+Migrating to AddCoverToLooks (20100608181556)
+Migrating to RemoveArchivedFlagsFromEverything (20100609145042)
+Migrating to AddIndexesForLoginAndSearching (20100609173310)
+Migrating to ActsAsTaggableMigration (20100612035435)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("looks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_looks_on_title')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("taggings")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_taggings_on_tag_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_username')[0m
+  [4;36;1mLook Load (0.5ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;35;1mLook Load (0.3ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 2) [0m
+  [4;36;1mLook Load (0.4ms)[0m   [0;1mSELECT * FROM "looks" WHERE ("looks"."id" = 1) [0m
+  [4;35;1mLook Load (0.6ms)[0m   [0mSELECT * FROM "looks" WHERE ("looks"."id" = 2) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'jperrine' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'email@email.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'jperrine' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'email@email.com' AND "users".id <> 1) LIMIT 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" IS NULL AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'email@email.com' AND "users".id <> 1) LIMIT 1[0m

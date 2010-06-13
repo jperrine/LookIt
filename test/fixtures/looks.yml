@@ -1,5 +1,5 @@
 valid_look:
-  #id:         1
+  id:         1
   title:      My Look
   content:    <p>This is a cool look</p>
   published:  false
@@ -7,7 +7,7 @@ valid_look:
   user_id:    1
   
 invalid_look:
-  #id:         2
+  id:         2
   title:      
   content:    blah
   published:  true
