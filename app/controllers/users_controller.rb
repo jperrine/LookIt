@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_login, :only => [:edit, :update, :destroy, :published_looks, :working_looks, :change_password]
-  before_filter :check_current_user_permission, :only => [:edit, :update, :destroy, :published_looks, :working_looks, :change_password]
+  before_filter :require_login, :except => [:index, :new, :login, :check_username, :logout, :create]
+	before_filter :check_current_user_permission, :except => [:index, :new, :login, :check_username, :logout, :create]
 	
   # GET /user/index(.:format)
   def index
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       if @user.save
         flash[:notice] = "#{@user.display_name}, your account was successfully created."
         session[:user_id] = @user.id
-        format.html { redirect_to user_looks_url(:user_id => @user.id) }
+        format.html { redirect_to @user }
         format.xml { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => 'new' }
@@ -89,7 +89,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /login
+  # GET /login && POST /login
   def login
     if request.post?
       user = User.authenticate(params[:username], params[:password])
