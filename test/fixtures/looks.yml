@@ -3,7 +3,7 @@ valid_look:
   title:      My Look
   content:    <p>This is a cool look</p>
   published:  false
-  posted:     Time.now
+  posted:     <%= Time.now %>
   user_id:    1
   
 invalid_look:

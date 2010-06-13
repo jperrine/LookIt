@@ -1,7 +1,8 @@
 log/development.log
+log/test.log
+log/production.sqlite3
 db/development.sqlite3
-log/*
-*.sqlite3
+db/test.sqlite3
+db/production.sqlite3
 .logworm
-#config/s3.yml
 public/assets/*

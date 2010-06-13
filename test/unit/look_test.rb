@@ -15,13 +15,29 @@ class LookTest < ActiveSupport::TestCase
     assert look.errors.invalid?(:content)
     assert look.errors.invalid?(:posted)
     assert look.errors.invalid?(:user_id)
-    assert look.errors.invalid?(:published)
   end
   
   test "valid look attributes" do
     assert @valid_look.valid?
     assert @valid_look.save
     @valid_look.title = nil
-    assert !@valid_user.valid?
+    assert !@valid_look.valid?
+  end
+  
+  test "valid look has_many pages" do
+    page = Page.new
+    page.title = "title"
+    page.content = "content"
+    page.posted = Time.now
+    page.look = @valid_look
+    assert page.save
+    look_has_page = false
+    @valid_look.pages.each do |p|
+      if p == page
+        look_has_page = true
+      end
+    end
+    assert look_has_page
+    assert page.look == @valid_look
   end
 end
