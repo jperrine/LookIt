@@ -1,11 +1,13 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  fixtures :users
+  fixtures :users, :looks, :pages
   
   def setup
     @valid_user = users(:valid_user)
     @invalid_user = users(:invalid_user)
+    @look = looks(:valid_look)
+    @page = pages(:valid_page)
   end
   
   test "invalid user attributes" do
@@ -53,5 +55,12 @@ class UserTest < ActiveSupport::TestCase
     assert_equal user.display_name, @valid_user.display_name
     assert_equal user.birthdate, @valid_user.birthdate
     assert_equal user.bio, @valid_user.bio
+  end
+  
+  test "test user has many looks, which has many pages" do
+    assert_equal @valid_user.looks.first, @look
+    assert_equal @valid_user.looks.first.pages.first, @page
+    assert !@valid_user.looks.empty?
+    assert !@valid_user.looks.first.pages.empty?
   end
 end
