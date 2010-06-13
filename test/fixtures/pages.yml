@@ -2,12 +2,12 @@ valid_page:
   id:         1
   title:      My Look
   content:    <p>This is a cool look</p>
-  posted:     Time.now
+  posted:     <%= Time.now %>
   look_id:    1
   
 invalid_page:
   id:         2
   title:      
-  content:    blah
+  content:    
   posted:     
   look_id:    
