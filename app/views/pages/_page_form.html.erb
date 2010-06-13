@@ -19,12 +19,13 @@
 <div id="canvas">
 	<%= render :partial => 'looks/private_look_page_select', :locals => { :look => @look} %>
 	<div id="TextArea">
+		<%= render :partial => 'users/form_errors', :locals => {:req => false} %>
 		<% form_for([@current_user, @look, @page])  do |f| %>
 			<%= f.error_messages %>
-			<%= f.label :title, "Page Title" %> <%= f.text_field :title %>
+			<%= f.label :title, "Page Title" %> <%= f.text_field :title, :class => 'required' %>
 			<br />
 			<div id="editable">
-				<%= f.text_area :content, {:class => 'content '} %>
+				<%= f.text_area :content, {:class => 'content required'} %>
 			</div>
 			<br />
 			<%= submit_tag("Save") %>

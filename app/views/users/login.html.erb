@@ -4,9 +4,10 @@
 <div id= "canvas">
 	<div id="TextArea">
 		<div id="content">
+			<%= render :partial => 'users/form_errors', :locals => {:req => false} %>
 			<% form_tag(url_for(:action => 'login'), :method => 'post') do %>
-			  Username: <%= text_field_tag("username") %><br />
-			  Password: <%= password_field_tag("password") %><br />
+			  Username: <%= text_field_tag("username", '', :class => 'required') %><br />
+			  Password: <%= password_field_tag("password", '', :class => 'required') %><br />
 			  <%= submit_tag("Login")%>
 			<% end %>
 		</div>

@@ -1,7 +1,7 @@
 <br />
-<%= f.label :display_name, "Display Name: "%><br /><%= f.text_field :display_name %> <br />
+<%= f.label :display_name, "* Display Name: "%><br /><%= f.text_field :display_name, :class => 'required' %> <br />
 <br />
-<%= f.label :email, "Email Address: " %><br /><%= f.text_field :email %><br />
+<%= f.label :email, "* Email Address: " %><br /><%= f.text_field :email, :class => 'required' %><br />
 <br />
 <%= f.label :birthdate, "Birth Date: " %><br /><%= f.date_select :birthdate, :start_year => 1940, :end_year => Time.now.year, :prompt => {:day => 'Choose day', :month => 'Choose month', :year => 'Choose year'} %><br />
 <br />

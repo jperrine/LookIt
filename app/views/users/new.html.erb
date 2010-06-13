@@ -6,7 +6,7 @@
 
 <div id="register"> 
   <p>Sign-up for an account. Fair warning - this is a work in progress. We ain't promising much.</p> 
-
+	<%= render :partial => 'form_errors', :locals => {:req => false} %>
 	<% form_for(@user, :html => { :multipart => true }) do |f| %>
 	  <%= f.error_messages %><br />
 		<%= f.text_field :email %><br />
