@@ -1,6 +1,16 @@
 <div id="container">
-	<h3>Viewing published looks by <%= @user.display_name %></h3>
-	<br />
+	<div id="lookcover">
+		<%= image_tag(@user.photo.url(:thumb)) %>
+	</div> 
+	<div id="lookinfo"> 
+		<h2> 
+			<%=h @user.display_name %>'s Published Looks
+		</h2>  
+	  <div id="userbio"> 
+			<br />
+			<p><%=h @user.bio %></p> 
+	  </div> 
+	</div>
 </div>
 <div id="canvas">
 	<div id="TextArea">
