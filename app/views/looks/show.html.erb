@@ -15,6 +15,7 @@
 			<% end %>
 		</div>
   </div> 
-	<a id="LastPage" href="#">< Last Page</a> 
-	<a id="NextPage" href="#">Next Page ></a> 
+	<% unless @look.pages.empty? %>
+		<%= render :partial => 'pages/page_change', :locals => {:page => @look.pages.first} %>
+	<% end %>
 </div> 

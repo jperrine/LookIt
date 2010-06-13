@@ -9,7 +9,6 @@
 			<br /><br />
 			<%= @page.content %>
 		</div>
-  </div> 
-	<a id="LastPage" href="#">< Last Page</a> 
-	<a id="NextPage" href="#">Next Page ></a> 
+  </div>
+	<%= render :partial => 'page_change', :locals => {:page => @page} %>
 </div>

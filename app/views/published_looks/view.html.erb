@@ -11,7 +11,8 @@
 				<p>No content has been created for this look.</p>
 			<% end %>
 		</div>
-  </div> 
-	<a id="LastPage" href="#">< Last Page</a> 
-	<a id="NextPage" href="#">Next Page ></a> 
+  </div>
+	<% unless @page.nil? %>
+		<%= render :partial => 'pages/public_page_change', :locals => {:page => @page} %>
+	<% end %>
 </div> 
