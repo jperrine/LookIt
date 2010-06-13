@@ -40,4 +40,18 @@ class UserTest < ActiveSupport::TestCase
     user = User.authenticate(@valid_user.username, '')
     assert user != @valid_user
   end
+  
+  test "test user.match_password" do
+    assert User.match_password(@valid_user.hashed_password, 'password', @valid_user.salt)
+    assert !User.match_password(@valid_user.hashed_password, '', @valid_user.salt)
+  end
+  
+  test "test user update_settings" do
+    user = User.new
+    User.update_settings(@valid_user, user)
+    assert_equal user.email, @valid_user.email
+    assert_equal user.display_name, @valid_user.display_name
+    assert_equal user.birthdate, @valid_user.birthdate
+    assert_equal user.bio, @valid_user.bio
+  end
 end

@@ -59,7 +59,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     User.update_settings(@user, User.new(params[:user]))
-    
+    if params[:user][:photo]
+      @user.photo = params[:user][:photo]
+    end
     respond_to do |format|
       if @user.save
         flash[:notice] = "#{@user.display_name}, your account was successfully updated."

@@ -35,4 +35,21 @@ class PageTest < ActiveSupport::TestCase
     end
     assert look_has_page
   end
+  
+  test "valid page length constaints" do 
+    assert @valid_page.valid?
+    title = '1'
+    content = '1'
+    10000.times do content += '1' end
+    255.times do title += '1' end
+    @valid_page.title = title
+    @valid_page.content = content
+    assert !@valid_page.save
+    assert @valid_page.errors.invalid?(:title)
+    assert @valid_page.errors.invalid?(:content)
+    @valid_page.title = "new title"
+    @valid_page.content = "new content"
+    assert @valid_page.save
+    assert @valid_page.valid?
+  end
 end

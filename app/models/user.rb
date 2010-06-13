@@ -50,7 +50,6 @@ class User < ActiveRecord::Base
     current.display_name = user_obj.display_name
     current.email = user_obj.email
     current.birthdate = user_obj.birthdate
-    current.photo = user_obj.photo
     current.bio = user_obj.bio
   end
     
