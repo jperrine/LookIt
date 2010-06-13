@@ -19,4 +19,7 @@ $().ready(function() {
         },
         onkeyup: false
     });
+	$('input.watermarked').each(function() {
+	  $(this).watermark('watermark', $(this).attr('title'));
+	});
 });
