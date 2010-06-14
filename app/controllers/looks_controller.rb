@@ -29,7 +29,7 @@ class LooksController < ApplicationController
   # POST /user/:user_id/look(.:format)
   def create
   	@look = @current_user.looks.build(params[:look])
-    
+    @look.published = false
     @look.posted = Time.now
     
     respond_to do |format|
@@ -76,7 +76,7 @@ class LooksController < ApplicationController
     destroyed = @look.destroy
     
     if destroyed
-      pages = Page.find(:all, :look_id => params[:id])
+      pages = Page.find(:all, :conditions => ["look_id = ?", params[:id]])
       pages.each do |page|
         page.destroy
       end
@@ -85,11 +85,11 @@ class LooksController < ApplicationController
     respond_to do |format|
       if destroyed
         flash[:notice] = "#{@look.title} was successfully deleted."
-        format.html { redirect_to :action => 'index' }
+        format.html { redirect_to @current_user }
         format.xml { head :ok }
       else
         flash[:notice] = "There was an error trying to delete #{@look.title}, please try again."
-        format.html { redirect_to :action => 'index' }
+        format.html { redirect_to @current_user }
         format.xml { head :ok }
       end
     end
