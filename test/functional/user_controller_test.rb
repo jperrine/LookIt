@@ -86,4 +86,9 @@ class UsersControllerTest < ActionController::TestCase
     assert_nil session[:user_id]
     assert_redirected_to :login
   end
+  
+  test 'check username' do
+    #get :check_username, {:username => @user.username}, {}
+    #assert_response false
+  end
 end
