@@ -57,4 +57,18 @@ class LooksControllerTest < ActionController::TestCase
     assert !Look.exists?(@look_to_delete.id)
     assert_redirected_to @user
   end
+  
+  test 'unpublish look' do
+    put :unpublish, {:user_id => @user.id, :id => @look.id}, {:user_id => @user.id}
+    assert_redirected_to [@user, @look]
+    @updated_look = Look.find(@look.id)
+    assert !@updated_look.published
+  end
+  
+  test 'publish look' do
+    put :publish, {:user_id => @user.id, :id => @look.id}, {:user_id => @user.id}
+    assert_redirected_to [@user, @look]
+    @updated_look = Look.find(@look.id)
+    assert @updated_look.published
+  end
 end
