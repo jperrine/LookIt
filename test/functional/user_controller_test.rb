@@ -74,7 +74,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_nil session[:user_id]
   end
   
-  test 'new user register' do 
+  test 'create' do 
     post :create, :user => { :username => 'user', :password => 'password', :email => 'mail@mal.com', :display_name => 'new user' }
     @new_user = User.find_by_username('user')
     assert @new_user
@@ -88,7 +88,36 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test 'check username' do
-    #get :check_username, {:username => @user.username}, {}
-    #assert_response false
+    xhr(:get, :check_username, {:username => @user.username}, {})
+    assert_response :ok, false
+  end
+  
+  test 'update user with correct user permissions' do
+    put :update, {:id => @user.id, :user => {:username => 'boo', :email => 'ahh@ahh.com', :display_name => 'arr'}}, {:user_id => @user.id}
+    @updated_user = User.find(@user.id)
+    assert_equal @updated_user.username, @user.username#can't change username
+    assert_equal @updated_user.display_name, 'arr' 
+    assert_redirected_to @updated_user
+  end
+  
+  test 'destroy user' do
+    delete :destroy, {:id => @user.id}, {:user_id => @user.id}
+    assert !User.exists?(@user.id)
+    assert_redirected_to :root
+  end
+  
+  test 'post change password' do
+    post :change_password, {:id => @user.id, :old_password => 'password', :password => 'blahh', :password_confirmation => 'blahh'}, {:user_id => @user.id}
+    assert_redirected_to @user
+  end
+  
+  test 'published looks' do
+    get :published_looks, {:user_id => @user.id}, {:user_id => @user.id}
+    assert_template 'published_looks'
+  end
+  
+  test 'working looks' do
+    get :working_looks, {:user_id => @user.id}, {:user_id => @user.id}
+    assert_template 'working_looks'
   end
 end

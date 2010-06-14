@@ -13,3 +13,11 @@ invalid_look:
   published:  true
   posted:     this is not a time
   user_id:    
+  
+published_look:
+  id:        3
+  title:     This is published
+  content:   <p>This look is awesome</p>
+  published: true
+  posted:    <%= Time.now %>
+  user_id:   1

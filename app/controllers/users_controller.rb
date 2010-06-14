@@ -159,13 +159,12 @@ class UsersController < ApplicationController
   # GET || POST /user/:id/edit/password
   def change_password
     if request.post?
-      #debugger
       @user = @current_user
-      unless User.match_password(@user.hashed_password, params['old_password'], @user.salt)
+      unless User.match_password(@user.hashed_password, params[:old_password], @user.salt)
         flash[:notice] = 'Incorrect old password.'
       else
-        @user.password = params['new_password']
-        @user.password_confirmation = params['new_password_confirmation']
+        @user.password = params[:new_password]
+        @user.password_confirmation = params[:new_password_confirmation]
         if @user.save
           flash[:notice] = 'Password successfully updated.'
           redirect_to @user
