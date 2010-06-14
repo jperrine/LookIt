@@ -11,3 +11,10 @@ invalid_page:
   content:    
   posted:     
   look_id:    
+  
+published_page:
+  id:       3
+  title:    this is an awesome page
+  content:  more awesomeness
+  posted:   <%= Time.now %>
+  look_id:  3

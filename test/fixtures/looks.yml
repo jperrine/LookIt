@@ -10,7 +10,7 @@ invalid_look:
   id:         2
   title:      
   content:    blah
-  published:  true
+  published:  false
   posted:     this is not a time
   user_id:    
   
