@@ -67,6 +67,8 @@ a:hover {
 #logo
 {
 	float: left;
+	margin-left: 3px;
+	margin-top: 2px;
 }
 
 #container
@@ -81,28 +83,29 @@ a:hover {
 {
 	float: left;
 	width: 100%;
-	background: #d5d5d5;
-	height: 2.5em;
-	text-shadow: #eaeaeb 0 1px 0;
+	height: 50px;
 	display: inline-block;
 	margin-bottom: 20px;
-	border-radius: 4px;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-size: 0.85em;
 }
 
 #navigation ul
 {
-	margin: 0;
-	padding-top: 0.4em;
 	float: right;
+	background-color: #d5d5d5;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 25px;
+	padding-top: 8px;
 }
 
 #navigation ul li
 {
-	list-style-type: none;
 	display: inline;
-	line-height: 1.5em;
-	font: 0.4em;
-
 }
 
 #navigation li a
