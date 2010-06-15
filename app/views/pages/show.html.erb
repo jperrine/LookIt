@@ -7,7 +7,7 @@
 			<br />
 			<%=h @page.title %>
 			<br /><br />
-			<%= scrub @page.content %>
+			<%= @page.content %>
 		</div>
   </div>
 	<%= render :partial => 'page_change', :locals => {:page => @page} %>
