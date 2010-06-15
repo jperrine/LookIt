@@ -7,7 +7,7 @@
 		<dd>
 			<ul>
 				<% look.pages.each do |page| %>
-					<li><%= link_to h(page.title), url_for(:action => 'view', :look_id => page.look.id, :id => page.id) %></li>
+					<li><%= link_to h(page.title), url_for(:action => 'view', :look_id => page.look, :id => page) %></li>
 				<% end %>
 			</ul>
 		</dd>
