@@ -61,11 +61,12 @@ class PublishedLooksController < ApplicationController
   
   # GET /public-looks/view/:id OR /public-looks/view/:look_id/pages/:id
   def view
+    #debugger
     id = params[:look_id] || params[:id]
     @look = Look.find(id)
 
     #if look_id is nil, sets page to the first page in the look's collection, otherwise find specific page
-    @page = params[:look_id].nil? ? @look.pages.first : @look.pages.select { |page| page.id.to_s == params[:id] }.first
+    @page = params[:look_id].nil? ? @look.pages.first : @look.pages.select { |page| page.id == params[:id].to_i }.first
     
     if @look.published #only published looks can be viewed here
       respond_to do |format|
