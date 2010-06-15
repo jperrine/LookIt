@@ -73,6 +73,7 @@ class LooksController < ApplicationController
   # DELETE /user/:user_id/look/:id(.:format)
   def destroy
     @look = Look.find(params[:id])
+    title = @look.title
     destroyed = @look.destroy
     
     if destroyed
@@ -84,11 +85,11 @@ class LooksController < ApplicationController
     
     respond_to do |format|
       if destroyed
-        flash[:notice] = "#{@look.title} was successfully deleted."
+        flash[:notice] = "#{title} was successfully deleted."
         format.html { redirect_to @current_user }
         format.xml { head :ok }
       else
-        flash[:notice] = "There was an error trying to delete #{@look.title}, please try again."
+        flash[:notice] = "There was an error trying to delete #{title}, please try again."
         format.html { redirect_to @current_user }
         format.xml { head :ok }
       end
