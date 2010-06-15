@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
   
   validate :password_non_blank
   
+  def to_param
+    "#{id}-#{username.gsub(/[^a-z0-9]+/i, '-')}"
+  end
+  
   def self.authenticate(username, password)
     user = self.find_by_username(username)
     if user

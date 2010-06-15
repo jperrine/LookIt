@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
       unless id.nil?
         @current_user = User.find(id)
       end
+      session[:user_param] = @current_user
     end
     
     def require_login
@@ -27,7 +28,10 @@ class ApplicationController < ActionController::Base
     
     def check_current_user_permission
       param_id = params[:user_id] == nil ? params[:id] : params[:user_id]
-      if session[:user_id].to_s != param_id.to_s
+      param_id.to_i
+      logger.debug "Param ID: #{param_id}"
+      logger.debug "Session ID: #{session[:user_id]}"
+      if session[:user_id].to_i != param_id.to_i
         flash[:notice] = "You don't have permission to do that. You may only view/edit/create looks within your own look library."
         redirect_to root_url
       end

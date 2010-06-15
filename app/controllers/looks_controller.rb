@@ -62,7 +62,7 @@ class LooksController < ApplicationController
   # GET /user/:user_id/look/:id(.:format)
   def show
     @look = Look.find(params[:id], 
-      :conditions => {:user_id => params[:user_id] })
+      :conditions => {:user_id => @current_user.id })
         
     respond_to do |format|
       format.html

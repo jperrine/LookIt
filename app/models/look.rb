@@ -24,4 +24,8 @@ class Look < ActiveRecord::Base
 	
 	validates_length_of :content, :maximum => 500
 	validates_length_of :title, :maximum => 255
+	
+	def to_param
+    "#{id}-#{title.downcase.gsub(/[^a-z0-9]+/i, '-')}"
+  end
 end

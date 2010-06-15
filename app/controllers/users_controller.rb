@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def new
     #so logged-in users aren't greeted with a registration page
     if session[:user_id]
-      redirect_to :action => 'show', :id => session[:user_id] and return
+      redirect_to :action => 'show', :id => session[:user_param] and return
     end
     @user = User.new
     respond_to do |format|
@@ -95,6 +95,7 @@ class UsersController < ApplicationController
       user = User.authenticate(params[:username], params[:password])
       if user
         session[:user_id] = user.id
+        session[:user_param] = user
         uri, session[:original_uri] = session[:original_uri], nil
         respond_to do |format|
           format.html { redirect_to(uri || user) }
