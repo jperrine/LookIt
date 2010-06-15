@@ -46,27 +46,27 @@ class LooksControllerTest < ActionController::TestCase
   end
   
   test 'show look' do
-    get :show, {:user_id => @user.id, :id => @look.id}, {:user_id => @look.id}
+    get :show, {:user_id => @user.to_param, :id => @look.to_param}, {:user_id => @look.id}
     assert_response :success
     assert_template 'show'
   end
   
   test 'destroy look' do
     @look_to_delete = Look.last
-    delete :destroy, {:user_id => @user.id, :id => @look_to_delete.id}, {:user_id => @user.id}
+    delete :destroy, {:user_id => @user.to_param, :id => @look_to_delete.to_param }, {:user_id => @user.id}
     assert !Look.exists?(@look_to_delete.id)
     assert_redirected_to @user
   end
   
   test 'unpublish look' do
-    put :unpublish, {:user_id => @user.id, :id => @look.id}, {:user_id => @user.id}
+    put :unpublish, {:user_id => @user.to_param, :id => @look.to_param }, {:user_id => @user.id}
     assert_redirected_to [@user, @look]
     @updated_look = Look.find(@look.id)
     assert !@updated_look.published
   end
   
   test 'publish look' do
-    put :publish, {:user_id => @user.id, :id => @look.id}, {:user_id => @user.id}
+    put :publish, {:user_id => @user.to_param, :id => @look.to_param }, {:user_id => @user.id}
     assert_redirected_to [@user, @look]
     @updated_look = Look.find(@look.id)
     assert @updated_look.published

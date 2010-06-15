@@ -50,7 +50,7 @@ class LooksController < ApplicationController
     respond_to do |format|
       if @look.update_attributes(params[:look])
         flash[:notice] = "#{@look.title} was successfully updated."
-        format.html { redirect_to user_look_url(params[:user_id], @look) }
+        format.html { redirect_to user_look_url(@look.user, @look) }
         format.xml { head :ok }
       else
         format.html { render :action => 'edit' }

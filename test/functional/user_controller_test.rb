@@ -14,13 +14,13 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "show without user" do
-    get :show, :id => 1
+    get :show, :id => 3
     assert_response :redirect
     assert_redirected_to :action => 'login'
   end
   
   test 'show with user' do
-    get :show, {:id => 1}, {:user_id => @user.id}
+    get :show, {:id => @user.to_param}, {:user_id => @user.id}
     assert_response :success
     assert_template 'show'
   end
@@ -38,19 +38,19 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test 'new with logged in user' do
-    get :new, {}, {:user_id => @user.id}
+    get :new, {}, {:user_id => @user.id, :user_param => @user.to_param}
     assert_response :redirect
     assert_redirected_to :action => 'show'
   end
   
   test 'edit with user' do
-    get :edit, {:id => 1}, {:user_id => @user.id}
+    get :edit, {:id => @user.to_param}, {:user_id => @user.id}
     assert_response :success
     assert_template 'edit'
   end
   
   test 'edit without user' do
-    get :edit, {:id => 1}, {}
+    get :edit, {:id => @user.to_param}, {}
     assert_response :redirect
     assert_redirected_to :login
   end
@@ -101,23 +101,23 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test 'destroy user' do
-    delete :destroy, {:id => @user.id}, {:user_id => @user.id}
+    delete :destroy, {:id => @user.to_param}, {:user_id => @user.id}
     assert !User.exists?(@user.id)
     assert_redirected_to :root
   end
   
   test 'post change password' do
-    post :change_password, {:id => @user.id, :old_password => 'password', :password => 'blahh', :password_confirmation => 'blahh'}, {:user_id => @user.id}
+    post :change_password, {:id => @user.to_param, :old_password => 'password', :password => 'blahh', :password_confirmation => 'blahh'}, {:user_id => @user.id}
     assert_redirected_to @user
   end
   
   test 'published looks' do
-    get :published_looks, {:user_id => @user.id}, {:user_id => @user.id}
+    get :published_looks, {:user_id => @user.to_param}, {:user_id => @user.id}
     assert_template 'published_looks'
   end
   
   test 'working looks' do
-    get :working_looks, {:user_id => @user.id}, {:user_id => @user.id}
+    get :working_looks, {:user_id => @user.to_param}, {:user_id => @user.id}
     assert_template 'working_looks'
   end
 end
