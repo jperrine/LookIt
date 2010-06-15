@@ -46,6 +46,20 @@
     <% end %>
    	<%= yield %>
 		<%# <div id="footer"></div>%>
+
+	<!-- Zendesk Dropbox -->
+		<script type="text/javascript">
+		var zenbox_params = {};
+		zenbox_params.tab_id = "ask_us";
+		zenbox_params.tab_color = "black";
+		zenbox_params.title = "Ask Brighten";
+		zenbox_params.text = "Let us know what the issue is, and we'll help you out as soon as possible. It shouldn't take long at all. Thanks so much for your patience - we're still new at this, but we're learning a lot!";
+		zenbox_params.tag = "dropbox";
+		zenbox_params.url = "brighten.zendesk.com";
+		</script>
+		<style type='text/css'>@import url('//assets0.zendesk.com/external/zenbox/overlay.css');</style>
+		<script type='text/javascript' src='//assets0.zendesk.com/external/zenbox/overlay.js'></script>
+		
   </body>
 </html>
   
