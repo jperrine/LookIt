@@ -46,6 +46,7 @@ class UsersController < ApplicationController
       if @user.save
         flash[:notice] = "#{@user.display_name}, your account was successfully created."
         session[:user_id] = @user.id
+        session[:user_param] = @user
         format.html { redirect_to @user }
         format.xml { render :xml => @user, :status => :created, :location => @user }
       else
