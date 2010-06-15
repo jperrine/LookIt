@@ -2,9 +2,10 @@
 <div id="canvas">
 	<div id="TextArea">
 		<div id="content">
+			<%= render :partial => 'users/form_errors', :locals => {:req => false} %>
 			<% form_tag(url_for(:action => 'results'), :method => 'get') do %>
 				<p>Enter your search terms, you will be search by look title, page title (not quite yet), and user.</p>
-				<%= label_tag :query %>: <%= text_field_tag :query %>
+				<%= label_tag :query %>: <%= text_field_tag :query, '', :class => 'required' %>
 				<br /><br />
 				<%= submit_tag("Search") %>
 			<% end %>
