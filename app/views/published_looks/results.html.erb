@@ -19,11 +19,11 @@
 			<% unless @user_results.empty? %>
 				<% @user_results.each do |user| %>
 					<div class="LookSnippet">
-						<%= link_to image_tag(user.photo.url(:thumb)), url_for(:action => 'user', :id => user.id)  %>
-						<h3><%= link_to h(user.display_name), url_for(:action => 'user', :id => user.id) %></h3>
+						<%= link_to image_tag(user.photo.url(:thumb)), url_for(:action => 'user', :id => user)  %>
+						<h3><%= link_to h(user.display_name), url_for(:action => 'user', :id => user) %></h3>
 						<br />
 						<br />
-						<p><%= link_to h(user.bio), url_for(:action => 'user', :id => user.id) %></p>
+						<p><%= link_to h(user.bio), url_for(:action => 'user', :id => user) %></p>
 					</div>
 				<% end %>
 			<% else %>
