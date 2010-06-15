@@ -14,11 +14,13 @@ class UserFlowTest < ActionController::IntegrationTest
     post_via_redirect "/users", :user => @new_user
     @new_user = User.find_by_username('jabba')
     assert_equal "/users/#{@new_user.id}", path
+    assert_equal session[:user_id], @new_user.id
   end
   
   test 'user login' do
     get '/'
     post_via_redirect '/login', {:username => @user.username, :password => 'password'}
     assert_equal "/users/#{@user.id}", path
+    assert_equal session[:user_id], @user.id
   end
 end
