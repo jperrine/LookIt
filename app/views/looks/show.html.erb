@@ -8,7 +8,7 @@
 				<br />
 				<%=h @look.pages.first.title %>
 				<br /><br />
-				<%= @look.pages.first.content %>
+				<%= scrub @look.pages.first.content %>
 				<br /><br />
 			<% else %>
 				<p>No pages added yet, <%= link_to 'add one', new_user_look_page_url(@look.user, @look) %>

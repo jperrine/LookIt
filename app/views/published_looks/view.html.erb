@@ -6,7 +6,7 @@
 			<% unless @page.nil? %>
 				<%=h @page.title %>
 				<br /><br />
-				<%= @page.content %>
+				<%= scrub @page.content %>
 			<% else %> 
 				<p>No content has been created for this look.</p>
 			<% end %>
