@@ -2,7 +2,7 @@ class CreatePages < ActiveRecord::Migration
   def self.up
     create_table :pages do |t|
       t.string      :title
-      t.string      :content
+      t.text        :content
       t.integer     :look_id
       t.datetime    :posted
       t.timestamps

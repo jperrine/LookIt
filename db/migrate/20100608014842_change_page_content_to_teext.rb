@@ -4,6 +4,6 @@ class ChangePageContentToTeext < ActiveRecord::Migration
   end
 
   def self.down
-    change_column :pages, :content, :string
+    change_column :pages, :content, :text
   end
 end
