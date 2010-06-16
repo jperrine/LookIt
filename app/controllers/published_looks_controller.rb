@@ -84,7 +84,8 @@ class PublishedLooksController < ApplicationController
     tag = Tag.find_by_name(@tag)
     @looks = []
     tag.taggings.select {|tag| tag.taggable_type == 'Look'}.each do |tag|
-      @looks << Look.find(tag.taggable_id)
+      @look = Look.find(tag.taggable_id) 
+      @looks << @look if @look.published
     end
     respond_to do |format|
       format.html
