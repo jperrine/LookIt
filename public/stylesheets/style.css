@@ -173,15 +173,16 @@ p {
 	display: inline;
 }
 
-#editpreview li a
+#editpreview li span
 {
 	padding: 0 10px;
 	color: #424242;
 	text-decoration: none;
 	font-size: 0.9em;
+	cursor: pointer;
 }
 
-#editpreview li a:hover 
+#editpreview li span:hover 
 {
 	text-decoration: underline;
 }

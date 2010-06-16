@@ -8,8 +8,8 @@ $().ready(function() {
 		$('.pageSelect dd ul').slideToggle();
 	});
 	
-	$('div#editpreview a.preview').click(function() {
-		$('div#editpreview a.edit').removeClass('activeTab');
+	$('div#editpreview span.preview').click(function() {
+		$('div#editpreview span.edit').removeClass('activeTab');
 		$(this).addClass('activeTab');
 		$('div#editcontent').hide();
 		$('div#previewcontent').empty();
@@ -17,8 +17,8 @@ $().ready(function() {
 		$('div#previewcontent').append(HTML);
 		$('div#previewcontent').show();
 	});
-	$('div#editpreview a.edit').click(function() {
-		$('div#editpreview a.preview').removeClass('activeTab');
+	$('div#editpreview span.edit').click(function() {
+		$('div#editpreview span.preview').removeClass('activeTab');
 		$(this).addClass('activeTab');
 		$('div#previewcontent').hide();
 		$('div#editcontent').show();
