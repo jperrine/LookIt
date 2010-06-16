@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   # GET /user/:id(.:format)
   def show
     @user = User.find(params[:id])
+    @tags = Look.tag_counts
+    
     respond_to do |format|
       format.html 
       format.xml { render :xml => @user }
@@ -141,7 +143,9 @@ class UsersController < ApplicationController
   # GET /user/:id/published-looks.:format
   def published_looks
     @looks = @current_user.looks.select {|look| look.published == true }
-    @user = @current_user    
+    @user = @current_user
+    @tags = Look.tag_counts
+    
     respond_to do |format|
       format.html
       format.xml { render :xml => @looks }
@@ -152,6 +156,8 @@ class UsersController < ApplicationController
   def working_looks
     @looks = @current_user.looks.select {|look| look.published == false }
     @user = @current_user
+    @tags = Look.tag_counts
+    
     respond_to do |format|
       format.html
       format.xml { render :xml => @looks }
