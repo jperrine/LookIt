@@ -4,6 +4,6 @@ class ChangePageContentToTeext < ActiveRecord::Migration
   end
 
   def self.down
-    change_column :pages, :content, :string, :limit => 10000
+    change_column :pages, :content, :string
   end
 end

@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(:version => 20100612035435) do
   create_table "looks", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
-    t.string   "content",            :limit => 500
+    t.string   "content", :limit => 500
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "published"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20100612035435) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
-    t.text     "content",    :limit => 10000
+    t.text     "content"
     t.integer  "look_id"
     t.datetime "posted"
     t.datetime "created_at"

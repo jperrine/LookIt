@@ -1,6 +1,6 @@
 class AdjustStringLengthToLooks < ActiveRecord::Migration
   def self.up
-    change_column :looks, :content, :string, :length => 10000
+    change_column :looks, :content, :string
   end
 
   def self.down
