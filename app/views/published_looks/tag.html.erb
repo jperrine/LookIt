@@ -1,7 +1,7 @@
 <%= render :partial => 'published_nav' %>
 <div id="canvas">
 	<div id="TextArea">
-		<%= render :partial => 'tag_cloud', :locals => {:tags => @tags} %>
+		<h5>Viewing looks with tag '<%= h @tag %>'</h5>
 		<div id="content">
 			<%= render :partial => 'looks/public_look_list_display', :collection => @looks, :as => :look %>
 		</div>

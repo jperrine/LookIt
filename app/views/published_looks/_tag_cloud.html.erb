@@ -1,0 +1,6 @@
+<div id="tag_cloud">
+	<h5>Tags</h5>
+	<% tag_cloud tags, %w(tag1 tag2 tag3 tag4) do |tag, css_class| %>
+		<%= link_to h(tag.name), {:action => 'tag', :id => tag.name}, :class => css_class %>
+	<% end %>
+</div>

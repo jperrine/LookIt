@@ -3,6 +3,8 @@ class PublishedLooksController < ApplicationController
   # GET /public-looks/
   #browse all published looks
   def index
+    @tags = Look.tag_counts
+    
     @looks = Look.find(:all, 
       :order => "posted DESC", 
       :conditions => ["published = ?", true] )
@@ -76,4 +78,17 @@ class PublishedLooksController < ApplicationController
     end
   end
 
+  # GET /public-looks/tag/:id(tag name)
+  def tag
+    @tag = params[:id]
+    tag = Tag.find_by_name(@tag)
+    @looks = []
+    tag.taggings.select {|tag| tag.taggable_type == 'Look'}.each do |tag|
+      @looks << Look.find(tag.taggable_id)
+    end
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @looks }
+    end
+  end
 end
