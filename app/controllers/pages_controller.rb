@@ -35,7 +35,7 @@ class PagesController < ApplicationController
     @page = Page.new(params[:page])
     @page.look_id = params[:look_id]
     @page.posted = Time.now
-    
+    @look = Look.find(params[:look_id])
     respond_to do |format|
       if @page.save
         flash[:notice] = "#{@page.title} was successfully added to #{@page.look.title}"
