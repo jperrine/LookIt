@@ -173,7 +173,7 @@ p {
 	display: inline;
 }
 
-#editpreview li span
+#editpreview li span, #editpreview li a
 {
 	padding: 0 10px;
 	color: #424242;
@@ -182,7 +182,7 @@ p {
 	cursor: pointer;
 }
 
-#editpreview li span:hover 
+#editpreview li span:hover, #editpreview li a:hover
 {
 	text-decoration: underline;
 }

@@ -11,9 +11,9 @@
 </script>
 <%= render :partial => 'looks/edit_preview' %>
 <div id="canvas">
-	<div id="editcontent">
-		<%= render :partial => 'looks/private_look_page_select', :locals => { :look => @look} %>
-		<div id="TextArea">
+	<%= render :partial => 'looks/private_look_page_select', :locals => { :look => @look} %>
+	<div id="TextArea">
+		<div id="editcontent">
 			<%= render :partial => 'users/form_errors', :locals => {:req => false} %>
 			<% form_for([@current_user, @look, @page])  do |f| %>
 				<%= f.error_messages %>
