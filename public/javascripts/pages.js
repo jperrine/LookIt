@@ -12,7 +12,6 @@ $(document).ready(function() {
 			if ($(this).attr('class').length > 0) {
 				var type = $(this).attr('class').replace('mceItem', '');
 				$(buildMediaPlayer(type)).insertAfter($(this));
-				alert(type);
 				$(this).remove();
 			}
 		});
@@ -23,7 +22,20 @@ $(document).ready(function() {
 });
 //pulls the media url from the tinymce generated image
 function getMediaURL(type) {
-	return $('#contentDisplay img.mceItem' + type).attr('title').split("\":\"")[1].split(',')[0];
+	var url = '';
+	if (type == 'Flash') {
+		url = $('div#previewcontent img.mceItem' + type).attr('title').split("\":\"")[3].split("\",\"")[0].replace("\\\"", '');
+	} else if (type == 'QuickTime') {
+		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[1].split(',')[0];
+	} else if (type == 'WindowsMedia') {
+		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[1].split(",")[0];
+	} else if (type == 'RealMedia') {
+		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[1].split(",")[0];
+	} else if (type == 'ShockWave') {
+		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[5].split(',')[0];
+	}
+	//alert(url);
+	return url;
 }
 //gets the tinymce generated height from the user specified embed object
 function getHeight(type) {
