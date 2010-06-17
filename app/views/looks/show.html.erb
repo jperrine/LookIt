@@ -5,9 +5,8 @@
 		<div id="content">
 			<% unless @look.pages.empty? %>
 				<%= render :partial => 'pages/page_editor_panel', :locals => { :page => @look.pages.first }%>
+				<h3><%=h @look.pages.first.title %></h3>
 				<br />
-				<%=h @look.pages.first.title %>
-				<br /><br />
 				<%= @look.pages.first.content %>
 				<br /><br />
 			<% else %>
