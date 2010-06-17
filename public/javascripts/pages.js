@@ -24,15 +24,11 @@ $(document).ready(function() {
 function getMediaURL(type) {
 	var url = '';
 	if (type == 'Flash') {
-		url = $('div#previewcontent img.mceItem' + type).attr('title').split("\":\"")[3].split("\",\"")[0].replace("\\\"", '');
-	} else if (type == 'QuickTime') {
-		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[1].split(',')[0];
-	} else if (type == 'WindowsMedia') {
-		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[1].split(",")[0];
-	} else if (type == 'RealMedia') {
-		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[1].split(",")[0];
+		url = $('div#previewcontent img.mceItem' + type).attr('title').split("\":\"")[3].split("\",\"")[0].replace("\\\"", '');		
 	} else if (type == 'ShockWave') {
 		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[5].split(',')[0];
+	} else {
+		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[1].split(",")[0];
 	}
 	//alert(url);
 	return url;
