@@ -11,16 +11,26 @@ $().ready(function() {
 	$('div#editpreview span.preview').click(function() {
 		$('div#editpreview span.edit').removeClass('activeTab');
 		$(this).addClass('activeTab');
-		$('div#editcontent').hide();
-		$('div#previewcontent').empty();
+		$('div#previewcontent #contentDisplay').empty();
 		var HTML = "<h3>"+$('#look_title').val()+"</h3><p>"+$('#look_content').val()+"</p>";
-		$('div#previewcontent').append(HTML);
-		$('div#previewcontent').show();
+		$('div#previewcontent #contentDisplay').append(HTML);
+		$('div#editcontent').slideUp('fast', function() {
+			$('div#previewcontent').slideDown('slow');
+		});
 	});
 	$('div#editpreview span.edit').click(function() {
 		$('div#editpreview span.preview').removeClass('activeTab');
 		$(this).addClass('activeTab');
-		$('div#previewcontent').hide();
-		$('div#editcontent').show();
+		$('div#previewcontent').slideUp('fast', function() {
+			$('div#editcontent').slideDown('slow');
+		});
 	});
+	
+	$('#previewSave').click(function() {
+		var formID = $(this).parent().parent().find('form').attr('id');
+		$('#'+formID).submit();
+		if ($('#errorDiv span').html().length > 0) {
+			$('div#editpreview span.edit').click();
+		}
+	})
 });
