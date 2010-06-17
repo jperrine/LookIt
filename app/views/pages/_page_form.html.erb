@@ -1,13 +1,19 @@
 <%= javascript_include_tag 'tiny_mce/tiny_mce.js' %>
 <script type='text/javascript'>
-  tinyMCE.init({
-    mode: 'textareas',
-    theme: 'advanced',
-    editor_selector: 'content',
-		width: 500,
+	tinyMCE.init({
+	  mode: 'textareas',
+	  theme: 'advanced',
+	  editor_selector: 'content',
+		width: 590,
 		height: 490,
-		theme_advanced_toolbar_location : "top"
-  });
+		plugins: 'safari,media,autosave,advimage,preview',
+		theme_advanced_toolbar_location : "top",
+		theme_advanced_buttons1: "bold,italic,underline,bullist,numlist,undo,redo,link,unlink,image,media,forecolor,blockquote,removeformat,code,media,preview",
+	  theme_advanced_buttons2: "",
+	  theme_advanced_buttons3: "",
+	  entity_encoding: "raw",
+		content_css: "/stylesheets/tiny_mce.css",
+	});
 </script>
 <%= render :partial => 'looks/edit_preview' %>
 <div id="canvas">

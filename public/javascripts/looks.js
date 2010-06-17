@@ -7,7 +7,7 @@ $().ready(function() {
 	$('#PageSelector dl.pageSelect span').click(function() {
 		$('.pageSelect dd ul').slideToggle();
 	});
-	
+	$('div#previewcontent').hide();
 	$('div#editpreview span.preview').click(function() {
 		$('div#editpreview span.edit').removeClass('activeTab');
 		$(this).addClass('activeTab');

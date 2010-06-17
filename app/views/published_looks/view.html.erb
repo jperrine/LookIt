@@ -4,8 +4,8 @@
   <div id= "TextArea">
 		<div id="content">
 			<% unless @page.nil? %>
-				<%=h @page.title %>
-				<br /><br />
+				<h3><%=h @page.title %></h3>
+				<br />
 				<%= @page.content %>
 			<% else %> 
 				<p>No content has been created for this look.</p>

@@ -1,0 +1,14 @@
+blockquote {
+	display: block;
+	padding: 5px;
+	margin: 5px 0 0 20px;
+	background-color: #f3f3f3;
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+ol, ul {
+	margin: 5px 0 5px 30px;
+	padding: 0;
+}

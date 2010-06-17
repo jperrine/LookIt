@@ -234,7 +234,7 @@ div#canvas {
 	border: 1px solid #929292;
 }
 
-div#content {
+div#content, div#previewcontent {
 	padding: 45px;
 	text-align: left;
 }

@@ -5,8 +5,8 @@
 		<div id="content">
 			<%= render :partial => 'page_editor_panel', :locals => { :page => @page }%>
 			<br />
-			<%=h @page.title %>
-			<br /><br />
+			<h3><%=h @page.title %></h3>
+			<br />
 			<%= @page.content %>
 		</div>
   </div>
