@@ -10,8 +10,7 @@ $(document).ready(function() {
 		$('div#previewcontent #contentDisplay').append(HTML);
 		$('div#previewcontent #contentDisplay img').each(function() {
 			if ($(this).attr('class').length > 0) {
-				var type = $(this).attr('class').replace('mceItem', '');
-				$(buildMediaPlayer(type)).insertAfter($(this));
+				$(buildMediaPlayer($(this))).insertAfter($(this));
 				$(this).remove();
 			}
 		});
@@ -21,31 +20,50 @@ $(document).ready(function() {
 	});
 });
 //pulls the media url from the tinymce generated image
-function getMediaURL(type) {
+function getMediaURL(type, img) {
 	var url = '';
-	if (type == 'Flash') {
-		url = $('div#previewcontent img.mceItem' + type).attr('title').split("\":\"")[3].split("\",\"")[0].replace("\\\"", '');		
-	} else if (type == 'ShockWave') {
-		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[5].split(',')[0];
+	if ($('#new_or_edit').val() == 'new') {
+		if (type == 'Flash') {
+			url = $(img).attr('title').split(":'")[1].split("',")[0];
+		} else if (type == 'QuickTime') {
+			url = $(img).attr('title').split(":'")[1].split(',')[0];
+		} else if (type == 'WindowsMedia') {
+			url = $(img).attr('title').split(":'")[1].split(",")[0];
+		} else if (type == 'RealMedia') {
+			url = $(img).attr('title').split(":'")[1].split(",")[0];
+		} else if (type == 'ShockWave') {
+			url = $(img).attr('title').split(":'")[5].split(',')[0];
+		}		
 	} else {
-		url = $('div#previewcontent img.mceItem' + type).attr('title').split(":'")[1].split(",")[0];
+		if (type == 'Flash') {
+			url = $(img).attr('title').split("\":\"")[1].split("\\\"")[0];
+		} else if (type == 'QuickTime') {
+			url = $(img).attr('title').split(":'")[1].split(',')[0];
+		} else if (type == 'WindowsMedia') {
+			url = $(img).attr('title').split(":'")[1].split(",")[0];
+		} else if (type == 'RealMedia') {
+			url = $(img).attr('title').split(":'")[1].split(",")[0];
+		} else if (type == 'ShockWave') {
+			url = $(img).attr('title').split("\":\"")[8].split('"')[0];
+		}
 	}
 	//alert(url);
 	return url;
 }
 //gets the tinymce generated height from the user specified embed object
-function getHeight(type) {
-	return $('#contentDisplay img.mceItem' + type).attr('height');
+function getHeight(img) {
+	return $(img).attr('height');
 }
 //gets the tinymce generated width from the user specified embed object
-function getWidth(type) {
-	return $('#contentDisplay img.mceItem' + type).attr('width');
+function getWidth(img) {
+	return $(img).attr('width');
 }
 //builds the object embed code HTML for injection in the preview div
-function buildMediaPlayer(type) {
-	var URL = getMediaURL(type);
-	var height = getHeight(type);
-	var width = getWidth(type);
+function buildMediaPlayer(img) {
+	var type = $(img).attr('class').replace('mceItem', '');
+	var URL = getMediaURL(type, $(img));
+	var height = getHeight($(img));
+	var width = getWidth($(img));
 	var HTML = '';
 	if (type == "Flash") {
 		HTML = "<object width='"+width+"' height='"+height+"'>";

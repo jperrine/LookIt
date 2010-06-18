@@ -23,6 +23,7 @@
 		<div id="editcontent">
 			<%= render :partial => 'users/form_errors', :locals => {:req => false} %>
 			<% form_for([@current_user, @look, @page])  do |f| %>
+				<input id='new_or_edit' type='hidden' value='<%= action %>' />
 				<%= f.error_messages %>
 				<%= f.label :title, "Page Title" %> <%= f.text_field :title, :class => 'required' %>
 				<br />
@@ -34,6 +35,7 @@
 			<% end %>
 		</div>
 		<div id="previewcontent">
+			<p><strong>Warning: Embedded media won't display on this page, use preview on the editor to view that. (Working on it)</strong></p>
 			<div id="contentDisplay"></div>
 			<input type='button' id='previewSave' value='Save' />
 		</div>
