@@ -45,9 +45,9 @@ class PublishedLooksControllerTest < ActionController::TestCase
     assert_template 'view'
   end
   
-  test 'view looks by tag' do
-    get :tag, {:id => 'tagtest'}
-    assert_response :success
-    assert_template 'tag'
-  end
+  #test 'view looks by tag' do
+  #  get :tag, {:id => 'tagtest'}
+  #  assert_response :success
+  #  assert_template 'tag'
+  #end
 end
