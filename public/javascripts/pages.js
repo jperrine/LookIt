@@ -38,7 +38,7 @@ function getMediaURL(type, img) {
 		if (type == 'Flash') {
 			url = $(img).attr('title').split("\":\"")[1].split("\\\"")[0];
 		} else if (type == 'QuickTime') {
-			url = $(img).attr('title').split(":'")[1].split(',')[0];
+			url = $(img).attr('title').split(":\"")[1].replace("\"",'');
 		} else if (type == 'WindowsMedia') {
 			url = $(img).attr('title').split(":'")[1].split(",")[0];
 		} else if (type == 'RealMedia') {
