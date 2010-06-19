@@ -33,6 +33,7 @@
 			<br />
 			<% unless looks.empty? %>
 			  <%= render :partial => 'looks/my_look_list_display', :collection => looks, :as => :look %>
+				<%= will_paginate looks %>
 			<% else %>
 				<p>No <%= filter -%> looks yet, <%= link_to 'create one', new_user_look_url(user) %>.</p>
 			<% end %>

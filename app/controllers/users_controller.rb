@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tags = Look.tag_counts
+    @looks = Look.paginate :page => params[:page]
     
     respond_to do |format|
       format.html 
@@ -142,7 +143,8 @@ class UsersController < ApplicationController
   
   # GET /user/:id/published-looks.:format
   def published_looks
-    @looks = @current_user.looks.select {|look| look.published == true }
+    @looks = Look.paginate(:page => params[:page], 
+      :conditions => ["user_id = ? and published = ?", @current_user.id, true])
     @user = @current_user
     @tags = Look.tag_counts
     
@@ -154,7 +156,8 @@ class UsersController < ApplicationController
   
   # GET /user/:id/working-looks.:format
   def working_looks
-    @looks = @current_user.looks.select {|look| look.published == false }
+    @looks = Look.paginate(:page => params[:page], 
+      :conditions => ["user_id = ? and published = ?", @current_user.id, false])
     @user = @current_user
     @tags = Look.tag_counts
     

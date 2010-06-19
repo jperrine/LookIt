@@ -5,9 +5,7 @@ class PublishedLooksController < ApplicationController
   def index
     @tags = Look.tag_counts
     
-    @looks = Look.find(:all, 
-      :order => "posted DESC", 
-      :conditions => ["published = ?", true] )
+    @looks = Look.paginate(:page => params[:page], :order => 'posted DESC', :conditions => ["published = ?", true])
       
     respond_to do |format|
       format.html
