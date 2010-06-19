@@ -4,7 +4,6 @@
 		<h5>Viewing looks with tag '<%= h @tag %>'</h5>
 		<div id="content">
 			<%= render :partial => 'looks/public_look_list_display', :collection => @looks, :as => :look %>
-			<%= will_paginate @looks %>
 		</div>
 	</div>
 </div>
