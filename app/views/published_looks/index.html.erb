@@ -4,7 +4,7 @@
 		<%= render :partial => 'tag_cloud', :locals => {:tags => @tags} %>
 		<div id="content">
 			<%= render :partial => 'looks/public_look_list_display', :collection => @looks, :as => :look %>
+			<%= will_paginate @looks %>
 		</div>
-		<%= will_paginate @looks %>
 	</div>
 </div>

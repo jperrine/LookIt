@@ -5,7 +5,7 @@ class PublishedLooksController < ApplicationController
   def index
     @tags = Look.tag_counts
     
-    @looks = Look.paginate(:page => params[:page], :order => 'posted DESC', :conditions => ["published = ?", true])
+    @looks = Look.paginate(:page => params[:page], :per_page => 5, :order => 'id DESC', :conditions => ["published = ?", true])
       
     respond_to do |format|
       format.html
@@ -21,7 +21,7 @@ class PublishedLooksController < ApplicationController
       flash[:notice] = "You must enter a search term."
       redirect_to :action => 'search' and return
     else
-      @look_results = Look.find(:all,
+      @look_results = Look.find(:all, 
         :order => 'id DESC',
         :conditions => 
           ['published = ? AND title LIKE ?',
@@ -48,7 +48,7 @@ class PublishedLooksController < ApplicationController
   #browse looks via user
   def user
     @user = User.find(params[:id])
-    @looks = Look.find(:all, 
+    @looks = Look.paginate(:page => params[:page], :per_page => 5,
       :conditions => 
       ["user_id = ? and published = ?",
         @user.id, true] )
