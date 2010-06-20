@@ -9,10 +9,9 @@ class UsersController < ApplicationController
 
   # GET /user/:id(.:format)
   def show
-    @user = User.find(params[:id])
+    @user = @current_user
     @tags = Look.tag_counts
-    @looks = Look.paginate(:page => params[:page], :per_page => 5, :order => 'id DESC',
-      :conditions => ["user_id = ?", @current_user.id])
+    @looks = @user.looks.find_them_all(params[:page])
     
     respond_to do |format|
       format.html 
@@ -144,9 +143,8 @@ class UsersController < ApplicationController
   
   # GET /user/:id/published-looks.:format
   def published_looks
-    @looks = Look.paginate(:page => params[:page], :per_page => 5, :order => 'id DESC',
-      :conditions => ["user_id = ? and published = ?", @current_user.id, true])
     @user = @current_user
+    @looks = @user.looks.find_published(params[:page])
     @tags = Look.tag_counts
     
     respond_to do |format|
@@ -157,9 +155,8 @@ class UsersController < ApplicationController
   
   # GET /user/:id/working-looks.:format
   def working_looks
-    @looks = Look.paginate(:page => params[:page], :per_page => 5, :order => 'id DESC',
-      :conditions => ["user_id = ? and published = ?", @current_user.id, false])
     @user = @current_user
+    @looks = @user.looks.find_working(params[:page])
     @tags = Look.tag_counts
     
     respond_to do |format|
