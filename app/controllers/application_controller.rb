@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     def get_logged_in_user
       id = session[:user_id]
       unless id.nil?
-        @current_user = User.find(id)
+        @current_user ||= User.find(id)
       end
       session[:user_param] = @current_user
     end
