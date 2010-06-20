@@ -6,14 +6,6 @@ valid_look:
   posted:     <%= Time.now %>
   user_id:    1
   
-invalid_look:
-  id:         2
-  title:      
-  content:    blah
-  published:  false
-  posted:     this is not a time
-  user_id:    
-  
 published_look:
   id:        3
   title:     This is published

@@ -5,8 +5,10 @@ class LookTest < ActiveSupport::TestCase
   
   def setup
     @valid_look = looks(:valid_look)
-    @invalid_look = looks(:invalid_look)
     @user = users(:valid_user)
+    @all_looks = Look.all
+    @published = Look.paginate(:page => 1, :per_page => 5, :conditions => ["published = ?", true], :order => 'posted DESC')
+    @working = Look.paginate(:page => 1, :per_page => 5, :conditions => ["published = ?", false], :order => 'posted DESC')
   end
   
   test "invalid look attributes" do
@@ -75,5 +77,20 @@ class LookTest < ActiveSupport::TestCase
     assert @valid_look.user_id
     assert @valid_look.user == @user
     assert !@user.looks.empty?
+  end
+  
+  test 'find_them_all' do
+    @looks = Look.find_them_all(1)
+    assert_equal @looks, @all_looks
+  end
+  
+  test 'find_published' do
+    @looks = Look.find_published(1)
+    assert_equal @looks, @published
+  end
+  
+  test 'find_working' do
+    @looks = Look.find_working(1)
+    assert_equal @looks, @working
   end
 end
