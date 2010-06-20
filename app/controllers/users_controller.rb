@@ -84,10 +84,10 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.destroy
-        format.html { redirect_to root_url }
+        format.html { redirect_to root_path }
         format.xml { head :ok }
       else
-        format.html { redirect_to root_url }
+        format.html { redirect_to root_path }
         format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
@@ -125,7 +125,7 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "Successfully logged out."
     respond_to do |format|
-      format.html { redirect_to login_url }
+      format.html { redirect_to login_path }
       format.xml { head :ok }
     end
   end

@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
       if @current_user.nil?
         session[:original_uri] = request.request_uri
         flash[:notice] = "You must login first."
-        redirect_to login_url
+        redirect_to login_path
       end
     end
     
@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
       param_id = param_id.to_i
       if session[:user_id] != param_id
         flash[:notice] = "You don't have permission to do that. You may only view/edit/create looks within your own look library."
-        redirect_to root_url
+        redirect_to root_path
       end
     end
 end

@@ -1,10 +1,10 @@
 <% next_index = page.look.pages.index(page) + 1 %>
 <% prev_index = next_index - 2 %>
 <% unless page.look.pages[prev_index].nil? %>
-	<%= link_to "< Last Page", user_look_page_url(page.look.user, page.look, page.look.pages[prev_index]), :id => "LastPage" %>
+	<%= link_to "< Last Page", user_look_page_path(page.look.user, page.look, page.look.pages[prev_index]), :id => "LastPage" %>
 <% end %>
 <% unless page.look.pages[next_index].nil? %>
-	<%= link_to "Next Page >", user_look_page_url(page.look.user, page.look, page.look.pages[next_index]), :id => 'NextPage' %>
+	<%= link_to "Next Page >", user_look_page_path(page.look.user, page.look, page.look.pages[next_index]), :id => 'NextPage' %>
 <% else %>
-	<%= link_to "Next Page >", user_look_page_url(page.look.user, page.look, page.look.pages[0]), :id => 'NextPage' %>	
+	<%= link_to "Next Page >", user_look_page_path(page.look.user, page.look, page.look.pages[0]), :id => 'NextPage' %>	
 <% end %>

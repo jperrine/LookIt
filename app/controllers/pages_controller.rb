@@ -39,7 +39,7 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.save
         flash[:notice] = "#{@page.title} was successfully added to #{@page.look.title}"
-        format.html { redirect_to user_look_page_url(@current_user, @page.look, @page) }
+        format.html { redirect_to user_look_page_path(@current_user, @page.look, @page) }
         format.xml { render :xml => @page, :status => :created, :location => @page }
       else
         format.html { render :action => 'new' }
@@ -55,7 +55,7 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.update_attributes(params[:page])
         flash[:notice] = "#{@page.title} was successfully updated."
-        format.html { redirect_to user_look_page_url(@current_user, @page.look, @page) }
+        format.html { redirect_to user_look_page_path(@current_user, @page.look, @page) }
         format.xml { render :xml => @page, :status => :updated, :location => @page }
       else
         format.html { render :action => 'edit' }
@@ -81,11 +81,11 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.destroy
         flash[:notice] = "#{@page.title} was successfully deleted."
-        format.html { redirect_to user_look_url(@current_user, :id => params[:look_id]) }
+        format.html { redirect_to user_look_path(@current_user, :id => params[:look_id]) }
         format.xml { head :ok }
       else
         flash[:notice] = "There was an error trying to delete #{@page.title}, please try again."
-        format.html { redirect_to user_look_page_url(@current_user, @page.look, @page) }
+        format.html { redirect_to user_look_page_path(@current_user, @page.look, @page) }
         format.xml { head :ok }
       end
     end

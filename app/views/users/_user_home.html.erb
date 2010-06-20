@@ -16,8 +16,8 @@
 <div id="editpreview">
 	<ul>
 		<li><%= link_to 'All', user %></li>
-		<li><%= link_to 'Working', working_looks_url(user) %></li>
-		<li><%= link_to 'Published', published_looks_url(user) %></li>
+		<li><%= link_to 'Working', working_looks_path(user) %></li>
+		<li><%= link_to 'Published', published_looks_path(user) %></li>
 	</ul>
 </div>
 <div id= "canvas">
@@ -35,7 +35,7 @@
 			  <%= render :partial => 'looks/my_look_list_display', :collection => looks, :as => :look %>
 				<%= will_paginate looks %>
 			<% else %>
-				<p>No <%= filter -%> looks yet, <%= link_to 'create one', new_user_look_url(user) %>.</p>
+				<p>No <%= filter -%> looks yet, <%= link_to 'create one', new_user_look_path(user) %>.</p>
 			<% end %>
   </div> 
 </div>

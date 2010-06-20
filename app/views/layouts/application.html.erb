@@ -32,11 +32,11 @@
 	    </div> 
 	    <ul>
 				<% if session[:user_id] %>
-					<li><%= link_to "Home", root_url %></li>
+					<li><%= link_to "Home", root_path %></li>
 					<li><%= link_to "Browse Looks", :controller => :published_looks %></li>
-					<li><%= link_to "New Look", new_user_look_url(:user_id => session[:user_param]) %></li>
-          <li><%= link_to "Settings", edit_user_url(:id => session[:user_param]) %></li>
-         	<li><%= link_to "Log Out", logout_url %></li>
+					<li><%= link_to "New Look", new_user_look_path(:user_id => session[:user_param]) %></li>
+          <li><%= link_to "Settings", edit_user_path(:id => session[:user_param]) %></li>
+         	<li><%= link_to "Log Out", logout_path %></li>
 				<% else %>
 					<li><%= link_to "Browse Looks", :controller => 'published_looks' %></li>
 					<%= render :partial => 'users/login_form' %>			
