@@ -40,6 +40,11 @@
       border-radius: 7px;
       -moz-border-radius: 7px;
       -webkit-border-radius: 7px; }
+    #header ul li span.tab {
+      color: #000;
+      cursor: pointer; }
+      #header ul li span.tab:hover {
+        text-decoration: underline; }
   #header .button {
     float: right; }
   #header #search {
@@ -62,7 +67,6 @@
     clear: both; }
   #contentContainer div.lookPreview {
     clear: both;
-    height: 200px;
     padding: 30px 0 0 30px;
     margin-bottom: 50px;
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -71,25 +75,26 @@
     background: #fff;
     border-radius: 7px;
     -moz-border-radius: 7px;
-    -webkit-border-radius: 7px; }
-    #contentContainer div.lookPreview #lookContent p.author {
+    -webkit-border-radius: 7px;
+    height: 200px; }
+    #contentContainer div.lookPreview div.lookContent p.author {
       margin: -7px 0 8px 0;
       padding-left: 10px; }
-    #contentContainer div.lookPreview #lookContent img {
+    #contentContainer div.lookPreview div.lookContent img {
       float: left;
       margin-left: -4px;
       margin-right: 10px; }
-    #contentContainer div.lookPreview #lookContent h2 {
+    #contentContainer div.lookPreview div.lookContent h2 {
       margin-left: 5px;
       font-size: 1.25em;
       font-weight: bold;
       line-height: 45px; }
-    #contentContainer div.lookPreview #lookContent p {
+    #contentContainer div.lookPreview div.lookContent p {
       margin-left: 5px;
       float: left;
       font-size: 0.8em;
       width: 316px; }
-    #contentContainer div.lookPreview #lookContent p.tags {
+    #contentContainer div.lookPreview div.lookContent p.tags {
       border-left: 1px solid #929292;
       height: 65px;
       margin-left: 10px;
@@ -103,6 +108,85 @@
       font-size: 0.8em; }
       #contentContainer div.lookPreview ul li {
         display: inline; }
+  #contentContainer div.lookEditor {
+    padding: 30px 0 0 30px;
+    margin-bottom: 50px;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    border: 1px solid #929292;
+    background: #fff;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px; }
+    #contentContainer div.lookEditor div.lookContent p.author {
+      margin: -7px 0 8px 0;
+      padding-left: 10px; }
+    #contentContainer div.lookEditor div.lookContent img {
+      float: left;
+      margin-left: -4px;
+      margin-right: 10px; }
+    #contentContainer div.lookEditor div.lookContent h2 {
+      margin-left: 5px;
+      font-size: 1.25em;
+      font-weight: bold;
+      line-height: 45px; }
+    #contentContainer div.lookEditor div.lookContent p {
+      margin-left: 5px;
+      float: left;
+      font-size: 0.8em;
+      width: 316px; }
+    #contentContainer div.lookEditor div.lookContent p.tags {
+      border-left: 1px solid #929292;
+      height: 65px;
+      margin-left: 10px;
+      padding-left: 10px;
+      width: 147px; }
+    #contentContainer div.lookEditor div.lookContent ul {
+      margin: 25px 0 0 0;
+      clear: both;
+      float: left;
+      color: #929292;
+      font-size: 0.8em; }
+      #contentContainer div.lookEditor div.lookContent ul li {
+        display: inline; }
+    #contentContainer div.lookEditor div#pageContent {
+      border-top: 1px solid #c0c0c0;
+      clear: both; }
+      #contentContainer div.lookEditor div#pageContent div.pageList {
+        border-right: 1px solid #929292;
+        font-size: 0.8em;
+        margin: 15px 0;
+        height: 546px;
+        width: 88px;
+        float: left; }
+        #contentContainer div.lookEditor div#pageContent div.pageList h3 {
+          font-size: 1.1em;
+          font-weight: bold; }
+        #contentContainer div.lookEditor div#pageContent div.pageList ul {
+          margin: 0 0 0 -12px; }
+          #contentContainer div.lookEditor div#pageContent div.pageList ul li {
+            width: 96px;
+            margin: 0 0 0 -18px;
+            padding: 3px 0 2px 22px;
+            border-top: 1px solid #d5d5d5; }
+            #contentContainer div.lookEditor div#pageContent div.pageList ul li .button {
+              position: relative;
+              top: 8px;
+              left: 0;
+              font-size: 0.9em; }
+      #contentContainer div.lookEditor div#pageContent div.pageEditor {
+        margin: 15px 0;
+        float: right;
+        width: 570px; }
+        #contentContainer div.lookEditor div#pageContent div.pageEditor label {
+          font-weight: bold;
+          font-size: 1.1em;
+          margin: 0 0 0 35px; }
+        #contentContainer div.lookEditor div#pageContent div.pageEditor input[type='text'] {
+          width: 400px;
+          height: 25px; }
+      #contentContainer div.lookEditor div#pageContent div.clear {
+        clear: both; }
 
 /* General Classes */
 .button {

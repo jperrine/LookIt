@@ -61,6 +61,13 @@
 			background-color: #d5d5d5;
 			@include rounded;
 		}
+		li span.tab {
+			color: #000;
+			cursor: pointer;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 	.button {
 		float: right;
@@ -89,14 +96,15 @@
 	}
 	div.lookPreview {
 		clear:both;
-		height: 200px;
 		padding: 30px 0 0 30px;
 		margin-bottom: 50px;
 		@include shadow;
 		border: 1px solid $grey;
 		background: #fff;
 		@include rounded;
-		#lookContent {
+		height: 200px;
+		
+		div.lookContent {
 			p.author {
 				margin: -7px 0 8px 0;
 				padding-left: 10px;
@@ -135,6 +143,101 @@
 			li {display:inline;}
 		}
 	}
+	div.lookEditor {
+		padding: 30px 0 0 30px;
+		margin-bottom: 50px;
+		@include shadow;
+		border: 1px solid $grey;
+		background: #fff;
+		@include rounded;
+		
+		div.lookContent {
+			p.author {
+				margin: -7px 0 8px 0;
+				padding-left: 10px;
+			}
+			img {
+				float: left;
+				margin-left: -4px;
+				margin-right: 10px;
+			}
+			h2 {
+				margin-left: 5px;
+				font-size: 1.25em;
+				font-weight: bold;
+				line-height: 45px;
+			}
+			p {
+				margin-left: 5px;
+				float: left;
+				font-size: 0.8em;
+				width: 316px;
+			}
+			p.tags {
+				border-left: 1px solid $grey;
+				height: 65px;
+				margin-left: 10px;
+				padding-left: 10px;
+				width: 147px;
+			}
+			ul {
+				margin: 25px 0 0 0;
+				clear: both;
+				float: left;
+				color: $grey;
+				font-size: 0.8em;
+				li {display:inline;}
+			}
+		}
+		div#pageContent {
+			border-top: 1px solid #c0c0c0;	
+			clear: both;
+			div.pageList {
+				border-right: 1px solid $grey;
+				font-size: 0.8em;
+				margin: 15px 0;
+				height: 546px;
+				width: 88px;
+				float: left;
+				h3 {
+					font-size: 1.1em;
+					font-weight: bold;
+				}
+				ul {
+					margin: 0 0 0 -12px;
+					li {
+						width: 96px;
+						margin: 0 0 0 -18px;
+						padding: 3px 0 2px 22px;
+						border-top: 1px solid #d5d5d5;
+						.button {
+							position: relative;
+							top: 8px;
+							left: 0;
+							font-size: 0.9em;
+						}
+					}
+				}
+			}
+			div.pageEditor {
+				margin: 15px 0;
+				float: right;
+				width: 570px;
+				label {
+					font-weight: bold;
+					font-size: 1.1em;
+					margin: 0 0 0 35px;
+				}
+				input[type='text'] {
+					width: 400px;
+					height: 25px;
+				}
+			}
+			div.clear {
+				clear: both;
+			}
+		}
+	}
 }
 /* General Classes */
 
@@ -164,7 +267,6 @@
 	@include shadow;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 }
-
 input.watermarked {
 	color: #999;
 }
