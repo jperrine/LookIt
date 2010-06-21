@@ -32,7 +32,6 @@
 		}
 	}
 }
-
 #notice {
 	$hgt: 50px;
 	height: hgt;
@@ -200,10 +199,46 @@
 					height: 25px;
 				}
 			}
-			div.clear {
-				clear: both;
+		}
+	}
+}
+#signupbox {
+	margin: 100px auto;
+	width: 550px;
+	@include rounded;
+	@include shadow;
+	border: 1px solid #919191;
+	padding: 25px;
+	h1 {
+		font-size: 2em;
+		text-align:center;
+		text-shadow: 0 2px 0 #d5d5d5;
+		font-weight: bold;
+		margin: 0 0 10px 0;
+	}
+	p {
+		font-size: 0.9em;
+		text-align: center;
+		margin: 10px auto;
+	}
+	#labels {
+		float: left;
+		div.left {
+			width: 80px;
+			float: left;
+			label {
+				line-height: 1.4em;
 			}
 		}
+		div.right {
+			float: right;
+		}
+	}
+	#signup {
+		top: 50px;
+		left: 50px;
+		position: relative;
+		margin: 0 0 0 40px;
 	}
 }
 /* General Classes */
@@ -239,4 +274,7 @@ input.watermarked {
 }
 input.error {
 	background: #FF6A6A;
+}
+.clear {
+	clear: both;
 }

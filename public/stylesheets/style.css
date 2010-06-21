@@ -155,8 +155,41 @@
       #contentContainer div.lookEditor div#pageContent div.pageEditor input[type='text'] {
         width: 400px;
         height: 25px; }
-    #contentContainer div.lookEditor div#pageContent div.clear {
-      clear: both; }
+
+#signupbox {
+  margin: 100px auto;
+  width: 550px;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  border: 1px solid #919191;
+  padding: 25px; }
+  #signupbox h1 {
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 0 2px 0 #d5d5d5;
+    font-weight: bold;
+    margin: 0 0 10px 0; }
+  #signupbox p {
+    font-size: 0.9em;
+    text-align: center;
+    margin: 10px auto; }
+  #signupbox #labels {
+    float: left; }
+    #signupbox #labels div.left {
+      width: 80px;
+      float: left; }
+      #signupbox #labels div.left label {
+        line-height: 1.4em; }
+    #signupbox #labels div.right {
+      float: right; }
+  #signupbox #signup {
+    top: 50px;
+    left: 50px;
+    position: relative;
+    margin: 0 0 0 40px; }
 
 /* General Classes */
 .button {
@@ -185,3 +218,6 @@ input.watermarked {
 
 input.error {
   background: #FF6A6A; }
+
+.clear {
+  clear: both; }

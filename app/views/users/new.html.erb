@@ -1,0 +1,28 @@
+<div id="signupbox">
+	<h1>Brighten is in Closed Beta</h1>
+	<p>Want in? Just fill out the form below, and we'll get back to you when we're ready.</p>
+	<div id="labels"> 
+		<%= render :partial => 'form_errors', :locals => {:req => false} %>
+		<% form_for(@user, :html => { :multipart => true }) do |f| %>
+			<%= f.error_messages %><br />
+			<div class="left">
+				<%= f.label :display_name, "Name", :id => 'name' %><br />
+				<%= f.label :email, "E-Mail" %><br />
+				<%= f.label :username %><br />
+				<%= f.label :password %><br />
+				<%= f.label :password_confirmation, "Again" %><br />
+			</div>
+			<div class="right">
+				<%= f.text_field :display_name, :class => 'watermarked required', :title => 'Your Name' %><br />
+				<%= f.text_field :email, :class => 'watermarked required', :title => 'Email' %><br />
+				<%= f.text_field :username, :class => 'watermarked required', :title => 'Username' %><br />
+				<%= f.password_field :password, :class => 'required' %><br />
+				<%= f.password_field :password_confirmation, :class => 'required' %><br />
+			</div>
+	</div> 
+	<div id="signup"> 
+			<%= submit_tag("Sign Up &raquo;", :class => 'button')%><br />
+		<% end %>
+	</div>
+	<div class="clear"></div>
+</div>
