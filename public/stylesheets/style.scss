@@ -82,7 +82,6 @@
 
 #contentContainer {
 	$grey: #929292;
-	
 	padding: 30px 30px 30px 30px;
 	width: 700px;
 	background-color: #d5d5d5;
@@ -94,16 +93,14 @@
 		text-align: center;
 		clear: both;
 	}
-	div.lookPreview {
-		clear:both;
+	/*shared styles*/
+	div.lookPreview, div.lookEditor {
 		padding: 30px 0 0 30px;
 		margin-bottom: 50px;
 		@include shadow;
 		border: 1px solid $grey;
 		background: #fff;
 		@include rounded;
-		height: 200px;
-		
 		div.lookContent {
 			p.author {
 				margin: -7px 0 8px 0;
@@ -134,6 +131,11 @@
 				width: 147px;
 			}
 		}
+	}
+	/*independent styles */
+	div.lookPreview {
+		clear:both;
+		height: 200px;
 		ul {
 			margin: 25px 0 0 0;
 			clear: both;
@@ -144,42 +146,7 @@
 		}
 	}
 	div.lookEditor {
-		padding: 30px 0 0 30px;
-		margin-bottom: 50px;
-		@include shadow;
-		border: 1px solid $grey;
-		background: #fff;
-		@include rounded;
-		
 		div.lookContent {
-			p.author {
-				margin: -7px 0 8px 0;
-				padding-left: 10px;
-			}
-			img {
-				float: left;
-				margin-left: -4px;
-				margin-right: 10px;
-			}
-			h2 {
-				margin-left: 5px;
-				font-size: 1.25em;
-				font-weight: bold;
-				line-height: 45px;
-			}
-			p {
-				margin-left: 5px;
-				float: left;
-				font-size: 0.8em;
-				width: 316px;
-			}
-			p.tags {
-				border-left: 1px solid $grey;
-				height: 65px;
-				margin-left: 10px;
-				padding-left: 10px;
-				width: 147px;
-			}
 			ul {
 				margin: 25px 0 0 0;
 				clear: both;
@@ -269,4 +236,7 @@
 }
 input.watermarked {
 	color: #999;
+}
+input.error {
+	background: #FF6A6A;
 }

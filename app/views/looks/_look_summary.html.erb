@@ -1,29 +1,14 @@
-<div id="container">
-	<div id="lookcover">
-		<%= image_tag(look.cover.url(:thumb))%>
-	</div> 
-	<div id="lookinfo"> 
-		<h2> 
-			<%=h look.title %>
-		</h2> 
-	  <h5> 	
-			By <%= link_to h(look.user.display_name), user_path(look.user) %>
-	  </h5> 
-	  <p> 
-			<%=h look.content %>
-	  </p>
-		<br />
-		<p><strong>Tags:</strong> <%=h look.tag_list %></p>
-	</div>
-	<div id="lookEditor">
-		<%= link_to "Edit Look", edit_user_look_path(look.user, look) %> | 
-		<%= link_to "Add Page", new_user_look_page_path(look.user, look) %> | 
-		<% if look.published %>
-			<%= link_to 'Unpublish Look', unpublish_path(look.user, look) %> | 
+<div class="lookContent">
+	<%= image_tag(look.cover.url(:thumb)) %>
+	<h2><%= h(look.title) %></h2>
+	<p><%= h(look.content)%></p>
+	<p class="tags"><%=h look.tag_list %></p>
+	<ul>
+		<% if personal %>
+			<%= render :partial => 'look_editor_controls', :locals => {:look => look}%>
 		<% else %>
-			<%= link_to 'Publish Look', publish_path(look.user, look) %> | 
+			<li>Share | </li>
+			<li>Like</li>
 		<% end %>
-		<%= link_to "Delete Look", user_look_path(look.user, look), :method => 'delete', :confirm => 'Are you sure you want to delete this look?' %>
-	</div>
-	<br /><br />
+	</ul>
 </div>

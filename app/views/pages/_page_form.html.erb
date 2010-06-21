@@ -24,22 +24,7 @@
 </div>
 <div id="contentContainer">
 	<div class="lookEditor">
-		<div class="lookContent">
-			<%= image_tag(look.cover.url(:thumb)) %>
-			<h2><%= h(look.title) %></h2>
-			<p><%= h(look.content)%></p>
-			<p class="tags"><%=h look.tag_list %></p>
-			<ul>
-					<li><%= link_to "Edit", edit_user_look_path(look.user, look) %> | </li>
-					<li><%= link_to "View", user_look_path(look.user, look) %> | </li>
-					<% if look.published %>
-						<li><%= link_to 'Unpublish', unpublish_path(look.user, look) %> | </li>
-					<% else %>
-						<li><%= link_to 'Publish', publish_path(look.user, look) %> | </li>
-					<% end %>
-					<li><%= link_to "Delete", user_look_path(look.user, look), :method => 'delete', :confirm => 'Are you sure you want to delete this look?' %></li>
-			</ul>
-		</div>
+		<%= render :partial => 'looks/look_summary', :locals => {:look => look, :personal => true}%>
 		<div id="pageContent">
 			<div class="pageList">
 				<h3>Pages:</h3>
