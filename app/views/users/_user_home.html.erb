@@ -20,7 +20,7 @@
 </div>
 <div id="contentContainer">
 	<% unless looks.empty? %>
-		<%= render :partial => 'looks/my_look_list_display', :collection => looks, :as => :look, :locals => {:personal => true} %>
+		<%= render :partial => 'looks/look_list_display', :collection => looks, :as => :look, :locals => {:personal => true} %>
 	<% else %>
 		<p>No <%= filter -%> looks yet, <%= link_to 'create one', new_user_look_path(user) %>.</p>
 	<% end %>

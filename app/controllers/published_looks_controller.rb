@@ -4,7 +4,7 @@ class PublishedLooksController < ApplicationController
   #browse all published looks
   def index
     @tags = Look.tag_counts
-    
+    @sort = params[:sort] || "date"
     @looks = Look.find_published(params[:page])
       
     respond_to do |format|
@@ -48,6 +48,7 @@ class PublishedLooksController < ApplicationController
   #browse looks via user
   def user
     @user = User.find(params[:id])
+    @sort = params[:sort] || "date"
     @looks = @user.looks.find_published(params[:page])
     
     respond_to do |format|

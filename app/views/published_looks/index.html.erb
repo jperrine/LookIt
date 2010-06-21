@@ -1,10 +1,1 @@
-<%= render :partial => 'published_nav' %>
-<div id="canvas">
-	<div id="TextArea">
-		<%= render :partial => 'tag_cloud', :locals => {:tags => @tags} %>
-		<div id="content">
-			<%= render :partial => 'looks/public_look_list_display', :collection => @looks, :as => :look %>
-			<%= will_paginate @looks %>
-		</div>
-	</div>
-</div>
+<%= render :partial => 'published_looks', :locals => {:looks => @looks, :sort => @sort, :action => 'index'}%>

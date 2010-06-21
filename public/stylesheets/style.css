@@ -42,6 +42,10 @@
       -webkit-border-radius: 7px; }
   #header .button {
     float: right; }
+  #header #search {
+    float: right; }
+    #header #search input[type='text'] {
+      margin: 0 10px; }
 
 #contentContainer {
   padding: 30px 30px 30px 30px;

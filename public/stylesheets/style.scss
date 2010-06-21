@@ -65,6 +65,12 @@
 	.button {
 		float: right;
 	}
+	#search {
+		float: right;
+		input[type='text'] {
+		 	margin: 0 10px;
+		}
+	}
 }
 
 #contentContainer {

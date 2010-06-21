@@ -1,0 +1,28 @@
+<div id="header">
+	<ul>
+		<% if sort == 'title' %>
+			<li class="active"><%= link_to 'Sort By Title', :action => action, :sort => "title" %></li>
+		<% else %>
+			<li><%= link_to 'Sort By Title', :action => action, :sort => "title" %></li>
+		<% end %>
+		<% if sort == 'date' %>
+			<li class="active"><%= link_to 'Sort By Date', :action => action %></li>
+		<% else %>
+			<li><%= link_to 'Sort By Date', :action => action %></li>
+		<% end %>
+	</ul>
+	<div id="search">
+		<% form_tag(url_for(:action => 'results'), :method => 'get') do %>
+			<%= text_field_tag :query, '', :class => 'required' %>
+			<%= submit_tag("Search", :class => 'button') %>
+		<% end %>
+	</div>
+</div>
+<div id="contentContainer">
+	<% unless looks.empty? %>
+		<%= render :partial => 'looks/look_list_display', :collection => looks, :as => :look, :locals => {:personal => false} %>
+	<% else %>
+		<p>No published looks yet.</p>
+	<% end %>
+	<%= will_paginate looks %>
+</div>
