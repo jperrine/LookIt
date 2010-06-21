@@ -26,42 +26,32 @@
 		</script>
   </head>
   <body>
-  	<div id="navigation"> 
-		  <div id="logo"> 
-      	<%= image_tag('logoSmall.png') %>
-	    </div> 
-	    <ul>
-				<% if session[:user_id] %>
-					<li><%= link_to "Home", root_path %></li>
-					<li><%= link_to "Browse Looks", :controller => :published_looks %></li>
-					<li><%= link_to "New Look", new_user_look_path(:user_id => session[:user_param]) %></li>
-          <li><%= link_to "Settings", edit_user_path(:id => session[:user_param]) %></li>
-         	<li><%= link_to "Log Out", logout_path %></li>
-				<% else %>
-					<li><%= link_to "Browse Looks", :controller => 'published_looks' %></li>
-					<%= render :partial => 'users/login_form' %>			
-				<% end %>
-	    </ul> 
+		<div id="navContainer">
+			<div id="topBar">
+			</div>
+			<div id="navigation">
+				<%= image_tag "brightenLogo.png", :id => 'logo' %>
+				<ul>
+					<% if session[:user_id] %>
+						<li><%= link_to "My Looks", root_path %></li>
+						<li><%= link_to "All Looks", :controller => :published_looks %></li>
+						<li><%= link_to "Profile", new_user_look_path(:user_id => session[:user_param]) %></li>
+	          <li><%= link_to "Settings", edit_user_path(:id => session[:user_param]) %></li>
+	         	<li><%= link_to "Sign Out", logout_path %></li>
+					<% else %>
+						<li><a href='http://brightenit.tumblr.com/'>Blog</a></li>
+						<li><%= link_to "Sign In", login_path %></li>			
+					<% end %>
+				</ul>
+			</div>
 		</div>
-		<% unless flash[:notice].nil? %>
-      <div id="flash"><%= flash[:notice] %></div>
-    <% end %>
-   	<%= yield %>
-		<%# <div id="footer"></div>%>
+    <div id="notice">
+			<div id="message">
+				<%= flash[:notice] %>
+			</div>
+		</div>
 
-	<!-- Zendesk Dropbox -->
-		<script type="text/javascript">
-		var zenbox_params = {};
-		zenbox_params.tab_id = "ask_us";
-		zenbox_params.tab_color = "black";
-		zenbox_params.title = "Ask Brighten";
-		zenbox_params.text = "Let us know what the issue is, and we'll help you out as soon as possible. It shouldn't take long at all. Thanks so much for your patience - we're still new at this, but we're learning a lot!";
-		zenbox_params.tag = "dropbox";
-		zenbox_params.url = "brighten.zendesk.com";
-		</script>
-		<style type='text/css'>@import url('//assets0.zendesk.com/external/zenbox/overlay.css');</style>
-		<script type='text/javascript' src='//assets0.zendesk.com/external/zenbox/overlay.js'></script>
-		
+   	<%= yield %>
   </body>
 </html>
   

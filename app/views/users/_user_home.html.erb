@@ -1,41 +1,28 @@
-<div id="container">
-	<div id="lookcover">
-		<%= image_tag(user.photo.url(:thumb)) %>
-	</div> 
-	<div id="lookinfo"> 
-		<h2> 
-			<%=h user.display_name %>
-		</h2>  
-	  <div id="userbio"> 
-			<br />
-			<p><%=h user.bio %></p> 
-	  </div> 
-	</div>
-</div>
-
-<div id="editpreview">
+<div id="header">
 	<ul>
-		<li><%= link_to 'All', user %></li>
-		<li><%= link_to 'Working', working_looks_path(user) %></li>
-		<li><%= link_to 'Published', published_looks_path(user) %></li>
+		<% if filter == 'working' %>
+			<li class="active"><%= link_to 'Working Looks', working_looks_path(user) %></li>
+		<% else %>
+			<li><%= link_to 'Working Looks', working_looks_path(user) %></li>
+		<% end %>
+		<% if filter == 'published' %>
+			<li class="active"><%= link_to 'Published Looks', published_looks_path(user) %></li>
+		<% else %>
+			<li><%= link_to 'Published Looks', published_looks_path(user) %></li>
+		<% end %>
+		<% if filter.empty? %>
+			<li class="active"><%= link_to 'All Looks', user %></li>
+		<% else %>
+			<li><%= link_to 'All Looks', user %></li>
+		<% end %>
 	</ul>
+	<%= link_to 'New Look +', new_user_look_path(user), :class => 'button' %>
 </div>
-<div id= "canvas">
-  <div id= "TextArea">
-		<div id="tag_cloud">
-			<h5>Tags</h5>
-			<% tag_cloud tags, %w(tag1 tag2 tag3 tag4) do |tag, css_class| %>
-				<%= link_to h(tag.name), '#', :class => css_class %>
-			<% end %>
-		</div>
-		<div id="content">
-			<h4>Viewing all of your <%= filter -%> looks.</h4>
-			<br />
-			<% unless looks.empty? %>
-			  <%= render :partial => 'looks/my_look_list_display', :collection => looks, :as => :look %>
-				<%= will_paginate looks %>
-			<% else %>
-				<p>No <%= filter -%> looks yet, <%= link_to 'create one', new_user_look_path(user) %>.</p>
-			<% end %>
-  </div> 
+<div id="contentContainer">
+	<% unless looks.empty? %>
+		<%= render :partial => 'looks/my_look_list_display', :collection => looks, :as => :look, :locals => {:personal => true} %>
+	<% else %>
+		<p>No <%= filter -%> looks yet, <%= link_to 'create one', new_user_look_path(user) %>.</p>
+	<% end %>
+	<%= will_paginate looks %>
 </div>

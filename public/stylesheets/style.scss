@@ -1,0 +1,164 @@
+@import "css_reset.css";
+
+@mixin rounded($radius: 7px) {
+	border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+@mixin shadow() {
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+#navContainer {
+	width: 100%;
+	#topBar {
+		height: 6px;
+		margin-bottom: 3px;
+		background: #fff url(/images/baseNavBG.png) repeat-x;
+	}
+	#navigation {
+		img#logo {
+			margin: 0 6px;
+		}
+		ul {
+			float: right;
+			font-size: 0.9em;
+			li {
+				display: inline;
+				padding: 20px 6px 9px;
+				margin-right: 2px;
+			}
+		}
+	}
+}
+
+#notice {
+	$hgt: 50px;
+	height: hgt;
+	#message {
+		margin: 0 auto;
+		text-align:center;
+		width: 45%;
+		line-height: hgt;
+	}
+}
+
+#header {
+	width: 730px;
+	margin: 0 auto;
+	height: 30px;
+	ul {
+		float: left;
+		margin-left: 10px;
+		display: inline;
+		font-size: 0.9em;
+		li {
+			padding: 7px 6px 15px;
+			display:inline;
+		}
+		li.active {
+			background-color: #d5d5d5;
+			@include rounded;
+		}
+	}
+	.button {
+		float: right;
+	}
+}
+
+#contentContainer {
+	$grey: #929292;
+	
+	padding: 30px 30px 30px 30px;
+	width: 700px;
+	background-color: #d5d5d5;
+	margin: 0 auto;
+	@include rounded;
+	div.pagination {
+		width: 50%;
+		margin: 0 auto;
+		text-align: center;
+		clear: both;
+	}
+	div.lookPreview {
+		clear:both;
+		height: 200px;
+		padding: 30px 0 0 30px;
+		margin-bottom: 50px;
+		@include shadow;
+		border: 1px solid $grey;
+		background: #fff;
+		@include rounded;
+		#lookContent {
+			p.author {
+				margin: -7px 0 8px 0;
+				padding-left: 10px;
+			}
+			img {
+				float: left;
+				margin-left: -4px;
+				margin-right: 10px;
+			}
+			h2 {
+				margin-left: 5px;
+				font-size: 1.25em;
+				font-weight: bold;
+				line-height: 45px;
+			}
+			p {
+				margin-left: 5px;
+				float: left;
+				font-size: 0.8em;
+				width: 316px;
+			}
+			p.tags {
+				border-left: 1px solid $grey;
+				height: 65px;
+				margin-left: 10px;
+				padding-left: 10px;
+				width: 147px;
+			}
+		}
+		ul {
+			margin: 25px 0 0 0;
+			clear: both;
+			float: left;
+			color: $grey;
+			font-size: 0.8em;
+			li {display:inline;}
+		}
+	}
+}
+/* General Classes */
+
+.button {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 0.75em;
+	padding: 6px;
+	color: #fff;
+	border: {
+		bottom: 1px solid rgba(0,0,0,0.25);
+		left: {
+			width: 2px;
+			color: #00c800;
+		}
+		right: {
+			width: 2px;
+			color: #00c800;
+		}
+		top: {
+			width: 2px;
+			color: #00c800;
+		}
+	}
+	background-color: #009800;
+	@include rounded(5px);
+	@include shadow;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+
+input.watermarked {
+	color: #999;
+}

@@ -1,8 +1,4 @@
 $().ready(function() {
-	$('#flash').effect("highlight", {}, 3000);
-	setTimeout(function() {
-		$('#flash').fadeOut('fast');
-	}, 2500);
     $.validator.messages.required = "";
     $('form').validate({ //uses validate plugin
         invalidHandler: function(e, validator) {

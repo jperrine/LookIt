@@ -1,405 +1,126 @@
-/* v1.0 | 20080212 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-}
-body {
-	line-height: 1;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-/* remember to define focus styles! */
-:focus {
-	outline: 0;
-}
-/* remember to highlight inserts somehow! */
-ins {
-	text-decoration: none;
-}
-del {
-	text-decoration: line-through;
-}
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/* END CSS RESET */
+@import url(css_reset.css);
+#navContainer {
+  width: 100%; }
+  #navContainer #topBar {
+    height: 6px;
+    margin-bottom: 3px;
+    background: white url(/images/baseNavBG.png) repeat-x; }
+  #navContainer #navigation img#logo {
+    margin: 0 6px; }
+  #navContainer #navigation ul {
+    float: right;
+    font-size: 0.9em; }
+    #navContainer #navigation ul li {
+      display: inline;
+      padding: 20px 6px 9px;
+      margin-right: 2px; }
 
-/* General CSS */
-body {
-	font-family: arial;
-}
+#notice {
+  height: hgt; }
+  #notice #message {
+    margin: 0 auto;
+    text-align: center;
+    width: 45%;
+    line-height: hgt; }
 
-form {
-	display: inline;
-}
+#header {
+  width: 730px;
+  margin: 0 auto;
+  height: 30px; }
+  #header ul {
+    float: left;
+    margin-left: 10px;
+    display: inline;
+    font-size: 0.9em; }
+    #header ul li {
+      padding: 7px 6px 15px;
+      display: inline; }
+    #header ul li.active {
+      background-color: #d5d5d5;
+      border-radius: 7px;
+      -moz-border-radius: 7px;
+      -webkit-border-radius: 7px; }
+  #header .button {
+    float: right; }
 
-a, a:visited, a:active {
-	color: #424242;
-	text-decoration: none;
-}
+#contentContainer {
+  padding: 30px 30px 30px 30px;
+  width: 700px;
+  background-color: #d5d5d5;
+  margin: 0 auto;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px; }
+  #contentContainer div.pagination {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    clear: both; }
+  #contentContainer div.lookPreview {
+    clear: both;
+    height: 200px;
+    padding: 30px 0 0 30px;
+    margin-bottom: 50px;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    border: 1px solid #929292;
+    background: #fff;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px; }
+    #contentContainer div.lookPreview #lookContent p.author {
+      margin: -7px 0 8px 0;
+      padding-left: 10px; }
+    #contentContainer div.lookPreview #lookContent img {
+      float: left;
+      margin-left: -4px;
+      margin-right: 10px; }
+    #contentContainer div.lookPreview #lookContent h2 {
+      margin-left: 5px;
+      font-size: 1.25em;
+      font-weight: bold;
+      line-height: 45px; }
+    #contentContainer div.lookPreview #lookContent p {
+      margin-left: 5px;
+      float: left;
+      font-size: 0.8em;
+      width: 316px; }
+    #contentContainer div.lookPreview #lookContent p.tags {
+      border-left: 1px solid #929292;
+      height: 65px;
+      margin-left: 10px;
+      padding-left: 10px;
+      width: 147px; }
+    #contentContainer div.lookPreview ul {
+      margin: 25px 0 0 0;
+      clear: both;
+      float: left;
+      color: #929292;
+      font-size: 0.8em; }
+      #contentContainer div.lookPreview ul li {
+        display: inline; }
 
-a:hover {
-	text-decoration: underline;
-}
-/* Top Navigation Bar */
-
-#logo
-{
-	float: left;
-	margin-left: 3px;
-	margin-top: 2px;
-}
-
-#container
-{
-	background: #fff;
-	margin-right: 40px;
-	margin-left: 40px;
-	margin-bottom: 0;
-}
-
-#navigation
-{
-	float: left;
-	width: 100%;
-	height: 50px;
-	display: inline-block;
-	margin-bottom: 20px;
-	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	font-size: 0.85em;
-}
-
-#navigation ul
-{
-	float: right;
-	background-color: #d5d5d5;
-	margin-right: 0;
-	margin-left: 0;
-	margin-bottom: auto;
-	padding-left: 5px;
-	padding-right: 5px;
-	height: 25px;
-	padding-top: 8px;
-}
-
-#navigation ul li
-{
-	display: inline;
-}
-
-#navigation li a
-{
-	display: inline;
-	padding: 5px 10px;
-}
-
-/* Look Info Area */
-
-#lookcover
-{
-	float: left;
-	padding-right: 9px;
-	margin-top: 10px;
-	margin-right: 20px;
-	margin-bottom: 30px;
-}
-
-#lookinfo
-{
-	clear: right;
-	padding: 51px 20px 20px;
-	width: 600px;
-	margin-bottom: 11px;
-}
-
-div#lookinfo h5 {
-	color: #929292;
-	white-space: pre;
-	text-decoration: none;
-}
-
-p {
-	font: 0.8em/1.3em arial;
-	padding-top: 0;
-}
-
-#lookinfo h2
-{
-	color: #000;
-	font-size: 160%;
-	margin-right: 0;
-	margin-left: 0;
-	margin-bottom: -5px;
-	padding-top: 20px;
-}
-
-/* Edit/Preview Tabs (still needs "tab effect" styling, and I can't figure that out) */
-
-#editpreview {
-	float: left;
-	width: 100%;
-	background: #fffeff;
-	height: 1em;
-
-}
-
-#editpreview ul {
-	float: right;
-}
-
-#editpreview ul li
-{
-	display: inline;
-}
-
-#editpreview li span, #editpreview li a
-{
-	padding: 0 10px;
-	color: #424242;
-	text-decoration: none;
-	font-size: 0.9em;
-	cursor: pointer;
-}
-
-#editpreview li span:hover, #editpreview li a:hover
-{
-	text-decoration: underline;
-}
-
-/* Look Snippet Lists */
-
-div.LookSnippet img {
-	float: left;
-	display: inline;
-	margin-right: 10px;
-}
-
-div.LookSnippet h5 {
-	clear: right;
-	display: inline;
-}
-
-div.LookSnippet {
-	clear: both;
-	display: block;
-	height: 150px;
-}
-
-div.LookSnippet a {
-	text-decoration: none;
-	color: #424242;
-}
-
-div.LookSnippet a:hover {
-	color: #000;
-}
-
-/* The Working Area */
-
-div#canvas {
-	text-align: center;
-	background-color: #d5d5d5;
-	padding-bottom: 24px;
-	clear: both;
-	padding-top: 20px;
-}
-
-#TextArea {
-	width: 590px;
-	height:  auto;
-	margin: 15px auto 1px;
-	clear: both;
-	background-color: #fffeff;
-	border: 1px solid #929292;
-}
-
-div#content, div#contentDisplay {
-	padding: 45px;
-	text-align: left;
-}
-
-div#editable  {
-	margin: 0 auto;
-	
-}
-
-#footer { 
-	clear:both;
-	background-color:#333;
-	height:100px;
-}
-
-/* Home Page Stuff */
-#homecanvas {
-	width: 700px;
-	margin: 0 auto;
-}
-
-div#homecanvas h3 {
-	color: #424242;
-	font: bold 4em/1 arial;
-	text-shadow: #d5d5d5 0 2px 0;
-	display: inline-block;
-	background-color: #fffeff;
-	float: right;
-	clear: right;
-	width: 184px;
-	margin-left: 7px;
-	margin-right: 25%;
-	margin-top: 165px;
-}
-
-div#register {
-	width: 333px;
-	text-align: right;
-	padding: 20px 15px 0 0;
-	float: right;
-	margin-right: 5px;
-	margin-left: auto;
-	line-height: 25px;
-	border-right: 4px solid #d5d5d5;
-	margin-top: 150px;
-}
-
-div#register p {
-	margin-bottom: 13px;
-}
-/* View Look */
-
-a#LastPage {
-	float: left;
-	margin-left: 10%;
-	color: #424242;
-	text-decoration: none;
-	text-shadow: #fffeff 0 1px 0;
-}
-
-a#LastPage:hover {
-	text-decoration: underline;
-}
-
-a#NextPage {
-	float: right;
-	margin-right: 10%;
-	color: #424242;
-	text-decoration: none;
-	text-shadow: #fffeff 0 1px 0;
-}
-
-a#NextPage:hover {
-	text-decoration: underline;
-}
-
-/* Notifications */
-
-#flash {
-	width: 200px;
-	height: 50px;
-	padding: 25px;
-	margin: 10px;
-	position: absolute;
-	top: 25px;
-	right: -50px;
-	background-color: yellow;
-	border: 1px solid #000;
-}
-
-
-/* Look Page Drop Down Menu */
-
-#PageSelector {
-	height: 40px;
-	font: bold 1em arial;
-	color: #424242;
-	text-align: left;
-}
-
-dl.pageSelect {
-	width: 300px;
-	margin: 0 auto;
-}
-.pageSelect dd, .pageSelect dt, .pageSelect ul { 
-	margin: 0; 
-	padding: 0;
-}
-.pageSelect dd {
-	position: relative;
-}
-
-.pageSelect dt span {
-	display: block;
-	padding-right: 20px;
-	padding-left: 5px;
-	cursor: pointer;
-	background: #fff url(/images/arrow.png) no-repeat scroll right center;
-	border: 1px solid #929292;
-}
-
-.pageSelect dd ul { 
-	background-color: #fff;
-	border: 1px solid #929292;
-	list-style: none;
-	display: none;
-	padding: 5px 0;
-	position: absolute;
-	left: 0px;
-	top: 2px;
-}
-
-.pageSelect dd ul li {
-	width: 298px;
-}
-
-.pageSelect dd ul li a {
-	padding: 5px;
-	display: block;
-}
-
-.pageSelect dd ul li a:hover {
-	background-color: #d3d3d3;
-}
-
-/* Watermarks */
+/* General Classes */
+.button {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.75em;
+  padding: 6px;
+  color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  border-left-width: 2px;
+  border-left-color: #00c800;
+  border-right-width: 2px;
+  border-right-color: #00c800;
+  border-top-width: 2px;
+  border-top-color: #00c800;
+  background-color: #009800;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25); }
 
 input.watermarked {
-	color: #999;
-}
-
-/* Tag Cloud classes */
-
-#tag_cloud {
-	
-}
-#tag_cloud a.tag1 {
-	font-size: 1.5em;
-}
-#tag_cloud a.tag2 {
-	font-size: 1.2em;	
-}
-#tag_cloud a.tag3 {
-	font-size: 1em;	
-}
-#tag_cloud a.tag4 {
-	font-size: 0.8em;	
-}
+  color: #999; }
