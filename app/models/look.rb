@@ -31,12 +31,12 @@ class Look < ActiveRecord::Base
   
   def self.find_published(page)
     paginate(:page => page, :per_page => 5, :order => 'posted DESC', 
-      :conditions => ["published = ?", true])
+      :conditions => {:published => true})
   end
   
   def self.find_working(page)
     paginate(:page => page, :per_page => 5, :order => 'posted DESC', 
-      :conditions => ["published = ?", false])
+      :conditions => {:published => false})
   end
   
   def self.find_them_all(page)
