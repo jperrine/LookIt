@@ -22,7 +22,7 @@
 	<% unless looks.empty? %>
 		<%= render :partial => 'looks/look_list_display', :collection => looks, :as => :look, :locals => {:personal => false} %>
 	<% else %>
-		<p>No published looks yet.</p>
+		<p>No published looks.</p>
 	<% end %>
 	<%= will_paginate looks %>
 </div>

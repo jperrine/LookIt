@@ -31,15 +31,15 @@ class Look < ActiveRecord::Base
   
   def self.find_published(page, order = 'posted')
     paginate(:page => page, :per_page => 5, :order => "#{order} DESC", 
-      :conditions => {:published => true})
+      :conditions => {:published => true}, :include => :user)
   end
   
   def self.find_working(page, order = 'posted')
     paginate(:page => page, :per_page => 5, :order => "#{order} DESC", 
-      :conditions => {:published => false})
+      :conditions => {:published => false}, :include => :user)
   end
   
   def self.find_them_all(page, order = 'posted')
-    paginate(:page => page, :per_page => 5, :order => "#{order} DESC")
+    paginate(:page => page, :per_page => 5, :order => "#{order} DESC", :include => :user)
   end
 end

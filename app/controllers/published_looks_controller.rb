@@ -3,7 +3,7 @@ class PublishedLooksController < ApplicationController
   # GET /public-looks/
   #browse all published looks
   def index
-    @tags = Look.tag_counts
+    @tags = Look.tag_counts#needs to be updated for only published look tags
     @sort = params[:sort] || "date"
     sort = @sort == "date" ? "posted" : "title"
     @looks = Look.find_published(params[:page], sort)
@@ -17,32 +17,24 @@ class PublishedLooksController < ApplicationController
   # GET /public-looks/results?query=:query
   #search all published looks  
   def results
+    @sort = params[:sort] || "date"
+    sort = @sort == "date" ? "posted" : "title"
     query = params[:query]
     unless query
       flash[:notice] = "You must enter a search term."
-      redirect_to :action => 'search' and return
+      redirect_to :action => 'index' and return
     else
-      @look_results = Look.find(:all, 
-        :order => 'id DESC',
-        :conditions => 
-          ['published = ? AND title LIKE ?',
-            true, "%#{query}%"])
-      # TODO: implement search for pages, while look is published
-      @user_results = User.find(:all,
-        :order => 'id DESC',
-        :conditions => 
-          ['username LIKE ? OR display_name LIKE ? OR bio LIKE ?',
-            "%#{query}%", "%#{query}%", "%#{query}%"])
+      #todo reimplement searching for only looks, but can search within pages
+      @looks = Look.paginate(:page => params[:page], :per_page => 5, :order => "#{sort} DESC",
+        :joins => :pages,
+        :conditions => ["(lower(looks.title) LIKE ? OR lower(looks.content) LIKE ? ) AND looks.published = ?", 
+           "%#{query.downcase}%", "%#{query.downcase}%", true])
     end
     
     respond_to do |format|
       format.html
-      format.xml { render :xml => [@look_results, @page_results, @user_results] }
+      format.xml { render :xml => [@looks] }
     end
-  end
-  
-  # GET /public-looks/search
-  def search
   end
   
   # GET /public-looks/user/:id
@@ -63,7 +55,7 @@ class PublishedLooksController < ApplicationController
   def view
     #debugger
     id = params[:look_id] || params[:id]
-    @look = Look.find(id)
+    @look = Look.find(id, :include => [:user, :pages])
 
     #if look_id is nil, sets page to the first page in the look's collection, otherwise find specific page
     @page = params[:look_id].nil? ? @look.pages.first : @look.pages.select { |page| page.id == params[:id].to_i }.first

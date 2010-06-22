@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100621203743) do
+ActiveRecord::Schema.define(:version => 20100622142734) do
 
   create_table "looks", :force => true do |t|
     t.integer  "user_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100621203743) do
     t.string   "cached_tag_list"
   end
 
+  add_index "looks", ["content"], :name => "index_looks_on_content"
   add_index "looks", ["title"], :name => "index_looks_on_title"
 
   create_table "pages", :force => true do |t|

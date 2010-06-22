@@ -224,4 +224,5 @@ input.error {
   background: #FF6A6A; }
 
 div.clear {
-  clear: both; }
+  clear: both;
+  height: 15px; }

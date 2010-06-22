@@ -20,7 +20,7 @@
 		<% if personal %>
 			<%= render :partial => 'looks/look_editor_controls', :locals => {:look => look}%>
 		<% else %>
-			<li>View</li>
+			<li><%= link_to "View", :controller => 'published_looks', :action => 'view', :id => look %></li>
 			<li>Share</li>
 			<li>Like</li>
 		<% end %>
