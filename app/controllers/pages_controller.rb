@@ -32,10 +32,10 @@ class PagesController < ApplicationController
   
   # POST /users/:user_id/looks/:look_id/pages(.:format)
   def create
-    @page = Page.new(params[:page])
-    @page.look_id = params[:look_id]
-    @page.posted = Time.now
     @look = Look.find(params[:look_id])
+    @page = @look.pages.build(params[:page])
+    @page.posted = Time.now
+    
     respond_to do |format|
       if @page.save
         flash[:notice] = "#{@page.title} was successfully added to #{@page.look.title}"

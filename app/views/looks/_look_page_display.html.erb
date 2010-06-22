@@ -8,15 +8,15 @@
 				<h3>Pages:</h3>
 				<ul>
 					<% if personal %>
-						<% look.pages.each do |page| %>
-							<li><%= link_to h(page.title), user_look_page_path(look.user, look, page)%></li>
+						<% look.pages.each do |p| %>
+							<li><%= link_to h(p.title), user_look_page_path(look.user, look, p)%></li>
 						<% end %>
 						<li>
 							<%= link_to "Add Page + ", new_user_look_page_path(look.user, look), :class => 'button' %></li>
 						</li>
 					<% else %>	
-						<% look.pages.each do |page| %>
-							<li><%= link_to h(page.title), :controller => 'published_looks', :action => 'view', :look_id => look, :id => page %>
+						<% look.pages.each do |p| %>
+							<li><%= link_to h(p.title), :controller => 'published_looks', :action => 'view', :look_id => look, :id => p %>
 						<% end %>
 					<% end %>
 				</ul>
@@ -28,6 +28,12 @@
 				<div id="pageContent">
 					<%= page.content %>
 				</div>
+					<% if personal %>
+						<p class="pageEditorPanel">
+							<%= link_to "Edit Page", edit_user_look_page_path(look.user, look, page) %> | 
+							<%= link_to "Delete Page", user_look_page_path(look.user, look, page), :method => :delete, :confirm => "Are you sure you want to delete this page?"%>
+						</p>
+					<% end %>
 				<% else %>
 					<p>No pages have been added for this look.</p>
 					<% if personal %>

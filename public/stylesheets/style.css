@@ -159,6 +159,8 @@
       #contentContainer div.lookEditor div#pageContent div.pageEditor input[type='text'] {
         width: 400px;
         height: 25px; }
+      #contentContainer div.lookEditor div#pageContent div.pageEditor p.pageEditorPanel {
+        margin: 15px 0 0 0; }
 
 #signupbox {
   margin: 100px auto;
