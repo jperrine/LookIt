@@ -74,10 +74,11 @@ class LooksController < ApplicationController
   def destroy
     @look = Look.find(params[:id])
     title = @look.title
+    look_id = @look.id
     destroyed = @look.destroy
     
     if destroyed
-      pages = Page.find(:all, :conditions => ["look_id = ?", params[:id]])
+      pages = Page.find(:all, :conditions => ["look_id = ?", look_id])
       pages.each do |page|
         page.destroy
       end
