@@ -21,4 +21,5 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/public-looks/:action/:id.:format', :controller => 'published_looks'
   
   map.root :controller => 'users', :action => 'new'
+  map.catch_all '*url', :controller => 'error'
 end
