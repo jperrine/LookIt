@@ -1,14 +1,1 @@
-<%= render :partial => 'looks/look_summary', :locals => {:look => @page.look} %>
-<div id= "canvas"> 
-	<%= render :partial => 'looks/private_look_page_select', :locals => { :look => @page.look } %>
-  <div id= "TextArea">
-		<div id="content">
-			<%= render :partial => 'page_editor_panel', :locals => { :page => @page }%>
-			<br />
-			<h3><%=h @page.title %></h3>
-			<br />
-			<%= @page.content %>
-		</div>
-  </div>
-	<%= render :partial => 'page_change', :locals => {:page => @page} %>
-</div>
+<%= render :partial => 'looks/look_page_display', :locals => {:look => @look, :page => @page, :personal => true }%>

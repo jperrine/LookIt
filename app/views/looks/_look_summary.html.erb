@@ -5,7 +5,7 @@
 	<p class="tags"><%=h look.tag_list %></p>
 	<ul>
 		<% if personal %>
-			<%= render :partial => 'look_editor_controls', :locals => {:look => look}%>
+			<%= render :partial => 'looks/look_editor_controls', :locals => {:look => look}%>
 		<% else %>
 			<li>Share | </li>
 			<li>Like</li>

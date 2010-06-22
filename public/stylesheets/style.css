@@ -106,8 +106,7 @@
       padding-left: 10px;
       width: 147px; }
   #contentContainer div.lookPreview {
-    clear: both;
-    height: 200px; }
+    clear: both; }
     #contentContainer div.lookPreview ul {
       margin: 25px 0 0 0;
       clear: both;
@@ -224,5 +223,5 @@ input.watermarked {
 input.error {
   background: #FF6A6A; }
 
-.clear {
+div.clear {
   clear: both; }

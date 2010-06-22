@@ -1,14 +1,1 @@
-
-<div id= "canvas"> 
-  <div id= "TextArea">
-		<div id="content">
-			<% unless @page.nil? %>
-				<h3><%=h @page.title %></h3>
-				<br />
-				<%= @page.content %>
-			<% else %> 
-				<p>No content has been created for this look.</p>
-			<% end %>
-		</div>
-  </div>
-</div> 
+<%= render :partial => 'looks/look_page_display', :locals => {:look => @look, :page => @page, :personal => false }%>

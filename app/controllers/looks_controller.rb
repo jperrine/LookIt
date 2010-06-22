@@ -63,6 +63,7 @@ class LooksController < ApplicationController
   def show
     @look = Look.find(params[:id], 
       :conditions => {:user_id => @current_user.id })
+    @page = @look.pages.empty? ? @look.pages.first : nil
         
     respond_to do |format|
       format.html

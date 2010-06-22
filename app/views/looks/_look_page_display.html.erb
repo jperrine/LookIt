@@ -1,0 +1,41 @@
+<div id="header">
+</div>
+<div id="contentContainer">
+	<div class="lookEditor">
+		<%= render :partial => 'looks/look_summary', :locals => {:look => look, :personal => personal}%>
+		<div id="pageContent">
+			<div class="pageList">
+				<h3>Pages:</h3>
+				<ul>
+					<% if personal %>
+						<% look.pages.each do |page| %>
+							<li><%= link_to h(page.title), user_look_page_path(look.user, look, page)%></li>
+						<% end %>
+						<li>
+							<%= link_to "Add Page + ", new_user_look_page_path(look.user, look), :class => 'button' %></li>
+						</li>
+					<% else %>	
+						<% look.pages.each do |page| %>
+							<li><%= link_to h(page.title), :controller => 'published_looks', :action => 'view', :look_id => look, :id => page %>
+						<% end %>
+					<% end %>
+				</ul>
+			</div>
+			<div class="pageEditor">
+				<% unless page.nil? %>
+				<h3><%= h page.title %></h3>
+				<br />
+				<div id="pageContent">
+					<%= page.content %>
+				</div>
+				<% else %>
+					<p>No pages have been added for this look.</p>
+					<% if personal %>
+						<p><%= link_to "Add one", new_user_look_page_path(look.user, look) %></p>
+					<% end %>
+				<% end %>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
