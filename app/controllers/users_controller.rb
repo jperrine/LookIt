@@ -44,14 +44,14 @@ class UsersController < ApplicationController
   # POST /user/
   def create
     @user = User.new(params[:user])
-    
+    @user.active = false
     respond_to do |format|
       if @user.save
         flash[:notice] = "#{@user.display_name}, your account was successfully created."
-        session[:user_id] = @user.id
-        session[:user_param] = @user
-        format.html { redirect_to @user }
-        format.xml { render :xml => @user, :status => :created, :location => @user }
+        #session[:user_id] = @user.id
+        #session[:user_param] = @user
+        format.html { redirect_to root_url }
+        #format.xml { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => 'new' }
         format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
