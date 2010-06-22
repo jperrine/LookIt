@@ -6,6 +6,7 @@
     margin-bottom: 3px;
     background: white url(/images/baseNavBG.png) repeat-x; }
   #navContainer #navigation img#logo {
+    float: left;
     margin: 0 6px; }
   #navContainer #navigation ul {
     float: right;
@@ -16,17 +17,19 @@
       margin-right: 2px; }
 
 #notice {
-  height: hgt; }
+  clear: both;
+  width: 100%;
+  height: 70px; }
   #notice #message {
     margin: 0 auto;
     text-align: center;
     width: 45%;
-    line-height: hgt; }
+    line-height: 70px; }
 
 #header {
   width: 730px;
   margin: 0 auto;
-  height: 30px; }
+  height: 25px; }
   #header ul {
     float: left;
     margin-left: 10px;
@@ -45,12 +48,14 @@
       cursor: pointer; }
       #header ul li span.tab:hover {
         text-decoration: underline; }
-  #header .button {
-    float: right; }
+  #header a.button {
+    float: right;
+    margin: -7px 0 0 0; }
   #header #search {
-    float: right; }
+    float: right;
+    margin: -15px 0 0 0; }
     #header #search input[type='text'] {
-      margin: 0 10px; }
+      margin: 0 10px 0 35px; }
 
 #contentContainer {
   padding: 30px 30px 30px 30px;

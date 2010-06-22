@@ -98,6 +98,10 @@ class UsersController < ApplicationController
     if request.post?
       user = User.authenticate(params[:username], params[:password])
       if user
+        unless user.active
+          flash[:notice] = "Your account is not active, once we give you access you can log in."
+          redirect_to root_path and return
+        end
         session[:user_id] = user.id
         session[:user_param] = user
         uri, session[:original_uri] = session[:original_uri], nil

@@ -19,6 +19,7 @@
 	}
 	#navigation {
 		img#logo {
+			float: left;
 			margin: 0 6px;
 		}
 		ul {
@@ -33,20 +34,22 @@
 	}
 }
 #notice {
-	$hgt: 50px;
-	height: hgt;
+	clear:both;
+	$hgt: 70px;
+	width: 100%;
+	height: $hgt;
 	#message {
 		margin: 0 auto;
 		text-align:center;
 		width: 45%;
-		line-height: hgt;
+		line-height: $hgt;
 	}
 }
 
 #header {
 	width: 730px;
 	margin: 0 auto;
-	height: 30px;
+	height: 25px;
 	ul {
 		float: left;
 		margin-left: 10px;
@@ -68,14 +71,16 @@
 			}
 		}
 	}
-	.button {
+	a.button {
 		float: right;
+		margin: -7px 0 0 0;
 	}
 	#search {
 		float: right;
 		input[type='text'] {
-		 	margin: 0 10px;
+		 	margin: 0 10px 0 35px;
 		}
+		margin: -15px 0 0 0;
 	}
 }
 
