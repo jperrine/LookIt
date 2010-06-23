@@ -3,7 +3,9 @@ class PublishedLooksController < ApplicationController
   # GET /public-looks/
   #browse all published looks
   def index
-    @tags = Look.tag_counts#needs to be updated for only published look tags
+    @tags = Tag.find(:all, :conditions => ['looks.published = ?', true],
+      :joins => ['inner join taggings on taggings.tag_id = tags.id', 
+        'inner join looks on looks.id = taggings.taggable_id'])
     @sort = params[:sort] || "date"
     sort = @sort == "date" ? "posted" : "title"
     @looks = Look.find_published(params[:page], sort)

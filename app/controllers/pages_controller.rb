@@ -2,12 +2,6 @@ class PagesController < ApplicationController
   before_filter :require_login
   before_filter :check_current_user_permission
   
-  # GET /users/:user_id/looks/:look_id/pages(.:format)
-  def index
-    @look = Look.find(params[:look_id])
-    redirect_to [@current_user, @look, @look.pages.first]
-  end
-  
   # GET /users/:user_id/looks/:look_id/pages/new(.:format)
   def new
     @look = Look.find(params[:look_id])

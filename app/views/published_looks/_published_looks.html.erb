@@ -20,7 +20,7 @@
 </div>
 <div id="contentContainer">
 	<% unless looks.empty? %>
-		<%= render :partial => 'looks/look_list_display', :collection => looks, :as => :look, :locals => {:personal => false} %>
+		<%= render :partial => 'looks/look_list_display', :collection => looks, :as => :look, :locals => {:personal => false, :tags => @tags} %>
 	<% else %>
 		<p>No published looks.</p>
 	<% end %>

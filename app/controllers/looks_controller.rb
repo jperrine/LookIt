@@ -130,7 +130,9 @@ class LooksController < ApplicationController
   def published
     @user = @current_user
     @looks = @user.looks.find_published(params[:page])
-    @tags = Look.tag_counts
+    @tags = Tag.find(:all, :conditions => ['looks.published = ? and looks.user_id = ?', true, @user.id],
+      :joins => ['inner join taggings on taggings.tag_id = tags.id', 
+        'inner join looks on looks.id = taggings.taggable_id'])
     
     respond_to do |format|
       format.html
@@ -142,11 +144,26 @@ class LooksController < ApplicationController
   def working
     @user = @current_user
     @looks = @user.looks.find_working(params[:page])
-    @tags = Look.tag_counts
+    @tags = Tag.find(:all, :conditions => ['looks.published = ? and looks.user_id = ?', false, @user.id],
+      :joins => ['inner join taggings on taggings.tag_id = tags.id', 
+        'inner join looks on looks.id = taggings.taggable_id'])
     
     respond_to do |format|
       format.html
       format.xml { render :xml => @looks }
     end
+  end
+  
+  # GET /users/:user_id/looks/tags/:id
+  def tags
+    @user = @current_user
+    tag_name = params[:id]
+    @looks = @user.looks.paginate(:all, :per_page => 5, :page => params[:page], :joins => 
+      ['inner join taggings on taggings.taggable_id = looks.id', 'inner join tags on tags.id = taggings.tag_id'], 
+        :conditions => ['tags.name = ?', tag_name])
+    @tags = Tag.find(:all, :conditions => ['looks.user_id = ?', @user.id],
+      :joins => ['inner join taggings on taggings.tag_id = tags.id', 
+        'inner join looks on looks.id = taggings.taggable_id'])
+    @tags = Look.tag_counts
   end
 end
