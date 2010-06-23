@@ -1,15 +1,21 @@
-<div id="lookinfo">
-	<h2>Please login using your Lookit account.</h2>
-</div>
-<div id= "canvas">
-	<div id="TextArea">
-		<div id="content">
-			<%= render :partial => 'users/form_errors', :locals => {:req => false} %>
-			<% form_tag(url_for(:action => 'login'), :method => 'post') do %>
-			  Username: <%= text_field_tag("username", '', :class => 'required') %><br />
-			  Password: <%= password_field_tag("password", '', :class => 'required') %><br />
-			  <%= submit_tag("Login")%>
-			<% end %>
-		</div>
+<div id="signupbox">
+	<h1>Brighten is in Closed Beta</h1>
+	<p>If you've received word from us about your account being activated, login with the credentials you created at signup.</p>
+	<div id="labels">
+		<%= render :partial => 'users/form_errors', :locals => {:req => false} %>
+		<% form_tag(url_for(:action => 'login'), :method => 'post') do %>
+			<div class="left">
+				<label>Username: </label><br />
+				<label>Password: </label><br />
+			</div>
+			<div class="right">
+				<%= text_field_tag("username", '', :class => 'required') %><br />
+			  <%= password_field_tag("password", '', :class => 'required') %><br />
+			</div>
+	</div> 
+	<div id="signup"> 
+			<%= submit_tag("Sign In &raquo;", :class => 'button signin')%><br />
+		<% end %>
 	</div>
+	<div class="clear"></div>
 </div>

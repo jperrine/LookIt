@@ -1,26 +1,16 @@
-<div id="canvas">
-	<div id="TextArea">
-		<div id='editcontent'>
-			<%= render :partial => 'users/form_errors', :locals => { :req => true } %>
-			<% form_for([@current_user, @look], :html => { :multipart => true })  do |f| %>
-				<%= f.error_messages %>
-				<%= f.label :title, "* Look Title" %> <%= f.text_field :title, :class => 'required' %>
-				<br />
-				<%= f.label :content, "* Look Description" %><br />
-				<%= f.text_area :content, :class => 'required' %>
-				<br />
-				<%= f.label :tags %> <%= f.text_field :tag_list %>
-				<br />
-				<p class="small">Separate tags with commas</p>
-				<br />
-				<%= f.label :cover %> <%= f.file_field :cover %><br />
-				<br />
-				<%= submit_tag("Save") %>
-			<% end %>
-		</div>
-		<div id='previewcontent'>
-			<div id='contentDisplay'></div>
-			<input type='button' id='previewSave' value='Save' />
-		</div>
-	</div>
-</div>
+<%= render :partial => 'users/form_errors', :locals => { :req => true } %>
+<% form_for([@current_user, @look], :html => { :multipart => true })  do |f| %>
+	<%= f.error_messages %>
+	<%= f.label :title, "* Look Title" %> <%= f.text_field :title, :class => 'required' %>
+	<br />
+	<%= f.label :content, "* Look Description" %><br />
+	<%= f.text_area :content, :class => 'required' %>
+	<br />
+	<%= f.label :tags %> <%= f.text_field :tag_list %>
+	<br />
+	<p class="small">Separate tags with commas</p>
+	<br />
+	<%= f.label :cover %> <%= f.file_field :cover %><br />
+	<br />
+	<%= submit_tag("Save") %>
+<% end %>

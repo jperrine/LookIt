@@ -148,6 +148,8 @@
             top: 8px;
             left: 0;
             font-size: 0.9em; }
+    #contentContainer div.lookEditor div#pageContent div#preview {
+      display: none; }
     #contentContainer div.lookEditor div#pageContent div.pageEditor {
       margin: 15px 0;
       float: right;

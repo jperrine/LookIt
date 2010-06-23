@@ -50,6 +50,7 @@ class PagesController < ApplicationController
   
   # PUT /user/:user_id/looks/:look_id/pages/id(.:format)
   def update
+    @look = Look.find(params[:look_id])
     @page = Page.find(params[:id])
     
     respond_to do |format|
