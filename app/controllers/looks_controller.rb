@@ -125,4 +125,28 @@ class LooksController < ApplicationController
       format.xml { head :ok }
     end
   end
+  
+  # GET /user/:id/looks/published.:format
+  def published
+    @user = @current_user
+    @looks = @user.looks.find_published(params[:page])
+    @tags = Look.tag_counts
+    
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @looks }
+    end
+  end
+  
+  # GET /user/:id/looks/working-looks.:format
+  def working
+    @user = @current_user
+    @looks = @user.looks.find_working(params[:page])
+    @tags = Look.tag_counts
+    
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @looks }
+    end
+  end
 end

@@ -145,30 +145,6 @@ class UsersController < ApplicationController
     end
   end
   
-  # GET /user/:id/published-looks.:format
-  def published_looks
-    @user = @current_user
-    @looks = @user.looks.find_published(params[:page])
-    @tags = Look.tag_counts
-    
-    respond_to do |format|
-      format.html
-      format.xml { render :xml => @looks }
-    end
-  end
-  
-  # GET /user/:id/working-looks.:format
-  def working_looks
-    @user = @current_user
-    @looks = @user.looks.find_working(params[:page])
-    @tags = Look.tag_counts
-    
-    respond_to do |format|
-      format.html
-      format.xml { render :xml => @looks }
-    end
-  end
-  
   # GET || POST /user/:id/edit/password
   def change_password
     if request.post?

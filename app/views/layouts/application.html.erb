@@ -37,10 +37,10 @@
 						<li><%= link_to "All Looks", :controller => :published_looks %></li>
 						<li><%= link_to "Profile", :controller => :published_looks, :action => :user, :id => session[:user_param] %></li>
 					  <li><%= link_to "Settings", edit_user_path(:id => session[:user_param]) %></li>
-			     	<li><%= link_to "Sign Out", logout_path %></li>
+			     	<li><%= link_to "Sign Out", logout_users_path %></li>
 					<% else %>
 						<li><a href='http://brightenit.tumblr.com/'>Blog</a></li>
-						<li><%= link_to "Sign In", login_path %></li>			
+						<li><%= link_to "Sign In", login_users_path %></li>			
 					<% end %>
 				</ul>
 			</div>

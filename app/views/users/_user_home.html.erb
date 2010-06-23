@@ -1,14 +1,14 @@
 <div id="header">
 	<ul>
 		<% if filter == 'working' %>
-			<li class="active"><%= link_to 'Working Looks', working_looks_path(user) %></li>
+			<li class="active"><%= link_to 'Working Looks', working_user_looks_path(user) %></li>
 		<% else %>
-			<li><%= link_to 'Working Looks', working_looks_path(user) %></li>
+			<li><%= link_to 'Working Looks', working_user_looks_path(user) %></li>
 		<% end %>
 		<% if filter == 'published' %>
-			<li class="active"><%= link_to 'Published Looks', published_looks_path(user) %></li>
+			<li class="active"><%= link_to 'Published Looks', published_user_looks_path(user) %></li>
 		<% else %>
-			<li><%= link_to 'Published Looks', published_looks_path(user) %></li>
+			<li><%= link_to 'Published Looks', published_user_looks_path(user) %></li>
 		<% end %>
 		<% if filter.empty? %>
 			<li class="active"><%= link_to 'All Looks', user %></li>
