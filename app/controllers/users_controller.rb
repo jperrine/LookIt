@@ -129,7 +129,7 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "Successfully logged out."
     respond_to do |format|
-      format.html { redirect_to login_path }
+      format.html { redirect_to login_users_path }
       format.xml { head :ok }
     end
   end
