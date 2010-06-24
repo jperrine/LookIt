@@ -15,12 +15,26 @@ $(document).ready(function() {
 		content_css: "/stylesheets/tiny_mce.css",
 	});
 	
+	$('div#header ul li#edit').click(function() {
+		$('div#header ul li#preview').removeClass('active');
+		$(this).addClass('active');
+		$('div#preview').slideUp('fast', function() {
+			$('div#edit').slideDown('slow');
+		});
+	});
+	
+	$('#previewSave').click(function() {
+		var formID = $(this).parent().parent().find('form').attr('id');
+		$('#'+formID).submit();
+		if ($('#errorDiv span').html().length > 0) {
+			$('div#header ul li#edit').click();
+		}
+	})
+	
 	//intercept form submit button click to copy contents of tinymce to the textarea for content
 	$('form input:submit').click(function() {
 		$('form input#page_content').val(getEditorContent());
 	})
-	//unbinds the look version of preview
-	$('div#header ul li#preview').unbind('click');
 	
 	$('div#header ul li#preview').click(function() {
 		$('div#header ul li#edit').removeClass('active');

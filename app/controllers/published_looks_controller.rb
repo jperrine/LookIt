@@ -17,6 +17,7 @@ class PublishedLooksController < ApplicationController
   # GET /public-looks/results?query=:query
   #search all published looks  
   def results
+    @tags = Look.tag_counts(:conditions => ["looks.published = ?", true])
     @sort = params[:sort] || "date"
     sort = @sort == "date" ? "posted" : "title"
     query = params[:query]

@@ -63,8 +63,8 @@ class LooksController < ApplicationController
   def show
     @look = Look.find(params[:id], 
       :conditions => {:user_id => @current_user.id })
-    @page = @look.pages.empty? ? @look.pages.first : nil
-        
+    @page = @look.pages.empty? ? nil : @look.pages.first
+
     respond_to do |format|
       format.html
       format.xml { render :xml => @look }
