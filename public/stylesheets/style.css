@@ -187,17 +187,19 @@
   #signupbox #labels {
     float: left; }
     #signupbox #labels div.left {
-      width: 80px;
+      width: 275px;
+      text-align: right;
       float: left; }
       #signupbox #labels div.left label {
         line-height: 1.4em; }
     #signupbox #labels div.right {
+      text-align: left;
+      width: 275px;
       float: right; }
   #signupbox #signup {
-    top: 50px;
-    left: 50px;
-    position: relative;
-    margin: 0 0 0 40px; }
+    clear: both;
+    margin: 0 auto;
+    width: 45px; }
 
 /* General Classes */
 .button {

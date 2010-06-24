@@ -234,21 +234,23 @@
 	#labels {
 		float: left;
 		div.left {
-			width: 80px;
+			width: 275px;
+			text-align: right;
 			float: left;
 			label {
 				line-height: 1.4em;
 			}
 		}
 		div.right {
+			text-align: left;
+			width: 275px;
 			float: right;
 		}
 	}
 	#signup {
-		top: 50px;
-		left: 50px;
-		position: relative;
-		margin: 0 0 0 40px;
+		clear: both;
+		margin: 0 auto;
+		width: 45px;
 	}
 }
 /* General Classes */
