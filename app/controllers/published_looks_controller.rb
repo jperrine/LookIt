@@ -73,9 +73,12 @@ class PublishedLooksController < ApplicationController
   def tag
     @tags = Look.tag_counts(:conditions => ["looks.published = ?", true])
     @tag = params[:id]
+    @sort = params[:sort] || "date"
+    sort = @sort == "date" ? "posted" : "title"
     @looks = Look.paginate(:page => params[:page], :per_page => 5, 
       :joins => ["inner join taggings on taggings.taggable_id = looks.id", "inner join tags on tags.id = taggings.tag_id"], 
-      :conditions => ["looks.published = ? AND tags.name = ?", true, @tag])
+      :conditions => ["looks.published = ? AND tags.name = ?", true, @tag], 
+      :order => "#{sort} desc ")
     respond_to do |format|
       format.html
       format.xml { render :xml => @looks }
