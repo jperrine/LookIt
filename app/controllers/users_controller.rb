@@ -10,9 +10,7 @@ class UsersController < ApplicationController
   # GET /user/:id(.:format)
   def show
     @user = @current_user
-    @tags = Tag.find(:all, :conditions => ['looks.user_id = ?', @user.id],
-      :joins => ['inner join taggings on taggings.tag_id = tags.id', 
-        'inner join looks on looks.id = taggings.taggable_id'])
+    @tags = Look.tag_counts(:conditions => ["looks.user_id = ?", @user.id])
     @looks = @user.looks.find_them_all(params[:page])
     
     respond_to do |format|

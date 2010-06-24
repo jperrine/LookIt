@@ -130,9 +130,7 @@ class LooksController < ApplicationController
   def published
     @user = @current_user
     @looks = @user.looks.find_published(params[:page])
-    @tags = Tag.find(:all, :conditions => ['looks.published = ? and looks.user_id = ?', true, @user.id],
-      :joins => ['inner join taggings on taggings.tag_id = tags.id', 
-        'inner join looks on looks.id = taggings.taggable_id'])
+    @tags = Look.tag_counts(:conditions => ["looks.user_id = ? AND looks.published = ?", @user.id, true])
     
     respond_to do |format|
       format.html
@@ -144,9 +142,7 @@ class LooksController < ApplicationController
   def working
     @user = @current_user
     @looks = @user.looks.find_working(params[:page])
-    @tags = Tag.find(:all, :conditions => ['looks.published = ? and looks.user_id = ?', false, @user.id],
-      :joins => ['inner join taggings on taggings.tag_id = tags.id', 
-        'inner join looks on looks.id = taggings.taggable_id'])
+    @tags = Look.tag_counts(:conditions => ["looks.user_id = ? AND looks.published = ?", @user.id, false])
     
     respond_to do |format|
       format.html
@@ -161,9 +157,6 @@ class LooksController < ApplicationController
     @looks = @user.looks.paginate(:all, :per_page => 5, :page => params[:page], :joins => 
       ['inner join taggings on taggings.taggable_id = looks.id', 'inner join tags on tags.id = taggings.tag_id'], 
         :conditions => ['tags.name = ?', tag_name])
-    @tags = Tag.find(:all, :conditions => ['looks.user_id = ?', @user.id],
-      :joins => ['inner join taggings on taggings.tag_id = tags.id', 
-        'inner join looks on looks.id = taggings.taggable_id'])
-    @tags = Look.tag_counts
+    @tags = Look.tag_counts(:conditions => ["looks.user_id = ?", @user.id])
   end
 end

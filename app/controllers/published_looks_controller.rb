@@ -3,9 +3,7 @@ class PublishedLooksController < ApplicationController
   # GET /public-looks/
   #browse all published looks
   def index
-    @tags = Tag.find(:all, :conditions => ['looks.published = ?', true],
-      :joins => ['inner join taggings on taggings.tag_id = tags.id', 
-        'inner join looks on looks.id = taggings.taggable_id'])
+    @tags = Look.tag_counts(:conditions => ["looks.published = ?", true])
     @sort = params[:sort] || "date"
     sort = @sort == "date" ? "posted" : "title"
     @looks = Look.find_published(params[:page], sort)
@@ -72,13 +70,11 @@ class PublishedLooksController < ApplicationController
 
   # GET /public-looks/tag/:id(tag name)
   def tag
+    @tags = Look.tag_counts(:conditions => ["looks.published = ?", true])
     @tag = params[:id]
-    tag = Tag.find_by_name(@tag)
-    @looks = []
-    tag.taggings.select {|tag| tag.taggable_type == 'Look'}.each do |tag|
-      @look = Look.find(tag.taggable_id) 
-      @looks << @look if @look.published
-    end
+    @looks = Look.paginate(:page => params[:page], :per_page => 5, 
+      :joins => ["inner join taggings on taggings.taggable_id = looks.id", "inner join tags on tags.id = taggings.tag_id"], 
+      :conditions => ["looks.published = ? AND tags.name = ?", true, @tag])
     respond_to do |format|
       format.html
       format.xml { render :xml => @looks }
