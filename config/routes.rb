@@ -7,7 +7,6 @@ ActionController::Routing::Routes.draw do |map|
   	    looks.resources :pages, :except => 'index'
 	  end
   end
-  map.connect '/users/:user_id/looks/tags/:id', :controller => 'looks', :action => 'tags'
   map.connect '/users/:id/edit/password', :controller => 'users', :action => 'change_password'
 
   map.connect '/public-looks/view/:look_id/pages/:id.:format', :controller => 'published_looks', :action => 'view'

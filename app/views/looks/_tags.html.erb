@@ -1,0 +1,10 @@
+<div id="tag_cloud">
+	<p><strong>Tags</strong></p>
+	<% tag_cloud tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
+		<% if personal %>
+	  	<%= link_to tag.name, "#", :class => css_class %>
+		<% else %>
+			<%= link_to h(tag.name), {:action => 'tag', :id => h(tag.name), :controller => 'published_looks'}, :class => css_class %>
+		<% end %>
+	<% end %>
+</div>

@@ -72,6 +72,25 @@
     margin: 0 auto;
     text-align: center;
     clear: both; }
+  #contentContainer div#tag_cloud {
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    margin: 0 auto 25px auto;
+    width: 150px;
+    background: #fff;
+    height: 50px;
+    text-align: center; }
+    #contentContainer div#tag_cloud .css4 {
+      font-size: 0.9em; }
+    #contentContainer div#tag_cloud .css3 {
+      font-size: 1.1em; }
+    #contentContainer div#tag_cloud .css2 {
+      font-size: 1.3em; }
+    #contentContainer div#tag_cloud .css1 {
+      font-size: 1.5em; }
   #contentContainer div.lookPreview, #contentContainer div.lookEditor {
     padding: 30px 0 0 30px;
     margin-bottom: 50px;
@@ -232,12 +251,3 @@ input.error {
 div.clear {
   clear: both;
   height: 15px; }
-
-div#tag_cloud .css4 {
-  font-size: 0.9em; }
-div#tag_cloud .css3 {
-  font-size: 1.1em; }
-div#tag_cloud .css2 {
-  font-size: 1.3em; }
-div#tag_cloud .css1 {
-  font-size: 1.5em; }
