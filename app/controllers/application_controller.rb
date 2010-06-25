@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :username
   
   protected 
@@ -28,10 +27,8 @@ class ApplicationController < ActionController::Base
     
     def check_current_user_permission
       param_id = params[:user_id] == nil ? params[:id] : params[:user_id]
-      #debugger
-      param_id = param_id.to_i
-      if session[:user_id] != param_id
-        flash[:notice] = "You don't have permission to do that. You may only view/edit/create looks within your own look library."
+      if session[:user_id] != param_id.to_i
+        flash[:notice] = "You don't have permission to do that."
         redirect_to root_path and return
       end
     end

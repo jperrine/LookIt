@@ -28,8 +28,8 @@ class PublishedLooksController < ApplicationController
       #todo reimplement searching for only looks, but can search within pages
       @looks = Look.paginate(:page => params[:page], :per_page => 5, :order => "#{sort} DESC",
         :joins => :pages,
-        :conditions => ["(lower(looks.title) LIKE ? OR lower(looks.content) LIKE ? ) AND looks.published = ?", 
-           "%#{query.downcase}%", "%#{query.downcase}%", true])
+        :conditions => ["lower(looks.title) LIKE ? AND looks.published = ?", 
+           "%#{query.downcase}%", true])
     end
     
     respond_to do |format|
