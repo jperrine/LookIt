@@ -35,7 +35,7 @@ class LooksController < ApplicationController
     respond_to do |format|
       if @look.save
         flash[:notice] = "#{@look.title} was successfully created."
-        format.html { redirect_to [@current_user, @look] }
+        format.html { redirect_to new_user_look_page_path(@current_user, @look) }
         format.xml { render :xml => @look, :status => :created, :location => @look }
       else
         format.html { render :action => 'new' }

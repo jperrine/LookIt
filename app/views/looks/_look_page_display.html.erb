@@ -9,14 +9,18 @@
 				<ul>
 					<% if personal %>
 						<% look.pages.each do |p| %>
-							<li><%= link_to h(p.title), user_look_page_path(look.user, look, p)%></li>
+							<li>
+								<%= link_to h(p.title), user_look_page_path(look.user, look, p)%>
+							</li>
 						<% end %>
 						<li>
-							<%= link_to "Add Page + ", new_user_look_page_path(look.user, look), :class => 'button' %></li>
+							<%= link_to "Add Page + ", new_user_look_page_path(look.user, look), :class => 'button' %>
 						</li>
 					<% else %>	
 						<% look.pages.each do |p| %>
-							<li><%= link_to h(p.title), :controller => 'published_looks', :action => 'view', :look_id => look, :id => p %>
+							<li>
+								<%= link_to h(p.title), :controller => 'published_looks', :action => 'view', :look_id => look, :id => p %>
+							</li>
 						<% end %>
 					<% end %>
 				</ul>

@@ -1,4 +1,9 @@
 $().ready(function() {
+	if ($('#notice #message').text().length > 0) {
+		$('#notice #message').effect("highlight", {}, 3000, function() {
+			$('#notice #message').fadeOut('slow');
+		});
+	}
     $.validator.messages.required = "";
     $('form').validate({ //uses validate plugin
         invalidHandler: function(e, validator) {
