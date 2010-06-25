@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
       if @current_user.nil?
         session[:original_uri] = request.request_uri
         flash[:notice] = "You must login first."
-        redirect_to login_path and return
+        redirect_to login_users_path and return
       end
     end
     
