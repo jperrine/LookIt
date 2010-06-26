@@ -52,7 +52,7 @@ class UsersControllerTest < ActionController::TestCase
   test 'edit without user' do
     get :edit, {:id => @user.to_param}, {}
     assert_response :redirect
-    assert_redirected_to :login
+    assert_redirected_to login_users_url
   end
   
   test 'edit wrong user' do
@@ -66,6 +66,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :redirect
     assert_redirected_to @user
     assert_equal session[:user_id], @user.id
+    assert_equal session[:user_param], @user.to_param
   end
   
   test 'login bad password' do
@@ -78,13 +79,13 @@ class UsersControllerTest < ActionController::TestCase
     post :create, :user => { :username => 'user', :password => 'password', :email => 'mail@mal.com', :display_name => 'new user' }
     @new_user = User.find_by_username('user')
     assert @new_user
-    assert_redirected_to @new_user
+    assert_redirected_to root_url
   end
   
   test 'logout' do
     get :logout, {}, {:user_id => @user.id}
     assert_nil session[:user_id]
-    assert_redirected_to :login
+    assert_redirected_to login_users_url
   end
   
   test 'check username' do
@@ -109,15 +110,5 @@ class UsersControllerTest < ActionController::TestCase
   test 'post change password' do
     post :change_password, {:id => @user.to_param, :old_password => 'password', :password => 'blahh', :password_confirmation => 'blahh'}, {:user_id => @user.id}
     assert_redirected_to @user
-  end
-  
-  test 'published looks' do
-    get :published_looks, {:user_id => @user.to_param}, {:user_id => @user.id}
-    assert_template 'published_looks'
-  end
-  
-  test 'working looks' do
-    get :working_looks, {:user_id => @user.to_param}, {:user_id => @user.id}
-    assert_template 'working_looks'
   end
 end

@@ -15,14 +15,8 @@ class PublishedLooksControllerTest < ActionController::TestCase
     assert_template 'index'
   end
   
-  test 'search' do
-    get :search
-    assert_response :success
-    assert_template 'search'
-  end
-  
   test 'search results' do
-    get :results, {:query => 'jperrine'}
+    get :results, {:query => 'look'}
     assert_response :success
     assert_template 'results'
   end

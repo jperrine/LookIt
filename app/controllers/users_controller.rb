@@ -93,7 +93,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /login && POST /login
+  # GET /users/login && POST /users/login
   def login
     if request.post?
       user = User.authenticate(params[:username], params[:password])
@@ -103,7 +103,7 @@ class UsersController < ApplicationController
           redirect_to root_path and return
         end
         session[:user_id] = user.id
-        session[:user_param] = user
+        session[:user_param] = user.to_param
         uri, session[:original_uri] = session[:original_uri], nil
         respond_to do |format|
           format.html { redirect_to(uri || user) }

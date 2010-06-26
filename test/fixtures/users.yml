@@ -8,6 +8,7 @@ valid_user:
   username:        jperrine
   email:           email@email.com
   birthdate:       11/13/1987
+  active:          <%= true %>
   
 invalid_user:
   id:              2

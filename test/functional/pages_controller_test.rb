@@ -9,11 +9,6 @@ class PagesControllerTest < ActionController::TestCase
     @page = pages(:valid_page)
   end
   
-  test 'page index' do
-    get :index, {:user_id => @user.to_param, :look_id => @look.to_param}, {:user_id => @user.id}
-    assert_redirected_to [@user, @look, @look.pages.first]
-  end
-  
   test 'new page' do
     get :new, {:user_id => @user.to_param, :look_id => @look.to_param}, {:user_id => @user.id}
     assert_response :success

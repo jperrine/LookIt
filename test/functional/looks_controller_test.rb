@@ -33,7 +33,7 @@ class LooksControllerTest < ActionController::TestCase
     post :create, {:user_id => @user.id, :look => @new_look}, {:user_id => @user.id}
     @new_look = Look.find_by_title('test look')
     assert !@new_look.nil?
-    assert_redirected_to [@user, @new_look]
+    assert_redirected_to new_user_look_page_path(@user, @new_look)
   end
   
   test 'update look' do
@@ -70,5 +70,15 @@ class LooksControllerTest < ActionController::TestCase
     assert_redirected_to [@user, @look]
     @updated_look = Look.find(@look.id)
     assert @updated_look.published
+  end
+  
+  test 'published looks' do
+    get :published, {:user_id => @user.to_param}, {:user_id => @user.id}
+    assert_template 'published'
+  end
+  
+  test 'working looks' do
+    get :working, {:user_id => @user.to_param}, {:user_id => @user.id}
+    assert_template 'working'
   end
 end
