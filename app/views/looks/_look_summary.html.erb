@@ -2,7 +2,13 @@
 	<%= image_tag(look.cover.url(:thumb)) %>
 	<h2><%= h(look.title) %></h2>
 	<p><%= h(look.content)%></p>
-	<p class="tags"><%=h look.tag_list %></p>
+	<p class="tags">
+		<% if look.tag_list %>
+			<%=h look.tag_list %>
+		<% else %>
+			No tags.
+		<% end %>
+	</p>
 	<ul>
 		<% if personal %>
 			<%= render :partial => 'looks/look_editor_controls', :locals => {:look => look}%>
