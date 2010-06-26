@@ -14,7 +14,7 @@
 	<div id="search">
 		<% form_tag(url_for(:action => 'results'), :method => 'get') do %>
 			<%= text_field_tag :query, params[:query], :class => 'required' %>
-			<%= submit_tag("Search", :class => 'button') %>
+			<%= submit_tag("Search", :class => 'button', :name => nil) %>
 		<% end %>
 	</div>
 </div>
