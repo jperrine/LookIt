@@ -1,51 +1,53 @@
 <div id="header">
 </div>
-<div id="contentContainer">
-	<div class="lookEditor">
-		<%= render :partial => 'looks/look_summary', :locals => {:look => look, :personal => personal}%>
-		<div id="pageContent">
-			<div class="pageList">
-				<h3>Pages:</h3>
-				<ul>
-					<% if personal %>
-						<% look.pages.each do |p| %>
+<div id="bodyContainer">
+	<div id="contentContainer">
+		<div class="lookEditor">
+			<%= render :partial => 'looks/look_summary', :locals => {:look => look, :personal => personal}%>
+			<div id="pageContent">
+				<div class="pageList">
+					<h3>Pages:</h3>
+					<ul>
+						<% if personal %>
+							<% look.pages.each do |p| %>
+								<li>
+									<%= link_to h(p.title), user_look_page_path(look.user, look, p)%>
+								</li>
+							<% end %>
 							<li>
-								<%= link_to h(p.title), user_look_page_path(look.user, look, p)%>
+								<%= link_to "Add Page + ", new_user_look_page_path(look.user, look), :class => 'button' %>
 							</li>
+						<% else %>	
+							<% look.pages.each do |p| %>
+								<li>
+									<%= link_to h(p.title), :controller => 'published_looks', :action => 'view', :look_id => look, :id => p %>
+								</li>
+							<% end %>
 						<% end %>
-						<li>
-							<%= link_to "Add Page + ", new_user_look_page_path(look.user, look), :class => 'button' %>
-						</li>
-					<% else %>	
-						<% look.pages.each do |p| %>
-							<li>
-								<%= link_to h(p.title), :controller => 'published_looks', :action => 'view', :look_id => look, :id => p %>
-							</li>
-						<% end %>
-					<% end %>
-				</ul>
-			</div>
-			<div class="pageEditor">
-				<% unless page.nil? %>
-				<h3><%= h page.title %></h3>
-				<br />
-				<div id="pageContent">
-					<%= page.content %>
+					</ul>
 				</div>
-					<% if personal %>
-						<p class="pageEditorPanel">
-							<%= link_to "Edit Page", edit_user_look_page_path(look.user, look, page) %> | 
-							<%= link_to "Delete Page", user_look_page_path(look.user, look, page), :method => :delete, :confirm => "Are you sure you want to delete this page?"%>
-						</p>
+				<div class="pageEditor">
+					<% unless page.nil? %>
+					<h3><%= h page.title %></h3>
+					<br />
+					<div id="pageContent">
+						<%= page.content %>
+					</div>
+						<% if personal %>
+							<p class="pageEditorPanel">
+								<%= link_to "Edit Page", edit_user_look_page_path(look.user, look, page) %> | 
+								<%= link_to "Delete Page", user_look_page_path(look.user, look, page), :method => :delete, :confirm => "Are you sure you want to delete this page?"%>
+							</p>
+						<% end %>
+					<% else %>
+						<p>No pages have been added for this look.</p>
+						<% if personal %>
+							<p><%= link_to "Add one", new_user_look_page_path(look.user, look) %></p>
+						<% end %>
 					<% end %>
-				<% else %>
-					<p>No pages have been added for this look.</p>
-					<% if personal %>
-						<p><%= link_to "Add one", new_user_look_page_path(look.user, look) %></p>
-					<% end %>
-				<% end %>
+				</div>
+				<div class="clear"></div>
 			</div>
-			<div class="clear"></div>
 		</div>
 	</div>
 </div>
