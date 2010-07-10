@@ -19,11 +19,11 @@
 	<%= link_to 'New Look +', new_user_look_path(user), :class => 'button' %>
 </div>
 <div id="contentContainer">
-	<%= render :partial => 'looks/tags', :locals => {:tags => @tags, :personal => true}%>
 	<% unless looks.empty? %>
 		<%= render :partial => 'looks/look_list_display', :collection => looks, :as => :look, :locals => {:personal => true} %>
 	<% else %>
 		<p>No <%= filter -%> looks yet, <%= link_to 'create one', new_user_look_path(user) %>.</p>
 	<% end %>
+	<%= render :partial => 'looks/tags', :locals => {:tags => @tags, :personal => true}%>
 	<%= will_paginate looks %>
 </div>

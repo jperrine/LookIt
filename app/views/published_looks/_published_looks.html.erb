@@ -19,11 +19,11 @@
 	</div>
 </div>
 <div id="contentContainer">
-		<%= render :partial => 'looks/tags', :locals => {:tags => @tags, :personal => false}%>
 	<% unless looks.empty? %>
 		<%= render :partial => 'looks/look_list_display', :collection => looks, :as => :look, :locals => {:personal => false, :tags => @tags} %>
 	<% else %>
 		<p>No published looks.</p>
 	<% end %>
+	<%= render :partial => 'looks/tags', :locals => {:tags => @tags, :personal => false}%>
 	<%= will_paginate looks %>
 </div>
