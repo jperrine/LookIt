@@ -29,17 +29,17 @@ class Look < ActiveRecord::Base
     "#{id}-#{title.downcase.gsub(/[^a-z0-9]+/i, '-')}"
   end
   
-  def self.find_published(page, order = 'posted')
+  def self.find_published(page, order = 'title')
     paginate(:page => page, :per_page => 5, :order => "#{order} DESC", 
       :conditions => {:published => true}, :include => :user)
   end
   
-  def self.find_working(page, order = 'posted')
+  def self.find_working(page, order = 'title')
     paginate(:page => page, :per_page => 5, :order => "#{order} DESC", 
       :conditions => {:published => false}, :include => :user)
   end
   
-  def self.find_them_all(page, order = 'posted')
+  def self.find_them_all(page, order = 'title')
     paginate(:page => page, :per_page => 5, :order => "#{order} DESC", :include => :user)
   end
 end
