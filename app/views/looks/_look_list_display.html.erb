@@ -1,7 +1,17 @@
 <div class="lookPreview">
 	<div class="lookContent">
-		<%= image_tag(look.cover.url(:thumb)) %>
-		<h2><%= h(look.title) %></h2>
+		<% if personal %>
+			<%= link_to image_tag(look.cover.url(:thumb)), user_look_path(look.user, look) %>
+		<% else %>
+			<%= link_to image_tag(look.cover.url(:thumb)), :controller => 'published_looks', :action => 'view', :id => look %>
+		<% end %>
+		<h2>
+			<% if personal %>
+				<%= link_to h(look.title), user_look_path(look.user, look) %>
+			<% else %>
+				<%= link_to h(look.title), :controller => 'published_looks', :action => 'view', :id => look %>
+			<% end %>
+		</h2>
 		<% unless personal %>
 			<p class="author">
 				By <%= link_to h(look.user.display_name), :controller => 'published_looks', :action => 'user', :id => look.user %>
