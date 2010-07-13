@@ -5,7 +5,7 @@ class PublishedLooksController < ApplicationController
   def index
     @tags = Look.tag_counts(:conditions => ["looks.published = ?", true])
     @sort = params[:sort] || "date"
-    sort = @sort == "date" ? "posted" : "title"
+    sort = @sort == "date" ? "posted DESC" : "title ASC"
     @looks = Look.find_published(params[:page], sort)
       
     respond_to do |format|
@@ -19,7 +19,7 @@ class PublishedLooksController < ApplicationController
   def results
     @tags = Look.tag_counts(:conditions => ["looks.published = ?", true])
     @sort = params[:sort] || "date"
-    sort = @sort == "date" ? "posted" : "title"
+    sort = @sort == "date" ? "posted DESC" : "title ASC"
     query = params[:query]
     unless query
       flash[:notice] = "You must enter a search term."
@@ -44,7 +44,7 @@ class PublishedLooksController < ApplicationController
   def user
     @user = User.find(params[:id])
     @sort = params[:sort] || "date"
-    sort = @sort == "date" ? "posted" : "title"
+    sort = @sort == "date" ? "posted DESC" : "title ASC"
     @looks = @user.looks.find_published(params[:page], sort)
     @tags = Look.tag_counts(:conditions => ["looks.published = ?", true])
     
@@ -76,7 +76,7 @@ class PublishedLooksController < ApplicationController
     @tags = Look.tag_counts(:conditions => ["looks.published = ?", true])
     @tag = params[:id]
     @sort = params[:sort] || "date"
-    sort = @sort == "date" ? "posted" : "title"
+    sort = @sort == "date" ? "posted DESC" : "title ASC"
     @looks = Look.paginate(:page => params[:page], :per_page => 5, 
       :joins => ["inner join taggings on taggings.taggable_id = looks.id", "inner join tags on tags.id = taggings.tag_id"], 
       :conditions => ["looks.published = ? AND tags.name = ?", true, @tag], 
