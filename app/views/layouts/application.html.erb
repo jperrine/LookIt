@@ -51,20 +51,19 @@
 			</div>
 		</div>
    	<%= yield %>
-		<!-- Begin Survey.io code for . -->
-		<script src="http://cdn.survey.io/embed/1.0/survey.js" type="text/javascript"></script>
-		<script type="text/javascript" charset="utf-8">
-		Surveyio.init({
-			survey_id: "7cd70",
-			token: "9e18f399bfe70e0dc81c4dcc79b09ebbb3233254",
-			banner: {
-				x: "right",
-				y: "bottom",
-				color: "blue"
-			}
-		});
+		<!-- KISSinsights for brightenit.org -->
+		<script type="text/javascript">
+		  var _kiq = _kiq || [];
+		  (function(u){
+		    var s = document.createElement('script'), f = document.getElementsByTagName('script')[0];
+		    s.type = 'text/javascript'; s.async = true;
+		    s.src = '//s3.amazonaws.com/j.kissinsights.com/u/' + u + '.js?' + (5*Math.floor(new Date().getMinutes()/5));
+		    f.parentNode.insertBefore(s, f);
+		  })('4162/7d0aa5af1a2cbe3a848ace82571a38e842cc6d50');
 		</script>
-		<!-- /End Survey.io code -->
+		<script type="text/javascript" charset="utf-8">
+		    _kiq.push(['identify', '<%= @current_user.nil? ? "Anonymous" : @current_user.display_name %>']);
+		</script>
   </body>
 </html>
   
