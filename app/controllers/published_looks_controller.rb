@@ -46,7 +46,7 @@ class PublishedLooksController < ApplicationController
     @sort = params[:sort] || "date"
     sort = @sort == "date" ? "posted DESC" : "title ASC"
     @looks = @user.looks.find_published(params[:page], sort)
-    @tags = Look.tag_counts(:conditions => ["looks.published = ?", true])
+    @tags = Look.tag_counts(:conditions => ["looks.published = ? and looks.user_id = ?", true, @user.id])
     
     respond_to do |format|
       format.html

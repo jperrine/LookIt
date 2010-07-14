@@ -83,14 +83,14 @@
     background: #fff;
     min-height: 50px;
     text-align: center; }
-    #contentContainer div#tag_cloud .css4 {
+    #contentContainer div#tag_cloud .css1 {
+      font-size: 0.7em; }
+    #contentContainer div#tag_cloud .css2 {
       font-size: 0.9em; }
     #contentContainer div#tag_cloud .css3 {
       font-size: 1.1em; }
-    #contentContainer div#tag_cloud .css2 {
+    #contentContainer div#tag_cloud .css4 {
       font-size: 1.3em; }
-    #contentContainer div#tag_cloud .css1 {
-      font-size: 1.5em; }
   #contentContainer div.lookPreview, #contentContainer div.lookEditor {
     padding: 30px 0 0 30px;
     margin-bottom: 50px;
